@@ -3,6 +3,7 @@ import "./assets/common.scss";
 import React, { useRef, useState } from "react";
 import TodoList from "./components/TodoList";
 import BoardList from "./components/BoardList";
+import BoardListDone from "./components/BoardListDone";
 import SelectGuide from "./components/SelectGuide";
 import DialogGuide from "./components/DialogGuide";
 import TabsGuide from "./components/TabsGuide";
@@ -33,7 +34,7 @@ export default function App() {
   const headerRef = useRef();
   const containerRef = useRef();
   const [nav, setNav] = useState({
-    value: 1,
+    value: 3,
     options: [
       {
         label: "Tabs",
@@ -48,6 +49,9 @@ export default function App() {
         label: "Board",
       },
       {
+        label: "Board Done",
+      },
+      {
         label: "Todo List",
       },
       {
@@ -59,7 +63,7 @@ export default function App() {
     console.log(index);
     setNav((prev) => ({ ...prev, value: index }));
   };
-  const temp = Array.from({ length: 100 });
+  const temp = Array.from({ length: 1 });
   return (
     <main>
       <Header
@@ -73,6 +77,7 @@ export default function App() {
         <DialogGuide />
         <SelectGuide containerRef={containerRef} />
         <BoardList />
+        <BoardListDone />
         <TodoList />
         <TabsScrollGuide headerRef={headerRef} />
       </Container>
