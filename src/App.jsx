@@ -63,7 +63,7 @@ export default function App() {
     console.log(index);
     setNav((prev) => ({ ...prev, value: index }));
   };
-  const temp = Array.from({ length: 1 });
+  const temp = Array.from({ length: 0 });
   return (
     <main>
       <Header

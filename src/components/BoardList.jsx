@@ -30,9 +30,9 @@ function Nav(props) {
     <nav>
       <ol>
         {/* { list } */}
-        {props.topics.map((item) => {
+        {props.topics.map((item, index) => {
           return (
-            <li key={item.id}>
+            <li key={index}>
               <a
                 id={item.id}
                 href={"/read/" + item.id}
@@ -65,7 +65,7 @@ function Create(props) {
     <form>
       <input
         type="text"
-        value={title}
+        value={title || ""}
         onChange={(event) => {
           setTitle(event.target.value);
         }}
@@ -74,19 +74,20 @@ function Create(props) {
       <textarea
         name=""
         id=""
-        value={body}
+        value={body || ""}
         onChange={(event) => {
           setBody(event.target.value);
         }}
       ></textarea>
       <br />
+      {title}
+      {body}
+      <br />
       <button
         type="submit"
         onClick={(event) => {
           event.preventDefault();
-          props.getContents(title, body);
-          setTitle(null);
-          setBody(null);
+          props.onCreate(title, body);
         }}
       >
         Save
@@ -96,8 +97,8 @@ function Create(props) {
 }
 function Update(props) {
   let item = props.getItem;
-  const [title, setTitle] = useState(item.title ? item.title : null);
-  const [body, setBody] = useState(item.body ? item.body : null);
+  const [title, setTitle] = useState(item.title);
+  const [body, setBody] = useState(item.body);
   console.log(title, body);
   return (
     <form>
@@ -122,9 +123,8 @@ function Update(props) {
         type="submit"
         onClick={(event) => {
           event.preventDefault();
-          props.getContents(title, body);
-          setTitle(null);
-          setBody(null);
+          props.onUpdate(title, body);
+          console.log("update");
         }}
       >
         Save
@@ -155,18 +155,31 @@ function App() {
 
     // map
   } else if (mode === "READ") {
-    contents = topics.map((item) =>
+    contents = topics.map((item, index) =>
       item.id === id ? (
-        <div key={item.id}>
+        <div key={index}>
           <Article title={item.title} body={item.body}></Article>
           <button
             type="button"
-            onClick={() => {
+            onClick={(event) => {
+              event.preventDefault();
               setMode("UPDATE");
               setId(item.id);
             }}
           >
             Update
+          </button>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.preventDefault();
+              topics.splice(id - 1, 1);
+              setTopics(topics);
+              setMode("WELCOME");
+              setId(null);
+            }}
+          >
+            Delete
           </button>
         </div>
       ) : null
@@ -184,49 +197,47 @@ function App() {
   } else if (mode === "CREATE") {
     contents = (
       <Create
-        getContents={(_title, _body) => {
-          // if (_title !== null && _body !== null) {
-          let _id = topics.length + 1;
-          setTopics([
-            ...topics,
-            {
-              id: _id,
-              title: _title,
-              body: _body,
-            },
-          ]);
-          setMode("READ");
-          setId(_id);
-          // } else {
-          //   alert(_title === null ? "제목을 입력하세요" : "내용을 입력하세요");
-          //   console.log(_title, _body);
-          // }
+        onCreate={(_title, _body) => {
+          if (_title !== null && _body !== null) {
+            let _id = topics.length + 1;
+            setTopics([
+              ...topics,
+              {
+                id: _id,
+                title: _title,
+                body: _body,
+              },
+            ]);
+            setMode("READ");
+            setId(_id);
+          } else {
+            alert(_title === null ? "제목을 입력하세요" : "내용을 입력하세요");
+          }
         }}
       />
     );
   } else if (mode === "UPDATE") {
-    let item = topics[id - 1];
+    let _id = id - 1;
+    let item = topics[_id];
     contents = (
       <Update
         getItem={item}
-        getContents={(_title, _body) => {
-          let _id = topics.length + 1;
-          setTopics([
-            ...topics,
-            {
-              id: _id,
-              title: _title,
-              body: _body,
-            },
-          ]);
+        onUpdate={(_title, _body) => {
+          const updateItem = {
+            id: id,
+            title: _title,
+            body: _body,
+          };
+          topics.splice(_id, 1, updateItem); // (인덱스, 삭제할 개수, 추가할 값));
+          setTopics(topics);
+          setId(id);
           setMode("READ");
-          setId(_id);
         }}
       />
     );
   }
   return (
-    <div>
+    <div className="board-wrap">
       <Header
         title="WEB"
         onChangeMode={() => {
