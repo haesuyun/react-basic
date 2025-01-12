@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import style from '@/assets/board.module.scss';
+import Button from '@mui/material/Button';
 
 function Header(props) {
   return (
     <header>
+    
       <h1>
         <a
           href="/"
@@ -237,7 +240,8 @@ function App() {
     );
   }
   return (
-    <div className="board-wrap">
+    <div className={style.boardWrap}>
+    <Button>material button</Button>
       <Header
         title="WEB"
         onChangeMode={() => {
