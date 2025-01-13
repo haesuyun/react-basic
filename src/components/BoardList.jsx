@@ -199,7 +199,8 @@ function App() {
       <Create
         onCreate={(_title, _body) => {
           if (_title !== null && _body !== null) {
-            let _id = topics.length + 1;
+            let _id = topics[topics.length - 1].id + 1;
+            console.log(_id);
             setTopics([
               ...topics,
               {
