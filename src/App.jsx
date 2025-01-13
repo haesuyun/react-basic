@@ -1,9 +1,8 @@
-import "./App.css";
 import "./assets/common.scss";
 import React, { useRef, useState } from "react";
 import TodoList from "./components/TodoList";
-import BoardList from "./components/BoardList";
-import BoardListDone from "./components/BoardListDone";
+import Board from "./components/Board";
+import BoardDone from "./components/BoardDone";
 import SelectGuide from "./components/SelectGuide";
 import DialogGuide from "./components/DialogGuide";
 import TabsGuide from "./components/TabsGuide";
@@ -76,8 +75,8 @@ export default function App() {
         <TabsGuide />
         <DialogGuide />
         <SelectGuide containerRef={containerRef} />
-        <BoardList />
-        <BoardListDone />
+        <Board />
+        <BoardDone />
         <TodoList />
         <TabsScrollGuide headerRef={headerRef} />
       </Container>

@@ -1,5 +1,23 @@
+// reset
+
+html {
+  font-size: 10px;
+}
+body {
+  font-size: 1.6rem;
+  color: #000;
+}
 * {
   box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  &,
+  :hover,
+  :focus,
+  :active {
+    color: inherit;
+  }
 }
 .button,
 input[type="submit"],
