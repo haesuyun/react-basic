@@ -1,5 +1,8 @@
 import "./assets/common.scss";
-import React, { useRef, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import routes from "@/routes/routes";
+
 import TodoList from "./components/TodoList";
 import Board from "./components/Board";
 import BoardDone from "./components/BoardDone";
@@ -64,29 +67,42 @@ export default function App() {
   };
   const temp = Array.from({ length: 0 });
   return (
-    <main>
-      <Header
-        headerRef={headerRef}
-        containerRef={containerRef}
-        nav={nav}
-        onChange={handleNavChange}
-      ></Header>
-      <Container containerRef={containerRef} nav={nav}>
-        <TabsGuide />
-        <DialogGuide />
-        <SelectGuide containerRef={containerRef} />
-        <Board />
-        <BoardDone />
-        <TodoList />
-        <TabsScrollGuide headerRef={headerRef} />
-      </Container>
+    <Router>
+      <Suspense>
+        <Routes>
+          {routes.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              element={<route.component />}
+            />
+          ))}
+        </Routes>
+      </Suspense>
+    </Router>
+    // <main>
+    //   <Header
+    //     headerRef={headerRef}
+    //     containerRef={containerRef}
+    //     nav={nav}
+    //     onChange={handleNavChange}
+    //   ></Header>
+    //   <Container containerRef={containerRef} nav={nav}>
+    //     <TabsGuide />
+    //     <DialogGuide />
+    //     <SelectGuide containerRef={containerRef} />
+    //     <Board />
+    //     <BoardDone />
+    //     <TodoList />
+    //     <TabsScrollGuide headerRef={headerRef} />
+    //   </Container>
 
-      {temp.map((item, index) => (
-        <div key={index}>
-          {item}
-          lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </div>
-      ))}
-    </main>
+    //   {temp.map((item, index) => (
+    //     <div key={index}>
+    //       {item}
+    //       lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    //     </div>
+    //   ))}
+    // </main>
   );
 }
