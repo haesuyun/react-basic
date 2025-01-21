@@ -15,7 +15,7 @@ import ContactPage from "@/pages/Contact";
 const routes = [
   {
     path: "/",
-    component: React.lazy(() => import("@/pages/PageList")),
+    component: React.lazy(() => import("@/pages/guide/PageList")),
     exact: true, // 정확히 일치해야 렌더링
   },
   {
@@ -29,10 +29,32 @@ const routes = [
   {
     path: "/Board",
     component: React.lazy(() => import("@/components/Board")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "board",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
   },
   {
     path: "/TodoList",
     component: React.lazy(() => import("@/components/TodoList")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "todolist",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
   },
 ];
 

@@ -1,0 +1,51 @@
+
+.page-list-wrap {
+  outline: 1px solid red;
+  display: flex;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  .list-top {
+    padding: 12px 24px;
+    background-color: pink;
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+  .list-wrap {
+    flex: 1 1 auto;
+    table {
+      width: 100%;
+      tr {
+        border-top: 1px solid #ddd;
+      }
+      td {
+        padding: 8px 4px;
+        vertical-align: middle;
+        a {
+          display: inline-flex;
+          align-items: center;
+          vertical-align: middle;
+          margin-left: 4px;
+          padding: 4px 4px;
+          outline: 1px solid red;
+          svg {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  .preview-wrap {
+    flex: 0 1 auto;
+    margin: 0;
+    padding: 0;
+    border: 1px solid blue;
+    iframe {
+      display: block;
+      min-height: 100%;
+      margin: 0;
+    }
+  }
+}
