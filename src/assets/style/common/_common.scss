@@ -1,12 +1,8 @@
-// reset
-@forward './reset.scss';
-@forward './font.scss';
-@forward './button.scss';
-
 html {
   font-size: 10px;
 }
 body {
+  background-color: #fff;
   font-family: 'pretendard';
   font-size: 1.6rem;
   color: #000;

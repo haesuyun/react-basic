@@ -1,16 +1,7 @@
 import React from "react";
-// src/routes/routes.js
 import HomePage from "@/pages/Home";
 import AboutPage from "@/pages/About";
 import ContactPage from "@/pages/Contact";
-// import Board from "@/components/Board";
-// import TodoList from "@/components/TodoList";
-// import BoardDone from "@/components/BoardDone";
-// import SelectGuide from "@/components/SelectGuide";
-// import DialogGuide from "@/components/DialogGuide";
-// import TabsGuide from "@/components/TabsGuide";
-// import TabsScrollGuide from "@/components/TabsScrollGuide";
-// import Select from "@/components/Select";
 
 const routes = [
   {
@@ -19,12 +10,49 @@ const routes = [
     exact: true, // 정확히 일치해야 렌더링
   },
   {
+    path: "/home",
+    component: HomePage,
+    meta: {
+      depth01: "sample",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "home",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
     path: "/about",
     component: AboutPage,
+    meta: {
+      depth01: "sample",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "about",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
   },
   {
     path: "/contact",
     component: ContactPage,
+    meta: {
+      depth01: "sample",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "contact",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
   },
   {
     path: "/Board",
@@ -42,6 +70,21 @@ const routes = [
     },
   },
   {
+    path: "/BoardDone",
+    component: React.lazy(() => import("@/components/BoardDone")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "boardDone",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "생활코딩",
+    },
+  },
+  {
     path: "/TodoList",
     component: React.lazy(() => import("@/components/TodoList")),
     meta: {
@@ -49,13 +92,74 @@ const routes = [
       depth02: "",
       depth03: "",
       id: "",
-      name: "todolist",
+      name: "todoList",
       author: "",
       state: "진행중",
       createdDate: "",
       note: "",
     },
   },
+  {
+    path: "/SelectGuide",
+    component: React.lazy(() => import("@/components/SelectGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "select",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
+    path: "/DialogGuide",
+    component: React.lazy(() => import("@/components/DialogGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "dialog",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
+    path: "/TabsGuide",
+    component: React.lazy(() => import("@/components/TabsGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "tab",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
+    path: "/TabsScrollGuide",
+    component: React.lazy(() => import("@/components/TabsScrollGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "tabScroll",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  // import Select from "@/components/Select";
 ];
 
 export default routes;

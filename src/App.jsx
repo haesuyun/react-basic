@@ -1,4 +1,4 @@
-import "./assets/common.scss";
+import "./assets/style/main.scss";
 import React, { Suspense, useRef, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import routes from "@/routes/routes";

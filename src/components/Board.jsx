@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import style from '@/assets/board.module.scss';
-import Button from '@mui/material/Button';
+import style from "@/assets/style/module/board.module.scss";
+import Button from "@mui/material/Button";
 
 function Header(props) {
   return (
     <header>
-    
       <h1>
         <a
           href="/"
@@ -88,6 +87,7 @@ function Create(props) {
       <br />
       <button
         type="submit"
+        color="primary"
         onClick={(event) => {
           event.preventDefault();
           props.onCreate(title, body);
@@ -242,7 +242,7 @@ function App() {
   }
   return (
     <div className={style.boardWrap}>
-    <Button>material button</Button>
+      <Button>material button</Button>
       <Header
         title="WEB"
         onChangeMode={() => {

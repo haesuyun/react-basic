@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import Dialog from "./Dialog";
 
 function OptionsList({ value, options, onCheck }) {
@@ -21,7 +21,12 @@ function OptionsList({ value, options, onCheck }) {
     </ul>
   );
 }
-function Select({ value, options, onChange, containerRef }) {
+function Select({
+  value,
+  options,
+  onChange,
+  // containerRef
+}) {
   const [selectValue, setSelectValue] = useState(value);
   const [open, setOpen] = useState({
     dialog: false,
@@ -49,28 +54,22 @@ function Select({ value, options, onChange, containerRef }) {
         value={inputValue}
         onClick={() => handleClickOpen("dialog")}
       ></input>
-      {containerRef.current &&
-        ReactDOM.createPortal(
-          <Dialog
-            type="bottom-sheet"
-            open={open.dialog}
-            onClose={() => handleClose("dialog")}
-            title="option title"
-          >
-            <OptionsList
-              value={selectValue}
-              options={options}
-              onCheck={onCheck}
-            />
-            {temp.map((t, i) => (
-              <p key={i}>
-                lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            ))}
-          </Dialog>,
-          // containerRef.current.nextSibling,
-          containerRef.current,
-        )}
+      {/* { */}
+      {/* // containerRef.current && // ReactDOM.createPortal( */}
+      <Dialog
+        type="bottom-sheet"
+        open={open.dialog}
+        onClose={() => handleClose("dialog")}
+        title="option title"
+      >
+        <OptionsList value={selectValue} options={options} onCheck={onCheck} />
+        {temp.map((t, i) => (
+          <p key={i}>
+            lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        ))}
+      </Dialog>
+      {/* , // containerRef.current.nextSibling, containerRef.current // )} */}
     </div>
   );
 }

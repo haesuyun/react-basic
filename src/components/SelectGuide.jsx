@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Select from "./Select";
 
-function SelectGuide({ containerRef }) {
+// function SelectGuide({ containerRef }) {
+function SelectGuide() {
   const [select, setSelect] = useState({
     value: 1,
     options: [
@@ -25,7 +26,6 @@ function SelectGuide({ containerRef }) {
   });
   return (
     <Select
-      containerRef={containerRef}
       value={select.value}
       options={select.options}
       onChange={(index) => setSelect((prev) => ({ ...prev, value: index }))}
