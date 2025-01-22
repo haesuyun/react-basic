@@ -1,18 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { ThemeProvider } from "@mui/material/styles"; // mui theme
+import { theme } from "@/assets/style/theme"; // mui theme
 import App from "./App";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
-  // <BrowserRouter>
-  //   <Routes>
-  //     <Route path="/" element={<App />} />
-  //   </Routes>
-  // </BrowserRouter>
 );
+
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// <BrowserRouter>
+//   <Routes>
+//     <Route path="/" element={<App />} />
+//   </Routes>
+// </BrowserRouter>
 
 // import Layout from "./pages/Layout";
 // import Home from "./pages/Home";
