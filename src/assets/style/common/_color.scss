@@ -1,6 +1,6 @@
-@use '../settings/_color.scss' as color;
+@use '../settings/' as *;
 body {
-  @each $key, $color in color.$colorGroup {
+  @each $key, $color in $colorGroup {
     .bg-#{$key} {
       background-color: $color !important;
     }

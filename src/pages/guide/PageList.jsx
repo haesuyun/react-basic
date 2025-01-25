@@ -4,6 +4,7 @@ import style from "@/assets/style/module/pagelist.module.scss";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 export default function PageList() {
   const [path, setPath] = useState(null);
+  const newRoutes = routes.slice(1);
   return (
     <section className={style.pageListWrap}>
       <div className={style.listWrap}>
@@ -13,12 +14,12 @@ export default function PageList() {
         <div className={style.tableWrap}>
           <table>
             <tbody>
-              {routes.map((route, index) => (
+              {newRoutes.map((route, index) => (
                 <tr key={index}>
-                  <td className="text-primary">
+                  <td>
                     {route?.meta?.depth01 || null}
                   </td>
-                  <td className="bg-primary">{route?.meta?.depth02 || null}</td>
+                  <td>{route?.meta?.depth02 || null}</td>
                   <td>{route?.meta?.depth03 || null}</td>
                   <td>{route?.meta?.name || null}</td>
                   <td>
@@ -49,7 +50,7 @@ export default function PageList() {
         </div>
       </div>
       <div className={style.previewWrap}>
-        <iframe src={path} frameBorder="0" width="400px"></iframe>
+        <iframe src={path} style={{border: 'none'}} width="400px"></iframe>
       </div>
     </section>
   );

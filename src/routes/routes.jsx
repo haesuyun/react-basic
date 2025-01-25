@@ -55,6 +55,21 @@ const routes = [
     },
   },
   {
+    path: "/Typography",
+    component: React.lazy(() => import("@/pages/guide/TypographyGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "Typography",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
     path: "/Board",
     component: React.lazy(() => import("@/components/Board")),
     meta: {
@@ -81,7 +96,7 @@ const routes = [
       author: "",
       state: "진행중",
       createdDate: "",
-      note: "생활코딩",
+      note: "",
     },
   },
   {
