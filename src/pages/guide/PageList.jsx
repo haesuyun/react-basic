@@ -15,8 +15,10 @@ export default function PageList() {
             <tbody>
               {routes.map((route, index) => (
                 <tr key={index}>
-                  <td>{route?.meta?.depth01 || null}</td>
-                  <td>{route?.meta?.depth02 || null}</td>
+                  <td className="text-primary">
+                    {route?.meta?.depth01 || null}
+                  </td>
+                  <td className="bg-primary">{route?.meta?.depth02 || null}</td>
                   <td>{route?.meta?.depth03 || null}</td>
                   <td>{route?.meta?.name || null}</td>
                   <td>

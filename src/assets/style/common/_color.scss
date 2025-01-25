@@ -1,0 +1,11 @@
+@use '../settings/_color.scss' as color;
+body {
+  @each $key, $color in color.$colorGroup {
+    .bg-#{$key} {
+      background-color: $color !important;
+    }
+    .text-#{$key} {
+      color: $color !important;
+    }
+  }
+}

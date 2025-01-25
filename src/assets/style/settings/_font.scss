@@ -1,0 +1,196 @@
+@function ptr($size) {
+  @return (
+    font-size: $size*0.1rem,
+    line-height: 1.4em
+  );
+}
+body {
+  .heading {
+    &_36 {
+      @each $property, $value in ptr(36) {
+        #{$property}: #{$value};
+      }
+      font-weight: 700;
+    }
+    &_32 {
+      @each $property, $value in ptr(32) {
+        #{$property}: #{$value};
+      }
+      font-weight: 700;
+    }
+    &_30 {
+      @each $property, $value in ptr(30) {
+        #{$property}: #{$value};
+      }
+      font-weight: 700;
+    }
+    &_28 {
+      @each $property, $value in ptr(28) {
+        #{$property}: #{$value};
+      }
+      font-weight: 700;
+    }
+    &_26 {
+      @each $property, $value in ptr(26) {
+        #{$property}: #{$value};
+      }
+      font-weight: 700;
+    }
+  }
+
+  .title {
+    &_24 {
+      font-weight: 700;
+      @each $property, $value in ptr(24) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 2.6rem;
+      }
+    }
+    &_22 {
+      font-weight: 700;
+      @each $property, $value in ptr(22) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 2.4rem;
+      }
+    }
+    &_20 {
+      font-weight: 700;
+      @each $property, $value in ptr(20) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 2.2rem;
+      }
+    }
+    &_18 {
+      font-weight: 700;
+      @each $property, $value in ptr(18) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 2rem;
+      }
+    }
+    &_16 {
+      font-weight: 700;
+      @each $property, $value in ptr(16) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 1.8rem;
+      }
+    }
+    &_14 {
+      font-weight: 700;
+      @each $property, $value in ptr(14) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 1.6rem;
+      }
+    }
+    &_13 {
+      font-weight: 700;
+      @each $property, $value in ptr(13) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .text {
+    &_18 {
+      @each $property, $value in ptr(18) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 2rem;
+      }
+    }
+    &_16 {
+      @each $property, $value in ptr(16) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 1.8rem;
+      }
+    }
+    &_14 {
+      @each $property, $value in ptr(14) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 1.6rem;
+      }
+    }
+    &_13 {
+      @each $property, $value in ptr(13) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 1.5rem;
+      }
+    }
+    &_12 {
+      @each $property, $value in ptr(12) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 1.4rem;
+      }
+    }
+    &_11 {
+      @each $property, $value in ptr(11) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 1.3rem;
+      }
+    }
+    &_10 {
+      @each $property, $value in ptr(10) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .button {
+    &_16 {
+      @each $property, $value in ptr(16) {
+        #{$property}: #{$value};
+      }
+      @media (min-width: 1100px) {
+        font-size: 1.8rem;
+      }
+    }
+    &_14 {
+      @each $property, $value in ptr(14) {
+        #{$property}: #{$value};
+      }
+    }
+    &_12 {
+      @each $property, $value in ptr(12) {
+        #{$property}: #{$value};
+      }
+    }
+    &_11 {
+      @each $property, $value in ptr(11) {
+        #{$property}: #{$value};
+      }
+    }
+    &_10 {
+      @each $property, $value in ptr(10) {
+        #{$property}: #{$value};
+      }
+    }
+  }
+}
