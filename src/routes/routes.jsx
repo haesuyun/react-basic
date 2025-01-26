@@ -70,6 +70,21 @@ const routes = [
     },
   },
   {
+    path: "/Color",
+    component: React.lazy(() => import("@/pages/guide/ColorGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "Color",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
     path: "/Board",
     component: React.lazy(() => import("@/components/Board")),
     meta: {

@@ -1,18 +1,8 @@
-// @function generateTypography($size) {
-//   @return (
-//     font-size: $size * 0.1rem,
-//     line-height: 1.4em
-//   );
-// }
-
-@mixin applyTypography($className, $sizes, $fontWeight) {
+@mixin applyTypography($className, $sizes, $fontWeight:400, $lineHeight:1.4 ) {
   .#{$className} {
     @each $size in $sizes {
       &-#{$size} {
-        // @each $property, $value in generateTypography($size) {
-        //   #{$property}: #{$value} !important;
-        // }
-        line-height: 1.4em;
+        line-height: $lineHeight+em !important;
         font-size: $size * 0.1rem !important;
         font-weight: $fontWeight !important;
       }
@@ -27,5 +17,5 @@ body {
 
   @include applyTypography("heading", $headingSizes, 700);
   @include applyTypography("title", $titleSizes, 700);
-  @include applyTypography("text", $textSizes, 400);
+  @include applyTypography("text", $textSizes );
 }
