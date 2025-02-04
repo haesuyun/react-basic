@@ -85,6 +85,21 @@ const routes = [
     },
   },
   {
+    path: "/Button",
+    component: React.lazy(() => import("@/pages/guide/ButtonGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "Button",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
     path: "/Board",
     component: React.lazy(() => import("@/components/Board")),
     meta: {

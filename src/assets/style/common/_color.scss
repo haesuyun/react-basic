@@ -1,11 +1,9 @@
 @use '../settings/' as *;
-body {
-  @each $key, $color in $colorGroup {
-    .bg-#{$key} {
-      background-color: $color !important;
-    }
-    .text-#{$key} {
-      color: $color !important;
-    }
+@each $key, $color in $colorGroup {
+  .bg-#{$key} {
+    background-color: $color !important;
+  }
+  .text-#{$key} {
+    color: $color !important;
   }
 }

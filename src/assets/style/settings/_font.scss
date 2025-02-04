@@ -10,12 +10,12 @@
   }
 }
 
-body {
-  $headingSizes: 36, 32, 30, 28, 26;
-  $titleSizes: 24, 22, 20, 18, 16, 14, 13;
-  $textSizes: 18, 16, 14, 13, 12, 11, 10;
+$headingSizes: 36, 32, 30, 28, 26;
+$titleSizes: 24, 22, 20, 18, 16, 14, 13;
+$buttonSizes: 24, 22, 20, 18, 16, 14, 13;
+$textSizes: 18, 16, 14, 13, 12, 11, 10;
 
-  @include applyTypography("heading", $headingSizes, 700);
-  @include applyTypography("title", $titleSizes, 700);
-  @include applyTypography("text", $textSizes );
-}
+@include applyTypography("heading", $headingSizes, 700);
+@include applyTypography("title", $titleSizes, 700);
+@include applyTypography("button", $buttonSizes, 400);
+@include applyTypography("text", $textSizes );
