@@ -14,6 +14,15 @@ function ButtonGuide() {
         </thead>
         <tbody>
           <tr>
+            <th>icon</th>
+            <td>small-16px</td>
+            <td>
+              <button type="button" className="button-text button-small">
+                Button
+              </button>
+            </td>
+          </tr>
+          <tr>
             <th>text</th>
             <td>small-14px</td>
             <td>
