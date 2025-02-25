@@ -1,0 +1,36 @@
+@use '../settings/' as *;
+
+.icon-large,
+.icon-small,
+.icon {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  outline: 1px solid pink;
+}
+.icon {
+  width: 18px;
+  height: 18px;
+}
+.icon-xsmall {
+  width: 12px;
+  height: 12px;
+}
+.icon-small {
+  width: 16px;
+  height: 16px;
+}
+.icon-large {
+  width: 24px;
+  height: 24px;
+}
+.icon-xlarge {
+  width: 32px;
+  height: 32px;
+}
+.icon {
+  &.close-black {
+    background: url('@/assets/images/icon/icon_close_black.svg') no-repeat;
+    background-size: contain;
+  }
+}

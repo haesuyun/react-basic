@@ -1,0 +1,41 @@
+$unit: rem; // 단위
+$max-step: 16; // 최대 단계
+$base-size: 0.4; // 기본 단위 (0.4rem씩 증가)
+
+$directions: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+  x: (left, right),
+  y: (top, bottom)
+);
+
+@mixin generateSpacing($prop, $short) {
+  @for $i from 1 through $max-step {
+    $size: $i * $base-size;
+
+    .#{$short}a-#{$i} {
+      #{$prop}: #{$size}#{$unit};
+    }
+
+    @each $key, $val in $directions {
+      @if type-of($val) == list {
+        .#{$short}#{$key}-#{$i} {
+          @each $v in $val {
+            #{$prop}-#{$v}: #{$size}#{$unit};
+          }
+        }
+      } @else {
+        .#{$short}#{$key}-#{$i} {
+          #{$prop}-#{$val}: #{$size}#{$unit};
+        }
+      }
+    }
+  }
+}
+
+// margin, padding 클래스 생성
+@include generateSpacing(margin, m);
+@include generateSpacing(padding, p);
+@include generateSpacing(gap, p);

@@ -15,8 +15,24 @@ function ButtonGuide() {
         <tbody>
           <tr>
             <th>icon</th>
+            <td>xsmall-12px</td>
+            <td>
+              <i className="icon icon-xsmall close-black"></i>
+              <button type="button" className="button-text button-small">
+                <i className="icon icon-xsmall close-black"></i>
+                Button small
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th>icon</th>
             <td>small-16px</td>
             <td>
+              <i className="icon icon-xsmall close-black"></i>
+              <i className="icon icon-small close-black"></i>
+              <i className="icon close-black"></i>
+              <i className="icon icon-large close-black"></i>
+              <i className="icon icon-xlarge close-black"></i>
               <button type="button" className="button-text button-small">
                 Button
               </button>
