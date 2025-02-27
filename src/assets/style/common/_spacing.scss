@@ -17,7 +17,7 @@ $directions: (
     $class-name: if($i < 0, "n#{abs($i)}", "#{$i}"); // 음수 변환
 
     .#{$short}a-#{$class-name} {
-      #{$prop}: #{$size}#{$unit};
+      #{$prop}: #{$size}#{$unit} !important;
     }
 
     // gap일 경우 추가 클래스를 생성하지 않음
@@ -26,12 +26,12 @@ $directions: (
         @if type-of($val) == list {
           .#{$short}#{$key}-#{$class-name} {
             @each $v in $val {
-              #{$prop}-#{$v}: #{$size}#{$unit};
+              #{$prop}-#{$v}: #{$size}#{$unit} !important;
             }
           }
         } @else {
           .#{$short}#{$key}-#{$class-name} {
-            #{$prop}-#{$val}: #{$size}#{$unit};
+            #{$prop}-#{$val}: #{$size}#{$unit} !important;
           }
         }
       }

@@ -7,7 +7,7 @@ import TodoList from "./components/TodoList";
 import Board from "./components/Board";
 import BoardDone from "./components/BoardDone";
 import SelectGuide from "./components/SelectGuide";
-import DialogGuide from "./components/DialogGuide";
+// import DialogGuide from "./components/DialogGuide";
 import TabsGuide from "./components/TabsGuide";
 import TabsScrollGuide from "./components/TabsScrollGuide";
 import Select from "./components/Select";

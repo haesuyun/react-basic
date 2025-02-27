@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import style from "@/assets/style/module/dialog.module.scss";
 function Dialog({
   open,
   type,
@@ -29,24 +30,30 @@ function Dialog({
   // type: bottom-sheet,
   return (
     <div
-      className={`dialog-wrap ${type || ""} ${size || ""} ${dimHide ? "dim-hide" : ""}`.trim()}
+      className={`${style.dialogWrap} ${type || ""} ${style[size] || ""} ${
+        dimHide ? style.dimHide : ""
+      }`.trim()}
     >
       {/* style={{ zIndex: 100 + dialogs.length }} */}
-      <div className="dialog-container">
-        <div className="dialog-title">
-          {title.length && <p className="title">{title}</p>}
+      <div className={style.dialogContainer}>
+        <div className={style.dialogTitle}>
+          {title.length && <p className={style.title}>{title}</p>}
           <button type="button" onClick={() => onClose()}>
-            닫기
+            <i className="icon icon-large close-black" aria-label="닫기"></i>
           </button>
         </div>
         <div
-          className={`dialog-content ${actions ? "dialog-content-actions" : ""}`.trim()}
+          className={`${style.dialogContent} ${
+            actions ? style.dialogContentActions : ""
+          }`.trim()}
         >
           {children}
         </div>
-        {actions && <div className="dialog-actions">{actions}</div>}
+        {actions && <div className={style.dialogActions}>{actions}</div>}
       </div>
-      {!dimHide && <div className="dialog-dim" onClick={() => onClose()}></div>}
+      {!dimHide && (
+        <div className={style.dialogDim} onClick={() => onClose()}></div>
+      )}
     </div>
   );
 }

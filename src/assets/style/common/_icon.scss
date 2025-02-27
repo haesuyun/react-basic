@@ -8,7 +8,6 @@
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
-  outline: 1px solid pink;
 }
 .icon {
   width: 18px;
@@ -35,6 +34,9 @@
   background-repeat: no-repeat;
   &.close-black {
     background-image: url('@/assets/images/icon/icon_close_black.svg');
+  }
+  &.close-white {
+    background-image: url('@/assets/images/icon/icon_close_white.svg');
   }
   &.arrow-black {
     background-image: url('@/assets/images/icon/icon_arrow_black.svg');
