@@ -1,0 +1,45 @@
+$unit: rem; // 단위
+$max-step: 16; // 최대 단계
+$base-size: 0.4; // 기본 단위 (0.4rem씩 증가)
+
+$directions: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+  x: (left, right), // list
+  y: (top, bottom) // list
+);
+
+@mixin generateSpacing($prop, $short, $minStep: 0, $onlyAll: false) {
+  @for $i from $minStep through $max-step {
+    $size: $i * $base-size;
+    $class-name: if($i < 0, "n#{abs($i)}", "#{$i}"); // 음수 변환
+
+    .#{$short}a-#{$class-name} {
+      #{$prop}: #{$size}#{$unit};
+    }
+
+    // gap일 경우 추가 클래스를 생성하지 않음
+    @if not $onlyAll {
+      @each $key, $val in $directions {
+        @if type-of($val) == list {
+          .#{$short}#{$key}-#{$class-name} {
+            @each $v in $val {
+              #{$prop}-#{$v}: #{$size}#{$unit};
+            }
+          }
+        } @else {
+          .#{$short}#{$key}-#{$class-name} {
+            #{$prop}-#{$val}: #{$size}#{$unit};
+          }
+        }
+      }
+    }
+  }
+}
+
+// gap은 `ga-*`만 필요
+@include generateSpacing(gap, g, 0, true);
+@include generateSpacing(margin, m, -16);
+@include generateSpacing(padding, p);
