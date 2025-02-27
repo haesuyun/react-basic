@@ -18,6 +18,7 @@
 button {
   cursor: pointer;
 }
+.button-text,
 .button-large,
 .button-small,
 .button {
@@ -46,7 +47,6 @@ button {
   font-weight: 700 !important;
 }
 .button-text {
-  display: inline-flex;
   min-height: initial;
   padding: 0;
   border-radius: 0;
@@ -62,6 +62,10 @@ button {
 }
 a,
 button {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  background-color: transparent;
   &.bg-tertiary,
   &.bg-secondary,
   &.bg-primary {

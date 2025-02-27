@@ -1,7 +1,9 @@
 @use '../settings/' as *;
 
+.icon-xlarge,
 .icon-large,
 .icon-small,
+.icon-xsmall,
 .icon {
   display: inline-flex;
   align-items: center;
@@ -29,8 +31,12 @@
   height: 32px;
 }
 .icon {
+  background-size: contain;
+  background-repeat: no-repeat;
   &.close-black {
-    background: url('@/assets/images/icon/icon_close_black.svg') no-repeat;
-    background-size: contain;
+    background-image: url('@/assets/images/icon/icon_close_black.svg');
+  }
+  &.arrow-black {
+    background-image: url('@/assets/images/icon/icon_arrow_black.svg');
   }
 }

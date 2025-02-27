@@ -7,35 +7,39 @@ $directions: (
   r: right,
   b: bottom,
   l: left,
-  x: (left, right),
-  y: (top, bottom)
+  x: (left, right), // list
+  y: (top, bottom) // list
 );
 
-@mixin generateSpacing($prop, $short) {
-  @for $i from 1 through $max-step {
+@mixin generateSpacing($prop, $short, $minStep: 0, $onlyAll: false) {
+  @for $i from $minStep through $max-step {
     $size: $i * $base-size;
+    $class-name: if($i < 0, "n#{abs($i)}", "#{$i}"); // 음수 변환
 
-    .#{$short}a-#{$i} {
+    .#{$short}a-#{$class-name} {
       #{$prop}: #{$size}#{$unit};
     }
 
-    @each $key, $val in $directions {
-      @if type-of($val) == list {
-        .#{$short}#{$key}-#{$i} {
-          @each $v in $val {
-            #{$prop}-#{$v}: #{$size}#{$unit};
+    // gap일 경우 추가 클래스를 생성하지 않음
+    @if not $onlyAll {
+      @each $key, $val in $directions {
+        @if type-of($val) == list {
+          .#{$short}#{$key}-#{$class-name} {
+            @each $v in $val {
+              #{$prop}-#{$v}: #{$size}#{$unit};
+            }
           }
-        }
-      } @else {
-        .#{$short}#{$key}-#{$i} {
-          #{$prop}-#{$val}: #{$size}#{$unit};
+        } @else {
+          .#{$short}#{$key}-#{$class-name} {
+            #{$prop}-#{$val}: #{$size}#{$unit};
+          }
         }
       }
     }
   }
 }
 
-// margin, padding 클래스 생성
-@include generateSpacing(margin, m);
+// gap은 `ga-*`만 필요
+@include generateSpacing(gap, g, 0, true);
+@include generateSpacing(margin, m, -16);
 @include generateSpacing(padding, p);
-@include generateSpacing(gap, p);
