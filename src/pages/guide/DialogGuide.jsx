@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Dialog from "../../components/Dialog";
+import style from "@/assets/style/module/guide.module.scss";
 
 function DialogBody() {
   return <div>dialog body</div>;
@@ -7,8 +8,8 @@ function DialogBody() {
 function DialogGuide() {
   const [open, setOpen] = useState({
     dialog01: false,
-    dialog02: true,
-    dialog03: false,
+    dialog02: false,
+    dialog03: true,
   });
   const handleClickOpen = (key) => {
     setOpen((prev) => ({ ...prev, [key]: true }));
@@ -18,10 +19,59 @@ function DialogGuide() {
   };
   const temp = Array.from({ length: 100 });
   return (
-    <div>
-      <button type="button" onClick={() => handleClickOpen("dialog01")}>
-        Alert Popup
-      </button>
+    <section>
+      <h1 className={style.h1}>Dialog</h1>
+      <table className={style.table}>
+        <thead>
+          <tr>
+            <th className="text-center">type</th>
+            <th>size</th>
+            <th>view</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Alert</th>
+            <td>small (w: 300)</td>
+            <td>
+              <button
+                type="button"
+                className="button bg-secondary"
+                onClick={() => handleClickOpen("dialog01")}
+              >
+                Alert Dialog
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th>full Screen</th>
+            <td>full (w: 600)</td>
+            <td>
+              <button
+                type="button"
+                className="button bg-secondary"
+                onClick={() => handleClickOpen("dialog02")}
+              >
+                Full Screen Dialog
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th>Bottom Sheet</th>
+            <td>half (w: 600, h: 600)</td>
+            <td>
+              <button
+                type="button"
+                className="button bg-secondary"
+                onClick={() => handleClickOpen("dialog03")}
+              >
+                Bottom Sheet Dialog(dimHide)
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      {/* alert */}
       <Dialog
         open={open.dialog01}
         onClose={() => {
@@ -49,14 +99,10 @@ function DialogGuide() {
       >
         <DialogBody />
       </Dialog>
-      <br />
-      <br />
-      <button type="button" onClick={() => handleClickOpen("dialog02")}>
-        Full Screen Popup
-      </button>
+      {/* full screen */}
       <Dialog
         size="fullScreen"
-        dimHide
+        // dimHide
         open={open.dialog02}
         onClose={() => {
           handleClose("dialog02");
@@ -83,18 +129,14 @@ function DialogGuide() {
       >
         {temp.map((t, i) => (
           <span key={i}>
-            {t, i}lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            {(t, i)}lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </span>
         ))}
       </Dialog>
-      <br />
-      <br />
-      <button type="button" onClick={() => handleClickOpen("dialog03")}>
-        Bottom Sheet Popup(dimHide)
-      </button>
+      {/* bottom sheet */}
       <Dialog
-        type="bottom-sheet"
-        dimHide
+        type="bottomSheet"
+        // dimHide
         open={open.dialog03}
         onClose={() => {
           handleClose("dialog03");
@@ -102,10 +144,18 @@ function DialogGuide() {
         title="dialog title3"
         actions={
           <>
-            <button type="button" onClick={() => handleClose("dialog03")}>
+            <button
+              type="button"
+              className="button-large bg-grey"
+              onClick={() => handleClose("dialog03")}
+            >
               취소
             </button>
-            <button type="button" onClick={() => handleClose("dialog03")}>
+            <button
+              type="button"
+              className="button-large bg-secondary"
+              onClick={() => handleClose("dialog03")}
+            >
               확인
             </button>
           </>
@@ -117,7 +167,7 @@ function DialogGuide() {
           </p>
         ))}
       </Dialog>
-    </div>
+    </section>
   );
 }
 export default DialogGuide;

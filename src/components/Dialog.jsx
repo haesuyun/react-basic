@@ -30,9 +30,9 @@ function Dialog({
   // type: bottom-sheet,
   return (
     <div
-      className={`${style.dialogWrap} ${type || ""} ${style[size] || ""} ${
-        dimHide ? style.dimHide : ""
-      }`.trim()}
+      className={`${style.dialogWrap} ${style[type] || ""} ${
+        style[size] || ""
+      } ${dimHide ? style.dimHide : ""}`.trim()}
     >
       {/* style={{ zIndex: 100 + dialogs.length }} */}
       <div className={style.dialogContainer}>
