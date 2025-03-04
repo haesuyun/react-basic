@@ -38,7 +38,11 @@
   &.close-white {
     background-image: url('@/assets/images/icon/icon_close_white.svg');
   }
+  &.down-black,
   &.arrow-black {
     background-image: url('@/assets/images/icon/icon_arrow_black.svg');
+  }
+  &.down-black {
+    transform: rotate(90deg);
   }
 }
