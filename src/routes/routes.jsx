@@ -115,6 +115,21 @@ const routes = [
     },
   },
   {
+    path: "/SelectGuide",
+    component: React.lazy(() => import("@/components/SelectGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "select",
+      author: "",
+      state: "수정중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
     path: "/Board",
     component: React.lazy(() => import("@/components/Board")),
     meta: {
@@ -153,21 +168,6 @@ const routes = [
       depth03: "",
       id: "",
       name: "todoList",
-      author: "",
-      state: "진행중",
-      createdDate: "",
-      note: "",
-    },
-  },
-  {
-    path: "/SelectGuide",
-    component: React.lazy(() => import("@/components/SelectGuide")),
-    meta: {
-      depth01: "guide",
-      depth02: "",
-      depth03: "",
-      id: "",
-      name: "select",
       author: "",
       state: "진행중",
       createdDate: "",
