@@ -1,0 +1,33 @@
+@use '../settings' as *;
+.select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-width: 200px;
+  border: 1px solid $grey-300;
+  border-radius: 0.4rem;
+  input {
+    display: inline-flex;
+    flex: 1 1 auto;
+    width: 5rem;
+    border: 0 none;
+    padding: 0 3rem 0 0.8rem;
+    border-radius: 0.4rem;
+    user-select:none;
+  }
+  .icon {
+    position: absolute;
+    right: 0.8rem;
+  }
+}
+.option-list {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  li {
+    @extand .text_16;
+  }
+  li.active {
+    color: $secondary;
+  }
+}

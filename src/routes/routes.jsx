@@ -116,7 +116,7 @@ const routes = [
   },
   {
     path: "/SelectGuide",
-    component: React.lazy(() => import("@/components/SelectGuide")),
+    component: React.lazy(() => import("@/pages/guide/SelectGuide")),
     meta: {
       depth01: "guide",
       depth02: "",

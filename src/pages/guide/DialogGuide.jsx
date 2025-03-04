@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Dialog from "../../components/Dialog";
+import Dialog from "@/components/Dialog";
 import style from "@/assets/style/module/guide.module.scss";
 
 function DialogBody() {
@@ -9,7 +9,7 @@ function DialogGuide() {
   const [open, setOpen] = useState({
     dialog01: false,
     dialog02: false,
-    dialog03: true,
+    dialog03: false,
   });
   const handleClickOpen = (key) => {
     setOpen((prev) => ({ ...prev, [key]: true }));
