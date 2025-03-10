@@ -1,0 +1,23 @@
+@use '../settings/' as *;
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  label {
+    display: flex;
+    align-items: start;
+    gap: .8rem;
+    input {
+      position:absolute;
+      opacity: 0;
+    }
+    .icon {
+      flex-shrink: 0;
+      margin: 0.2rem 0;
+    }
+    .label {
+      @extend .text-16;
+      padding-right: 0.8rem;
+    }
+  }
+}

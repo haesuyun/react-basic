@@ -13,7 +13,6 @@
     border: 0 none;
     padding: 0 3rem 0 0.8rem;
     border-radius: 0.4rem;
-    user-select:none;
   }
   .icon {
     position: absolute;
@@ -25,7 +24,7 @@
   flex-direction: column;
   gap: .8rem;
   li {
-    @extand .text_16;
+    @extend .text_16;
   }
   li.active {
     color: $secondary;

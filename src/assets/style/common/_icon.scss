@@ -32,6 +32,12 @@
 .icon {
   background-size: contain;
   background-repeat: no-repeat;
+  &.checkbox-on {
+    background-image: url('@/assets/images/icon/icon_checkbox_on.svg');
+  }
+  &.checkbox-off {
+    background-image: url('@/assets/images/icon/icon_checkbox_off.svg');
+  }
   &.close-black {
     background-image: url('@/assets/images/icon/icon_close_black.svg');
   }
