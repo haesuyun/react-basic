@@ -1,4 +1,8 @@
 @use '../settings/' as *;
+.radio-group {
+  display: flex;
+  gap: .8rem;
+}
 .radio {
   position: relative;
   display: inline-flex;

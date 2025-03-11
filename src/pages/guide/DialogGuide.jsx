@@ -5,7 +5,7 @@ import style from "@/assets/style/module/guide.module.scss";
 function DialogBody() {
   return <div>dialog body</div>;
 }
-function DialogGuide() {
+export default function DialogGuide() {
   const [open, setOpen] = useState({
     dialog01: false,
     dialog02: false,
@@ -170,4 +170,3 @@ function DialogGuide() {
     </section>
   );
 }
-export default DialogGuide;

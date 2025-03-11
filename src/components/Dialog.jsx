@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "@/assets/style/module/dialog.module.scss";
-function Dialog({
+export default function Dialog({
   open,
   type,
   size,
@@ -56,4 +56,3 @@ function Dialog({
     </div>
   );
 }
-export default Dialog;

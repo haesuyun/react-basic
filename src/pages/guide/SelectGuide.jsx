@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Select from "@/components/Select";
 import style from "@/assets/style/module/guide.module.scss";
 
-function SelectGuide() {
+export default function SelectGuide() {
   const [select, setSelect] = useState({
     value: 1,
     options: [
@@ -54,4 +54,3 @@ function SelectGuide() {
     </section>
   );
 }
-export default SelectGuide;

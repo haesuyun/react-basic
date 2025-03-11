@@ -18,7 +18,7 @@ function OptionsList({ value, options, onCheck }) {
     </ul>
   );
 }
-function Select({ value, options, onChange }) {
+export default function Select({ value, options, onChange }) {
   const [selectedIndex, setSelectedIndex] = useState(value);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -49,4 +49,3 @@ function Select({ value, options, onChange }) {
     </div>
   );
 }
-export default Select;

@@ -1,6 +1,6 @@
 import React from "react";
 import style from "@/assets/style/module/guide.module.scss";
-function ButtonGuide() {
+export default function ButtonGuide() {
   return (
     <section>
       <h1 className={style.h1}>Button</h1>
@@ -200,4 +200,3 @@ function ButtonGuide() {
     </section>
   );
 }
-export default ButtonGuide;

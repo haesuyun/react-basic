@@ -1,24 +1,27 @@
-import React, {useState} from "react";
+import React from "react";
+import clsx from "clsx";
 import style from "@/assets/style/module/radio.module.scss"
 
-function Radio({
+export default function Radio({
   inputProps,
   label,
-  name,
   value,
+  name,
   checked,
   onChange,
 }){
-  // const [value, setValue] = useState(checked!==undefined?checked:false)
-  const setChange = (e) => {
-    // setValue(e.target.checked)
-    // checked!==undefined?onChange(e):null
-  }
   return(
-    <div className={`radio ${style.radio}`}>
+    <div className={clsx("radio", style.radio)}>
       <label>
-        <input type="radio" name={name} id="" {...inputProps} value={value}/>
-        <i className={`icon ${style.icon} ${value? "checkbox-on" : "checkbox-off"}`}></i>
+        <input 
+          type="radio" 
+          name={name} 
+          {...inputProps} 
+          value={value} 
+          checked={checked}
+          onChange={onChange}
+          />
+        <i className={clsx("icon", style.icon, checked?"checkbox-on":"checkbox-off")}></i>
         { label &&
           <p className={style.label}>
             {label}
@@ -28,5 +31,3 @@ function Radio({
     </div>
   )
 }
-
-export default Radio;

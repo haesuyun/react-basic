@@ -5,7 +5,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from "@/components/Checkbox";
 
 
-function CheckboxGuide() {
+export default function CheckboxGuide() {
   const label = { 
     inputProps: { 
       'aria-label': 'Checkbox demo'
@@ -56,17 +56,17 @@ function CheckboxGuide() {
               {...label} 
               checked={checked.checkbox01} 
               label={String(checked.checkbox01)} 
-              onChange={(e)=>handleChange('checkbox01',e)}/>
+              onChange={e=>handleChange('checkbox01',e)}/>
             <Checkbox 
               {...label} 
               checked={checked.checkbox02} 
               label={String(checked.checkbox02)} 
-              onChange={(e)=>handleChange('checkbox02',e)}/>
+              onChange={e=>handleChange('checkbox02',e)}/>
             <Checkbox 
               {...label} 
               checked={checked.checkbox03} 
               label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, eos?" 
-              onChange={(e)=>handleChange('checkbox03',e)}/>
+              onChange={e=>handleChange('checkbox03',e)}/>
           </td>
         </tr>
       </tbody>
@@ -74,4 +74,3 @@ function CheckboxGuide() {
     </section>
   )
 }
-export default CheckboxGuide;

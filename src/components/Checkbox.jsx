@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/checkbox.module.scss"
 
-function Checkbox({
+export default function Checkbox({
   inputProps,
   checked,
   label,
@@ -34,5 +34,3 @@ function Checkbox({
     </div>
   )
 }
-
-export default Checkbox;

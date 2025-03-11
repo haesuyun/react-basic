@@ -3,23 +3,34 @@ import style from "@/assets/style/module/guide.module.scss";
 import MuiRadio from '@mui/material/Radio';
 import MuiRadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import RadioGroup from "@/components/RadioGroup";
 import Radio from "@/components/Radio";
 
 
-function RadioGuide() {
+export default function RadioGuide() {
   const label = { 
     inputProps: { 
-      'aria-label': 'Checkbox demo'
+      'aria-label': 'radio demo'
     } 
   };
-  const [checked, setChecked] = useState({
-    checkbox01: true,
-    checkbox02: false,
-    checkbox03: false,
-  })
-  const handleChange = (key,e) => {
-    setChecked((prev)=>({...prev, [key]: e.target.checked}))
-  }
+  const [value, setValue] = useState({
+    radio01: 0,
+    radio02: 0,
+  });
+  const options01 = [
+    { inputProps: {'aria-label': 'radio female'} },
+    { inputProps: {'aria-label': 'radio male'} },
+    { inputProps: {'aria-label': 'radio other'} },
+  ];
+  const options02 = [
+    { label: "Female", inputProps: {'aria-label': 'radio female'} },
+    { label: "Male", inputProps: {'aria-label': 'radio male'} },
+    { label: "Other", inputProps: {'aria-label': 'radio other'} },
+  ];
+
+  const handleChange = (key, e) => {
+    setValue((prev)=>({...prev, [key]:Number(e.target.value)}));
+  };
   return (
     <section>
       <h1 className={style.h1}>Form</h1><table className={style.table}>
@@ -49,8 +60,28 @@ function RadioGuide() {
           <th>radio</th>
           <td></td>
           <td>
-            <Radio name="radio-button-group" value="female"/>
-            <Radio name="radio-button-group" value="male"/>
+            <RadioGroup name='radio-button-group1' value={value.radio01} onChange={e=>handleChange('radio01',e)}>
+              {
+                options01.map((option,index)=>
+                  <Radio key={index} {...option} value={index} />
+                )
+              }
+            </RadioGroup>
+            <p>Radio value: {value.radio01}</p>
+          </td>
+        </tr>
+        <tr>
+          <th>radio label</th>
+          <td></td>
+          <td>
+            <RadioGroup name='radio-button-group2' value={value.radio02} onChange={e=>handleChange('radio02',e)}>
+              {
+                options02.map((option,index)=>
+                  <Radio key={index} {...option} value={index} />
+                )
+              }
+            </RadioGroup>
+            <p>Radio value: {value.radio02}</p>
           </td>
         </tr>
       </tbody>
@@ -58,4 +89,3 @@ function RadioGuide() {
     </section>
   )
 }
-export default RadioGuide;
