@@ -5,22 +5,27 @@ import style from "@/assets/style/module/guide.module.scss";
 export default function SelectGuide() {
   const [select, setSelect] = useState({
     value: 1,
+    optionTitle: '주제를 선택하세요',
     options: [
       {
         id: 0,
-        label: "option0",
+        label: "국내주식 0",
       },
       {
         id: 1,
-        label: "option1",
+        label: "해외주식 1",
       },
       {
         id: 2,
-        label: "option2",
+        label: "부동산 2",
       },
       {
         id: 3,
-        label: "option3",
+        label: "가상자산 3",
+      },
+      {
+        id: 4,
+        label: "기타 4 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, incidunt!",
       },
     ],
   });
@@ -41,8 +46,7 @@ export default function SelectGuide() {
             <td></td>
             <td>
               <Select
-                value={select.value}
-                options={select.options}
+                {...select}
                 onChange={(index) =>
                   setSelect((prev) => ({ ...prev, value: index }))
                 }

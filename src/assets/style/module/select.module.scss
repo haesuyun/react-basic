@@ -14,6 +14,7 @@
     border: 0 none;
     padding: 0 3rem 0 0.8rem;
     border-radius: 0.4rem;
+    text-overflow: ellipsis;
     background-color: transparent;
     z-index: 2;
   }
@@ -23,14 +24,18 @@
     z-index: 1;
   }
 }
-.option-list {
+.radio-group {
   display: flex;
   flex-direction: column;
-  gap: .8rem;
-  li {
-    @extend .text-16;
-  }
-  li.active {
-    color: $secondary;
+  gap: 1.6rem !important;
+  .radio {
+    label {
+      display: flex;
+      width: 100%;
+      flex-direction: row-reverse;
+      :global(.label) {
+        margin-right: auto;
+      }
+    }
   }
 }

@@ -28,8 +28,8 @@ export default function RadioGuide() {
     { label: "Other", inputProps: {'aria-label': 'radio other'} },
   ];
 
-  const handleChange = (key, e) => {
-    setValue((prev)=>({...prev, [key]:Number(e.target.value)}));
+  const handleChange = (key, index) => {
+    setValue((prev)=>({...prev, [key]:index}));
   };
   return (
     <section>
@@ -60,7 +60,7 @@ export default function RadioGuide() {
           <th>radio</th>
           <td></td>
           <td>
-            <RadioGroup name='radio-button-group1' value={value.radio01} onChange={e=>handleChange('radio01',e)}>
+            <RadioGroup name='radio-button-group1' value={value.radio01} onChange={index=>handleChange('radio01', index)}>
               {
                 options01.map((option,index)=>
                   <Radio key={index} {...option} value={index} />
@@ -74,7 +74,7 @@ export default function RadioGuide() {
           <th>radio label</th>
           <td></td>
           <td>
-            <RadioGroup name='radio-button-group2' value={value.radio02} onChange={e=>handleChange('radio02',e)}>
+            <RadioGroup name='radio-button-group2' value={value.radio02} onChange={index=>handleChange('radio02', index)}>
               {
                 options02.map((option,index)=>
                   <Radio key={index} {...option} value={index} />

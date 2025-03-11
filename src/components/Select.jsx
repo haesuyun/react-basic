@@ -1,24 +1,11 @@
 import React, { useState } from "react";
 import clsx from "clsx";
-import Dialog from "@/components/Dialog";
 import style from "@/assets/style/module/select.module.scss";
+import Dialog from "@/components/Dialog";
+import RadioGroup from "@/components/RadioGroup";
+import Radio from "@/components/Radio";
 
-function OptionsList({ value, options, onCheck }) {
-  return (
-    <ul className={style.optionList}>
-      {options.map((item, index) => (
-        <li
-          key={index}
-          className={clsx({[style.active]: value === index})}
-          onClick={() => onCheck(index)}
-        >
-          {item.label}
-        </li>
-      ))}
-    </ul>
-  );
-}
-export default function Select({ value, options, onChange }) {
+export default function Select({ value, optionTitle, options, onChange }) {
   const [selectedIndex, setSelectedIndex] = useState(value);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -42,9 +29,15 @@ export default function Select({ value, options, onChange }) {
         type="bottomSheet"
         open={open}
         onClose={handleClose}
-        title="option title"
+        title={optionTitle}
       >
-        <OptionsList value={selectedIndex} options={options} onCheck={handleSelect} />
+        <RadioGroup className={style.radioGroup} name='option-radio-group' value={selectedIndex} onChange={handleSelect} onClick={handleSelect}>
+          {
+            options.map((option,index)=>
+              <Radio key={index} {...option} value={index} className={style.radio}/>
+            )
+          }
+        </RadioGroup>
       </Dialog>
     </div>
   );

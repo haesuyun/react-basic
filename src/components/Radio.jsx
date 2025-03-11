@@ -8,10 +8,12 @@ export default function Radio({
   value,
   name,
   checked,
+  onClick,
   onChange,
+  className
 }){
   return(
-    <div className={clsx("radio", style.radio)}>
+    <div className={clsx("radio", style.radio, className)}>
       <label>
         <input 
           type="radio" 
@@ -19,11 +21,12 @@ export default function Radio({
           {...inputProps} 
           value={value} 
           checked={checked}
+          onClick={onClick}
           onChange={onChange}
           />
         <i className={clsx("icon", style.icon, checked?"checkbox-on":"checkbox-off")}></i>
         { label &&
-          <p className={style.label}>
+          <p className={clsx("label", style.label)}>
             {label}
           </p>
         }
