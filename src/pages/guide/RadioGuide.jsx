@@ -33,7 +33,7 @@ export default function RadioGuide() {
   };
   return (
     <section>
-      <h1 className={style.h1}>RAdio</h1><table className={style.table}>
+      <h1 className={style.h1}>Radio</h1><table className={style.table}>
       <thead>
         <tr>
           <th className="text-center">type</th>
