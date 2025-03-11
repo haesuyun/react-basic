@@ -21,7 +21,7 @@ export default function CheckboxGuide() {
   }
   return (
     <section>
-      <h1 className={style.h1}>Form</h1><table className={style.table}>
+      <h1 className={style.h1}>Checkbox</h1><table className={style.table}>
       <thead>
         <tr>
           <th className="text-center">type</th>
