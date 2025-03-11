@@ -2,10 +2,10 @@ import React, {useState} from "react";
 import style from "@/assets/style/module/guide.module.scss";
 import MuiCheckbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from "@/components/Checkbox"
+import Checkbox from "@/components/Checkbox";
 
 
-function FormGuide() {
+function CheckboxGuide() {
   const label = { 
     inputProps: { 
       'aria-label': 'Checkbox demo'
@@ -31,8 +31,8 @@ function FormGuide() {
       </thead>
       <tbody>
         <tr>
-          <th>checkbox</th>
-          <td>material</td>
+          <th>material checkbox</th>
+          <td></td>
           <td>
             <MuiCheckbox {...label} defaultChecked />
             <FormControlLabel control={<MuiCheckbox defaultChecked />} label="Label" />
@@ -43,7 +43,7 @@ function FormGuide() {
         </tr>
         <tr>
           <th>checkbox</th>
-          <td>default</td>
+          <td></td>
           <td>
             <Checkbox 
               {...label} 
@@ -74,4 +74,4 @@ function FormGuide() {
     </section>
   )
 }
-export default FormGuide;
+export default CheckboxGuide;

@@ -7,16 +7,20 @@
   border: 1px solid $grey-300;
   border-radius: 0.4rem;
   input {
+    position: relative;
     display: inline-flex;
     flex: 1 1 auto;
     width: 5rem;
     border: 0 none;
     padding: 0 3rem 0 0.8rem;
     border-radius: 0.4rem;
+    background-color: transparent;
+    z-index: 2;
   }
   .icon {
     position: absolute;
     right: 0.8rem;
+    z-index: 1;
   }
 }
 .option-list {
@@ -24,7 +28,7 @@
   flex-direction: column;
   gap: .8rem;
   li {
-    @extend .text_16;
+    @extend .text-16;
   }
   li.active {
     color: $secondary;

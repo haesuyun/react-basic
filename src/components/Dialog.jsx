@@ -15,7 +15,6 @@ function Dialog({
     const htmlElement = document.documentElement;
     // console.log("mount", title, open);
     setDialogs(document.querySelectorAll(".dialog-wrap"));
-    console.log(dialogs);
     if (open && !dimHide) {
       htmlElement.style.overflow = "hidden";
       // console.log("isTrue:", title, open);
