@@ -1,18 +1,41 @@
 import React, { useState } from "react";
 import style from "@/assets/style/module/guide.module.scss";
-import Select from "@/components/Select";
+import UiSelect from "@/components/Select";
 // mui
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import MuiSelect from '@mui/material/Select';
+import { 
+  Box, 
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
+} from '@mui/material';
 
-export default function SelectGuide() {
+function MuiSelect() {
   const [age, setAge] = useState('');
   const handleChange = (event) => {
     setAge(event.target.value);
   };
+  return (
+    <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="Age"
+          onChange={handleChange}
+        >
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+  )
+}
+
+export default function SelectGuide() {
   const [select, setSelect] = useState({
     value: 1,
     optionTitle: '주제를 선택하세요',
@@ -39,8 +62,6 @@ export default function SelectGuide() {
       },
     ],
   });
-  
-
   return (
     <section>
       <h1 className={style.h1}>Select</h1>
@@ -57,29 +78,14 @@ export default function SelectGuide() {
             <th>Material select</th>
             <td></td>
             <td>
-            <Box sx={{ minWidth: 120 }}>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                <MuiSelect
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={age}
-                  label="Age"
-                  onChange={handleChange}
-                >
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </MuiSelect>
-              </FormControl>
-            </Box>
+              <MuiSelect/>
             </td>
           </tr>
           <tr>
             <th>Default</th>
             <td></td>
             <td>
-              <Select
+              <UiSelect
                 {...select}
                 onChange={(index) =>
                   setSelect((prev) => ({ ...prev, value: index }))

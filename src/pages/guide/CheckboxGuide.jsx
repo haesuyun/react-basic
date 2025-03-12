@@ -1,9 +1,28 @@
 import React, {useState} from "react";
 import style from "@/assets/style/module/guide.module.scss";
-import MuiCheckbox from '@mui/material/Checkbox';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from "@/components/Checkbox";
+import UiCheckbox from "@/components/Checkbox";
+// mui
+import { 
+  Checkbox, 
+  FormControlLabel 
+} from '@mui/material';
 
+function MuiCheckbox(){
+  const label = { 
+    inputProps: { 
+      'aria-label': 'Checkbox demo'
+    } 
+  };
+  return (
+    <>
+      <Checkbox {...label} defaultChecked />
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+      <Checkbox {...label} />
+      <Checkbox {...label} disabled />
+      <Checkbox {...label} disabled checked />
+    </>
+  )
+}
 
 export default function CheckboxGuide() {
   const label = { 
@@ -34,35 +53,31 @@ export default function CheckboxGuide() {
           <th>material checkbox</th>
           <td></td>
           <td>
-            <MuiCheckbox {...label} defaultChecked />
-            <FormControlLabel control={<MuiCheckbox defaultChecked />} label="Label" />
-            <MuiCheckbox {...label} />
-            <MuiCheckbox {...label} disabled />
-            <MuiCheckbox {...label} disabled checked />
+            <MuiCheckbox/>
           </td>
         </tr>
         <tr>
           <th>checkbox</th>
           <td></td>
           <td>
-            <Checkbox 
+            <UiCheckbox 
               {...label} 
             />
-            <Checkbox 
+            <UiCheckbox 
               {...label} 
               label="Label" 
             />
-            <Checkbox 
+            <UiCheckbox 
               {...label} 
               checked={checked.checkbox01} 
               label={String(checked.checkbox01)} 
               onChange={e=>handleChange('checkbox01',e)}/>
-            <Checkbox 
+            <UiCheckbox 
               {...label} 
               checked={checked.checkbox02} 
               label={String(checked.checkbox02)} 
               onChange={e=>handleChange('checkbox02',e)}/>
-            <Checkbox 
+            <UiCheckbox 
               {...label} 
               checked={checked.checkbox03} 
               label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, eos?" 

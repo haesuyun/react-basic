@@ -1,11 +1,26 @@
 import React, {useState} from "react";
 import style from "@/assets/style/module/guide.module.scss";
-import MuiRadio from '@mui/material/Radio';
-import MuiRadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import RadioGroup from "@/components/RadioGroup";
-import Radio from "@/components/Radio";
+import UiRadio from "@/components/Radio";
+import UiRadioGroup from "@/components/RadioGroup";
+// mui
+import { 
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+} from '@mui/material';
 
+function MuiRadio(){
+  return (
+    <RadioGroup 
+      aria-labelledby="demo-radio-buttons-group-label"
+      defaultValue="female"
+      name="radio-buttons-group"
+      >
+      <FormControlLabel value="female" control={<Radio />} label="female" />
+      <FormControlLabel value="male" control={<Radio />} label="male" />
+    </RadioGroup>
+  )
+}
 
 export default function RadioGuide() {
   const label = { 
@@ -27,7 +42,6 @@ export default function RadioGuide() {
     { label: "Male", inputProps: {'aria-label': 'radio male'} },
     { label: "Other", inputProps: {'aria-label': 'radio other'} },
   ];
-
   const handleChange = (key, index) => {
     setValue((prev)=>({...prev, [key]:index}));
   };
@@ -46,27 +60,20 @@ export default function RadioGuide() {
           <th>material radio</th>
           <td></td>
           <td>
-            <MuiRadioGroup 
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
-              name="radio-buttons-group"
-              >
-              <FormControlLabel value="female" control={<MuiRadio />} label="female" />
-              <FormControlLabel value="male" control={<MuiRadio />} label="male" />
-            </MuiRadioGroup>
+            <MuiRadio/>
           </td>
         </tr>
         <tr>
           <th>radio</th>
           <td></td>
           <td>
-            <RadioGroup name='radio-button-group1' value={value.radio01} onChange={index=>handleChange('radio01', index)}>
+            <UiRadioGroup name='radio-button-group1' value={value.radio01} onChange={index=>handleChange('radio01', index)}>
               {
                 options01.map((option,index)=>
-                  <Radio key={index} {...option} value={index} />
+                  <UiRadio key={index} {...option} value={index} />
                 )
               }
-            </RadioGroup>
+            </UiRadioGroup>
             <p>Radio value: {value.radio01}</p>
           </td>
         </tr>
@@ -74,13 +81,13 @@ export default function RadioGuide() {
           <th>radio label</th>
           <td></td>
           <td>
-            <RadioGroup name='radio-button-group2' value={value.radio02} onChange={index=>handleChange('radio02', index)}>
+            <UiRadioGroup name='radio-button-group2' value={value.radio02} onChange={index=>handleChange('radio02', index)}>
               {
                 options02.map((option,index)=>
-                  <Radio key={index} {...option} value={index} />
+                  <UiRadio key={index} {...option} value={index} />
                 )
               }
-            </RadioGroup>
+            </UiRadioGroup>
             <p>Radio value: {value.radio02}</p>
           </td>
         </tr>

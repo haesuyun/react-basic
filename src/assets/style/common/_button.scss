@@ -14,19 +14,19 @@ button {
   gap: 0.4rem;
 }
 .button {
-  padding: 0 1.6rem;
+  padding: 0.6rem 1.6rem;
   min-height: 3.2rem;
   border-radius: .4rem;
   @extend .button-14;
 }
 .button-small {
-  padding: 0 1.2rem;
+  padding: 0.4rem 1.2rem;
   min-height: 2.4rem;
   border-radius: .4rem;
   @extend .button-13;
 }
 .button-large {
-  padding: 0 1.6rem;
+  padding: 0.8rem 1.6rem;
   min-height: 4.8rem;
   border-radius: .4rem;
   @extend .button-16;

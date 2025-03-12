@@ -13,4 +13,11 @@ export const theme = createTheme({
       main: "#282c34",
     },
   },
+  components: {
+    MuiDialog: {
+      defaultProps: {
+        closeAfterTransition: false, // 기본값 설정 (dialog를 닫을때 #root의 aria-hidden=false 값 변경이 늦어지는 에러 수정)
+      },
+    },
+  },
 });

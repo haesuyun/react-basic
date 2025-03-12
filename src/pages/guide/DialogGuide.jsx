@@ -1,6 +1,59 @@
-import React, { useState } from "react";
-import Dialog from "@/components/Dialog";
+import React, { useState, useRef } from "react";
 import style from "@/assets/style/module/guide.module.scss";
+import UiDialog from "@/components/Dialog";
+// mui
+import { 
+  Button, 
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle
+} from '@mui/material';
+
+function MuiDialog() {
+  const [open, setOpen] = useState(false);
+  const buttonRef = useRef(null);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <React.Fragment>
+      <Button ref={buttonRef} variant="outlined" onClick={handleClickOpen}>
+        Open alert dialog
+      </Button>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        // closeAfterTransition={false}
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Use Google's location service?"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Let Google help apps determine location. This means sending anonymous
+            location data to Google, even when no apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Disagree</Button>
+          <Button onClick={handleClose} autoFocus>
+            Agree
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </React.Fragment>
+  );
+}
 
 function DialogBody() {
   return <div>dialog body</div>;
@@ -30,6 +83,13 @@ export default function DialogGuide() {
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <th>material dialog</th>
+            <td></td>
+            <td>
+              <MuiDialog/>
+            </td>
+          </tr>
           <tr>
             <th>Alert</th>
             <td>small (w: 300)</td>
@@ -72,7 +132,7 @@ export default function DialogGuide() {
         </tbody>
       </table>
       {/* alert */}
-      <Dialog
+      <UiDialog
         open={open.dialog01}
         onClose={() => {
           handleClose("dialog01");
@@ -98,9 +158,9 @@ export default function DialogGuide() {
         }
       >
         <DialogBody />
-      </Dialog>
+      </UiDialog>
       {/* full screen */}
-      <Dialog
+      <UiDialog
         size="fullScreen"
         // dimHide
         open={open.dialog02}
@@ -132,9 +192,9 @@ export default function DialogGuide() {
             {(t, i)}lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </span>
         ))}
-      </Dialog>
+      </UiDialog>
       {/* bottom sheet */}
-      <Dialog
+      <UiDialog
         type="bottomSheet"
         // dimHide
         open={open.dialog03}
@@ -166,7 +226,7 @@ export default function DialogGuide() {
             {(t, i)}lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         ))}
-      </Dialog>
+      </UiDialog>
     </section>
   );
 }
