@@ -1,6 +1,6 @@
 import React from "react";
 import style from "@/assets/style/module/guide.module.scss";
-function ColorGuide(){
+export default function ColorGuide(){
   const colorGroup = [
     {
       color:'primary',
@@ -91,4 +91,3 @@ function ColorGuide(){
     </section>
   )
 };
-export default ColorGuide;

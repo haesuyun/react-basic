@@ -1,6 +1,6 @@
 import React from "react";
 import style from "@/assets/style/module/guide.module.scss";
-function TypographyGuide() {
+export default function TypographyGuide() {
   const HeadingSizes = [36, 32, 30, 28, 26];
   const titleSizes = [24, 22, 20, 18, 16, 14, 13];
   const buttonSizes = [24, 22, 20, 18, 16, 14, 13];
@@ -60,5 +60,3 @@ function TypographyGuide() {
     </section>
   );
 }
-
-export default TypographyGuide;
