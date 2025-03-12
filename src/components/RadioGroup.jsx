@@ -2,7 +2,9 @@ import React from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/radio.module.scss"
 
-export default function RadioGroup({name, value, onChange, onClick, children, className}){
+export default function RadioGroup({name, value, onChange, 
+  onClick, 
+  children, className}){
   return(
     <div role="radiogroup" className={clsx("radio-group", style.radioGroup, className)} aria-labelledby={`${name}-label`}>
       {React.Children.map(children, (child) => 
@@ -10,7 +12,7 @@ export default function RadioGroup({name, value, onChange, onClick, children, cl
         ? React.cloneElement(child, {
             name,
             checked: child.props.value === value,
-            onClick : (e)=> onClick(Number(e.target.value)),
+            onClick : (e)=> onClick?.(Number(e.target.value)),
             onChange : (e)=> onChange(Number(e.target.value)),
           })
         : child // 일반 텍스트나 다른 요소 유지

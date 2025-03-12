@@ -21,9 +21,8 @@ time, mark, audio, video, button {
 	border: 0;
 	font: inherit;
 	vertical-align: baseline;
-	user-select:none;
+	user-select:none; //add
 	box-sizing: border-box;
-	font-family: 'Pretendard';
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -47,6 +46,10 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+// add
+input:read-only {
+  user-select:none;
 }
 a {
   text-decoration: none;

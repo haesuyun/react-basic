@@ -1,8 +1,18 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Select from "@/components/Select";
 import style from "@/assets/style/module/guide.module.scss";
+// mui
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import MuiSelect from '@mui/material/Select';
 
 export default function SelectGuide() {
+  const [age, setAge] = useState('');
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   const [select, setSelect] = useState({
     value: 1,
     optionTitle: '주제를 선택하세요',
@@ -29,6 +39,8 @@ export default function SelectGuide() {
       },
     ],
   });
+  
+
   return (
     <section>
       <h1 className={style.h1}>Select</h1>
@@ -41,6 +53,28 @@ export default function SelectGuide() {
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <th>Material select</th>
+            <td></td>
+            <td>
+            <Box sx={{ minWidth: 120 }}>
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                <MuiSelect
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={age}
+                  label="Age"
+                  onChange={handleChange}
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </MuiSelect>
+              </FormControl>
+            </Box>
+            </td>
+          </tr>
           <tr>
             <th>Default</th>
             <td></td>

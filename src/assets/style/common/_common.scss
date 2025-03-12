@@ -3,9 +3,12 @@ html {
 }
 body {
   background-color: #fff;
-  font-family: 'Pretendard';
   font-size: 1.6rem;
   color: #000;
+}
+input,
+body {
+  font-family: 'Pretendard';
 }
 html,
 body,
@@ -17,7 +20,6 @@ body,
   float: left;
   width: 100%;
 }
-
 input[type="text"] {
   height: 32px;
   font-size: 14px;
