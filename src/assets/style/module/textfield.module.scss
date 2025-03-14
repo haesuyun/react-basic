@@ -1,19 +1,10 @@
 @use '../settings/' as *;
 
-:global(.form-label) {
-  color: $grey-700;
-}
-:global(.form-message) {
-  color: $grey-700;
-  @extend .text-13;
-}
-:global(.error-message) {
-  color: $error;
-}
 .input-wrap {
   display: flex;
   flex-direction: column;
   gap: .6rem;
+  width: 100%;
   &.error {
     .input-box:before {
       outline: 2px solid $error;
@@ -47,7 +38,7 @@
     .input-actions {
       padding: 0 .8rem 0 0.4rem;
       button {
-        word-break: keep-all;
+        white-space: nowrap;
       }
     }
     .input {

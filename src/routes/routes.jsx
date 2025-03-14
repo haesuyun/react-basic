@@ -1,7 +1,7 @@
 import React from "react";
-import HomePage from "@/pages/Home";
-import AboutPage from "@/pages/About";
-import ContactPage from "@/pages/Contact";
+// import HomePage from "@/pages/Home";
+// import AboutPage from "@/pages/About";
+// import ContactPage from "@/pages/Contact";
 
 const routes = [
   {
@@ -9,45 +9,60 @@ const routes = [
     component: React.lazy(() => import("@/pages/guide/PageList")),
     exact: true, // 정확히 일치해야 렌더링
   },
+  // {
+  //   path: "/home",
+  //   component: HomePage,
+  //   meta: {
+  //     depth01: "sample",
+  //     depth02: "",
+  //     depth03: "",
+  //     id: "",
+  //     name: "home",
+  //     author: "",
+  //     state: "진행중",
+  //     createdDate: "",
+  //     note: "",
+  //   },
+  // },
+  // {
+  //   path: "/about",
+  //   component: AboutPage,
+  //   meta: {
+  //     depth01: "sample",
+  //     depth02: "",
+  //     depth03: "",
+  //     id: "",
+  //     name: "about",
+  //     author: "",
+  //     state: "진행중",
+  //     createdDate: "",
+  //     note: "",
+  //   },
+  // },
+  // {
+  //   path: "/contact",
+  //   component: ContactPage,
+  //   meta: {
+  //     depth01: "sample",
+  //     depth02: "",
+  //     depth03: "",
+  //     id: "",
+  //     name: "contact",
+  //     author: "",
+  //     state: "진행중",
+  //     createdDate: "",
+  //     note: "",
+  //   },
+  // },
   {
-    path: "/home",
-    component: HomePage,
+    path: "/Signup",
+    component: React.lazy(() => import("@/pages/Signup")),
     meta: {
-      depth01: "sample",
+      depth01: "홈",
       depth02: "",
       depth03: "",
       id: "",
-      name: "home",
-      author: "",
-      state: "진행중",
-      createdDate: "",
-      note: "",
-    },
-  },
-  {
-    path: "/about",
-    component: AboutPage,
-    meta: {
-      depth01: "sample",
-      depth02: "",
-      depth03: "",
-      id: "",
-      name: "about",
-      author: "",
-      state: "진행중",
-      createdDate: "",
-      note: "",
-    },
-  },
-  {
-    path: "/contact",
-    component: ContactPage,
-    meta: {
-      depth01: "sample",
-      depth02: "",
-      depth03: "",
-      id: "",
-      name: "contact",
+      name: "회원가입",
       author: "",
       state: "진행중",
       createdDate: "",

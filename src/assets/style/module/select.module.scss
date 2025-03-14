@@ -1,9 +1,18 @@
 @use '../settings' as *;
+
+.select-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: .6rem;
+}
 .select {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   min-width: 200px;
+  width: 100%;
   border: 1px solid $grey-400;
   border-radius: 0.4rem;
   input {
@@ -11,7 +20,7 @@
     display: inline-flex;
     flex: 1 1 auto;
     width: 5rem;
-    padding: 1.6rem 3rem 1.6rem 0.8rem;
+    padding: 1.6rem 3rem 1.6rem 1.2rem;
     border-radius: 0.4rem;
     text-overflow: ellipsis !important;
     background-color: transparent;
@@ -28,7 +37,7 @@
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem !important;
+  gap: 2.4rem !important;
   .radio {
     label {
       display: flex;

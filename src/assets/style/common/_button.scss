@@ -57,6 +57,15 @@ button {
     color: #fff;
   }
 }
+.button-group {
+  width: 100%;
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 2.4rem;
+  button {
+    flex: 1;
+  }
+}
 .chip {
   height: 24px;
   line-height: 20px;

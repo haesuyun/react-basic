@@ -5,7 +5,7 @@ import Dialog from "@/components/Dialog";
 import RadioGroup from "@/components/RadioGroup";
 import Radio from "@/components/Radio";
 
-export default function Select({ value, optionTitle, options, onChange }) {
+export default function Select({ required, label, value, optionTitle, options, onChange }) {
   const [selectedIndex, setSelectedIndex] = useState(value);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -16,15 +16,24 @@ export default function Select({ value, optionTitle, options, onChange }) {
     handleClose();
   };
   return (
-    <div className={style.select}>
-      <input
-        type="text"
-        readOnly
-        value={options[selectedIndex]?.label||""}
-        onClick={handleOpen}
-        onKeyDown={handleOpen}
-      ></input>
-      <i className={clsx("icon down-black", style.icon)}></i>
+    <>
+      <div className={clsx("select-wrap", style.selectWrap)}>
+        { label &&
+          <p className={clsx("form-label", style.label)}>
+            {label}{required && ' *'}
+          </p>
+        }
+        <div className={clsx("select", style.select)}>
+          <input
+            type="text"
+            readOnly
+            value={options[selectedIndex]?.label||""}
+            onClick={handleOpen}
+            onKeyDown={handleOpen}
+          ></input>
+          <i className={clsx("icon down-black", style.icon)}></i>
+        </div>
+      </div>
       <Dialog
         type="bottomSheet"
         open={open}
@@ -39,6 +48,6 @@ export default function Select({ value, optionTitle, options, onChange }) {
           }
         </RadioGroup>
       </Dialog>
-    </div>
+    </>
   );
 }

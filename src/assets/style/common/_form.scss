@@ -1,0 +1,29 @@
+@use '../settings/' as *;
+
+.form-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  .form-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    .mt-label {
+      margin-top: 2.2rem;
+    }
+  }
+}
+.form-item,
+.input-wrap,
+.select-wrap {
+  .form-label {
+    color: $grey-700;
+  }
+  .form-message {
+    color: $grey-700;
+    @extend .text-13;
+  }
+  .error-message {
+    color: $error;
+  }
+}

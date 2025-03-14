@@ -50,7 +50,7 @@ export default function PageList() {
         </div>
       </div>
       <div className={style.previewWrap}>
-        <iframe src={path} style={{border: 'none'}} width="400px"></iframe>
+        <iframe src={path} style={{border: 'none'}} width="425px"></iframe>
       </div>
     </section>
   );

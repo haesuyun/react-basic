@@ -59,9 +59,9 @@ export default function TextField({
         </div>
         {children && <div className={clsx(style.inputActions)}>{children}</div>}
       </div>
-      <div className={clsx("form-message", error && "error-message")}>
+      {(errorMessage||message) && <div className={clsx("form-message", error && "error-message")}>
         {errorMessage?errorMessage:message}
-      </div>
+      </div>}
     </div>
   )
 }
