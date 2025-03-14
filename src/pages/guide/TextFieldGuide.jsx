@@ -53,7 +53,6 @@ function MuiTextField() {
       <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
         <InputLabel htmlFor="outlined-adornment-password">인증번호</InputLabel>
         <OutlinedInput
-          id="outlined-adornment-password"
           type="tel"
           value={value}
           onChange={(e)=>setValue(e.target.value)}
