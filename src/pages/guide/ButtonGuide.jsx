@@ -69,10 +69,16 @@ export default function ButtonGuide() {
             </td>
           </tr>
           <tr>
-            <th>icon</th>
+            <th rowspan="2">icon</th>
             <td>medium-18px(default)</td>
             <td>
               <i className="icon close-black" aria-label="닫기"></i>
+              <i className="icon down-black" aria-label="열기"></i>
+              <i className="icon arrow-black" aria-label="이동"></i>
+              <i className="icon delete-gray" aria-label="삭제"></i>
+              <button type="button">
+                <i className="icon close-black" aria-label="닫기"></i>
+              </button>
               <button type="button" className="button-text button-small">
                 <i className="icon close-black" aria-label="닫기"></i>
                 Button
@@ -81,6 +87,12 @@ export default function ButtonGuide() {
                 Button
                 <i className="icon close-black" aria-label="닫기"></i>
               </button>
+            </td>
+          </tr>
+          <tr>
+            <td>medium color white</td>
+            <td className="bg-grey-900">
+              <i className="icon close-white" aria-label="닫기"></i>
             </td>
           </tr>
           <tr>

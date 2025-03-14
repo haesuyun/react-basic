@@ -51,4 +51,7 @@
   &.down-black {
     transform: rotate(90deg);
   }
+  &.delete-gray {
+    background-image: url('@/assets/images/icon/icon_delete_gray.svg');
+  }
 }

@@ -160,6 +160,21 @@ const routes = [
     },
   },
   {
+    path: "/TextFieldGuide",
+    component: React.lazy(() => import("@/pages/guide/TextFieldGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "TextField",
+      author: "",
+      state: "수정중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
     path: "/Board",
     component: React.lazy(() => import("@/components/Board")),
     meta: {

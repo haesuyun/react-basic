@@ -1,0 +1,85 @@
+@use '../settings/' as *;
+
+:global(.form-label) {
+  color: $grey-700;
+}
+:global(.form-message) {
+  color: $grey-700;
+  @extend .text-13;
+}
+:global(.error-message) {
+  color: $error;
+}
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  &.error {
+    .input-box:before {
+      outline: 2px solid $error;
+    }
+    .label {
+      color: $error;
+    }
+  }
+  &.focus {
+    .input-box:before {
+      outline: 2px solid $primary;
+    }
+  }
+  .input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid $grey-400;
+    border-radius: 0.4rem;
+    z-index: 1;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.4rem;
+      z-index: 2;
+    }
+    .input-actions {
+      padding: 0 .8rem 0 0.4rem;
+      button {
+        word-break: keep-all;
+      }
+    }
+    .input {
+      position: relative;
+      width: 100%;
+      z-index: 3;
+      input {
+        display: block;
+        width: 100%;
+        padding: 1.6rem 1.2rem;
+        box-sizing: border-box;
+        border-radius: 0.4rem;
+        border: 0 none;
+        font-size: 1.6rem;
+        &:focus {
+          outline: 0 none;
+        }
+      }
+      .clearable {
+        position: absolute;
+        top: 50%;
+        right: .8rem;
+        transform: translate(0, -50%);
+        z-index: 4;
+      }
+      &.disabled,
+      &.readonly {
+        input {
+          background-color: $grey-100;
+          color: $grey-600;
+        }
+      }
+    }
+  }
+}

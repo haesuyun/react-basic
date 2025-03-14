@@ -84,7 +84,7 @@ export default function DialogGuide() {
         </thead>
         <tbody>
           <tr>
-            <th>material dialog</th>
+            <th>material Dialog</th>
             <td></td>
             <td>
               <MuiDialog/>

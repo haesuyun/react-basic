@@ -50,7 +50,7 @@ export default function CheckboxGuide() {
       </thead>
       <tbody>
         <tr>
-          <th>material checkbox</th>
+          <th>material Checkbox</th>
           <td></td>
           <td>
             <MuiCheckbox/>

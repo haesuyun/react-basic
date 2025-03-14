@@ -57,7 +57,7 @@ export default function RadioGuide() {
       </thead>
       <tbody>
         <tr>
-          <th>material radio</th>
+          <th>material Radio</th>
           <td></td>
           <td>
             <MuiRadio/>
