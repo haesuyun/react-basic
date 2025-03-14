@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/textfield.module.scss"
+import UiFormLabel from "@/components/FormLabel"
+import UiFormMessage from "@/components/FormMessage"
 
 export default function TextField({
   className,
@@ -23,11 +25,7 @@ export default function TextField({
   const [isFocused, setIsFocused] = useState(false)
   return(
     <div className={clsx("input-wrap", style.inputWrap, className, isFocused && style.focus, error && style.error)}>
-      { label &&
-        <p className={clsx("form-label", style.label)}>
-          {label}{required&&' *'}
-        </p>
-      }
+      <UiFormLabel label={label} required={required}/>
       <div className={clsx(style.inputBox)}>
         <div className={clsx(style.input, readonly && style.readonly, disabled && style.disabled)}>
           <input 
@@ -59,9 +57,7 @@ export default function TextField({
         </div>
         {children && <div className={clsx(style.inputActions)}>{children}</div>}
       </div>
-      {(errorMessage||message) && <div className={clsx("form-message", error && "error-message")}>
-        {errorMessage?errorMessage:message}
-      </div>}
+      <UiFormMessage message={message} errorMessage={errorMessage}/>
     </div>
   )
 }

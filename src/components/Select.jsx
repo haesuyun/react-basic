@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/select.module.scss";
+import UiFormLabel from "@/components/FormLabel"
 import Dialog from "@/components/Dialog";
 import RadioGroup from "@/components/RadioGroup";
 import Radio from "@/components/Radio";
 
-export default function Select({ required, label, value, optionTitle, options, onChange }) {
+export default function Select({ 
+  className, 
+  required, 
+  label, 
+  value, 
+  optionTitle, 
+  options, 
+  onChange 
+}) {
   const [selectedIndex, setSelectedIndex] = useState(value);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -17,12 +26,8 @@ export default function Select({ required, label, value, optionTitle, options, o
   };
   return (
     <>
-      <div className={clsx("select-wrap", style.selectWrap)}>
-        { label &&
-          <p className={clsx("form-label", style.label)}>
-            {label}{required && ' *'}
-          </p>
-        }
+      <div className={clsx("select-wrap", style.selectWrap, className)}>
+        <UiFormLabel label={label} required={required}/>
         <div className={clsx("select", style.select)}>
           <input
             type="text"
