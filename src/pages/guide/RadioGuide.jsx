@@ -31,6 +31,7 @@ export default function RadioGuide() {
   const [value, setValue] = useState({
     radio01: 0,
     radio02: 0,
+    radio03: 0,
   });
   const options01 = [
     { inputProps: {'aria-label': 'radio female'} },
@@ -41,6 +42,10 @@ export default function RadioGuide() {
     { label: "Female", inputProps: {'aria-label': 'radio female'} },
     { label: "Male", inputProps: {'aria-label': 'radio male'} },
     { label: "Other", inputProps: {'aria-label': 'radio other'} },
+  ];
+  const options03 = [
+    { label: "남자"},
+    { label: "여자"},
   ];
   const handleChange = (key, index) => {
     setValue((prev)=>({...prev, [key]:index}));
@@ -81,7 +86,7 @@ export default function RadioGuide() {
           <th>radio label</th>
           <td></td>
           <td>
-            <UiRadioGroup name='radio-button-group2' value={value.radio02} onChange={index=>handleChange('radio02', index)}>
+            <UiRadioGroup label="Label" required name='radio-button-group2' value={value.radio02} onChange={index=>handleChange('radio02', index)}>
               {
                 options02.map((option,index)=>
                   <UiRadio key={index} {...option} value={index} />
@@ -89,6 +94,19 @@ export default function RadioGuide() {
               }
             </UiRadioGroup>
             <p>Radio value: {value.radio02}</p>
+          </td>
+        </tr>
+        <tr>
+          <th>radio button</th>
+          <td></td>
+          <td>
+            <UiRadioGroup label="성별" required name='radio-button-group3' value={value.radio03} onChange={index=>handleChange('radio03', index)}>
+              {
+                options03.map((option,index)=>
+                  <UiRadio type="button" key={index} {...option} value={index} />
+                )
+              }
+            </UiRadioGroup>
           </td>
         </tr>
       </tbody>

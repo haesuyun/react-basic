@@ -3,17 +3,18 @@ import clsx from "clsx";
 import style from "@/assets/style/module/radio.module.scss"
 
 export default function Radio({
-  inputProps,
+  className,
   label,
   value,
   name,
+  inputProps,
+  type,
   checked,
   onClick,
   onChange,
-  className
 }){
   return(
-    <div className={clsx("radio", style.radio, className)}>
+    <div className={clsx("radio", style.radio, className, type==="button" && style.radioButton, checked && style.checked )}>
       <label>
         <input 
           type="radio" 
@@ -24,7 +25,7 @@ export default function Radio({
           onClick={onClick}
           onChange={onChange}
           />
-        <i className={clsx("icon", style.icon, checked?"checkbox-on":"checkbox-off")}></i>
+        {type !== "button" && <i className={clsx("icon", style.icon, checked?"checkbox-on":"checkbox-off")}></i>}
         { label &&
           <p className={clsx("label", style.label)}>
             {label}

@@ -13,17 +13,3 @@
     }
   }
 }
-.form-item,
-.input-wrap,
-.select-wrap {
-  .form-label {
-    color: $grey-700;
-  }
-  .form-message {
-    color: $grey-700;
-    @extend .text-13;
-  }
-  .error-message {
-    color: $error;
-  }
-}

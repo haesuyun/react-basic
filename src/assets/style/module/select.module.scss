@@ -20,6 +20,8 @@
     display: inline-flex;
     flex: 1 1 auto;
     width: 5rem;
+    min-height: 5.6rem;
+    box-sizing: border-box;
     padding: 1.6rem 3rem 1.6rem 1.2rem;
     border-radius: 0.4rem;
     text-overflow: ellipsis !important;
@@ -36,15 +38,17 @@
 }
 .radio-group {
   display: flex;
-  flex-direction: column;
-  gap: 2.4rem !important;
-  .radio {
-    label {
-      display: flex;
-      width: 100%;
-      flex-direction: row-reverse;
-      :global(.label) {
-        margin-right: auto;
+  :global(.radio-box) {
+    flex-direction: column !important;
+    gap: 2.4rem !important;
+    .radio {
+      label {
+        display: flex;
+        width: 100%;
+        flex-direction: row-reverse;
+        :global(.label) {
+          margin-right: auto;
+        }
       }
     }
   }

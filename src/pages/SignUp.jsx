@@ -3,6 +3,8 @@ import clsx from "clsx";
 import style from "@/assets/style/module/guide.module.scss";
 import UiTextField from "@/components/TextField"
 import UiSelect from "@/components/Select";
+import UiRadio from "@/components/Radio";
+import UiRadioGroup from "@/components/RadioGroup";
 
 export default function SignUp(){
   const [select, setSelect] = useState({
@@ -30,6 +32,16 @@ export default function SignUp(){
       },
     ],
   });
+  const [value, setValue] = useState({
+    radio01: 0,
+  });
+  const radioOptions01 = [
+    { label: "남자"},
+    { label: "여자"},
+  ];
+  const handleChange = (key, index) => {
+    setValue((prev)=>({...prev, [key]:index}));
+  };
   return (
     <section>
       <h1 className={style.h1}>회원 가입</h1>
@@ -75,11 +87,20 @@ export default function SignUp(){
                 </button>
             </UiTextField>
           </div>
+          <div className="form-item">
+            <UiRadioGroup label="성별" required name='radio-button-group1' value={value.radio01} onChange={index=>handleChange('radio01', index)}>
+              {
+                radioOptions01.map((option,index)=>
+                  <UiRadio type="button" key={index} {...option} value={index} />
+                )
+              }
+            </UiRadioGroup>
+          </div>
           <div className="button-group">
-            <button type="button" className="button-large bg-tertiary">
+            <button type="button" className="button-large bg-secondary">
               이전
             </button>
-            <button type="button" className="button-large bg-secondary">
+            <button type="button" className="button-large bg-primary">
               다음
             </button>
           </div>
