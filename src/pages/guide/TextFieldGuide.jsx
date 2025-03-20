@@ -114,7 +114,7 @@ export default function TextFieldGuide(){
               value="012345" 
               type="tel" 
               message="인증번호 6자리를 입력하세요">
-              <button type="button" className="button bg-secondary">
+              <button type="button" className="button bg-secondary" onClick={()=>console.log("click")}>
                 시간연장
               </button>
             </UiTextField>
@@ -128,7 +128,7 @@ export default function TextFieldGuide(){
               error 
               errorMessage="인증번호 6자리를 입력하세요!" 
               onChange={(e)=>console.log(e.target.value)}>
-                <button type="button" className="button bg-secondary">
+                <button type="button" className="button bg-secondary" onClick={()=>console.log("click")}>
                   시간연장
                 </button>
             </UiTextField>

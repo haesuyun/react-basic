@@ -152,7 +152,7 @@ export default function ButtonGuide() {
           </tr>
           <tr>
             <th>text</th>
-            <td>medium-16px(default)</td>
+            <td>medium-16px (default)</td>
             <td>
               <button type="button" className="button-text">
                 Button
@@ -169,7 +169,7 @@ export default function ButtonGuide() {
             </td>
           </tr>
           <tr>
-            <th>containd(default)</th>
+            <th>containd (default)</th>
             <td>small-24px</td>
             <td>
               <button type="button" className="button-small bg-primary">
@@ -178,8 +178,8 @@ export default function ButtonGuide() {
             </td>
           </tr>
           <tr>
-            <th>containd(default)</th>
-            <td>medium-42px(default)</td>
+            <th>containd (default)</th>
+            <td>medium-42px (default)</td>
             <td>
               <button type="button" className="button bg-primary">
                 Button
@@ -193,7 +193,7 @@ export default function ButtonGuide() {
             </td>
           </tr>
           <tr>
-            <th>containd(default)</th>
+            <th>containd (default)</th>
             <td>large-56px</td>
             <td>
               <button type="button" className="button-large bg-primary">
@@ -205,6 +205,14 @@ export default function ButtonGuide() {
               <button type="button" className="button-large bg-tertiary">
                 Button
               </button>
+              <div className="button-group">
+                <button type="button" className="button-large bg-secondary">
+                  이전
+                </button>
+                <button type="button" className="button-large bg-primary">
+                  다음
+                </button>
+              </div>
             </td>
           </tr>
         </tbody>

@@ -36,7 +36,9 @@
       z-index: 2;
     }
     .input-actions {
+      position: relative;
       padding: 0 .8rem 0 0.4rem;
+      z-index: 3;
       button {
         white-space: nowrap;
       }

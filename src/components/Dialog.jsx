@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import clsx from "clsx";
 import style from "@/assets/style/module/dialog.module.scss";
 export default function Dialog({
   open,
@@ -48,7 +49,7 @@ export default function Dialog({
         >
           {children}
         </div>
-        {actions && <div className={style.dialogActions}>{actions}</div>}
+        {actions && <div className={clsx("button-group", style.dialogActions)}>{actions}</div>}
       </div>
       {!dimHide && (
         <div className={style.dialogDim} onClick={() => onClose()}></div>

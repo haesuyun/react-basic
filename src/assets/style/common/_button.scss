@@ -60,10 +60,12 @@ button {
 .button-group {
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 0.8rem;
   margin-top: 2.4rem;
   button {
-    flex: 1;
+    flex: 1 1 auto;
   }
 }
 .chip {

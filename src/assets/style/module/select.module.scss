@@ -29,6 +29,10 @@
     border: 0 none;
     font-size: 1.6rem;
     z-index: 2;
+    cursor: pointer;
+    &:focus {
+      outline: 2px solid $primary;
+    }
   }
   .icon {
     position: absolute;
