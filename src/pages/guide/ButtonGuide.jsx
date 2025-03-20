@@ -179,7 +179,7 @@ export default function ButtonGuide() {
           </tr>
           <tr>
             <th>containd(default)</th>
-            <td>medium-32px(default)</td>
+            <td>medium-42px(default)</td>
             <td>
               <button type="button" className="button bg-primary">
                 Button

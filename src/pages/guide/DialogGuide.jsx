@@ -142,14 +142,14 @@ export default function DialogGuide() {
           <>
             <button
               type="button"
-              className="button-large bg-grey"
+              className="button bg-secondary"
               onClick={() => handleClose("dialog01")}
             >
               취소
             </button>
             <button
               type="button"
-              className="button-large bg-secondary"
+              className="button bg-primary"
               onClick={() => handleClose("dialog01")}
             >
               확인
@@ -172,14 +172,14 @@ export default function DialogGuide() {
           <>
             <button
               type="button"
-              className="button-large bg-grey"
+              className="button-large bg-secondary"
               onClick={() => handleClose("dialog02")}
             >
               취소
             </button>
             <button
               type="button"
-              className="button-large bg-secondary"
+              className="button-large bg-primary"
               onClick={() => handleClose("dialog02")}
             >
               확인
@@ -206,14 +206,14 @@ export default function DialogGuide() {
           <>
             <button
               type="button"
-              className="button-large bg-grey"
+              className="button-large bg-secondary"
               onClick={() => handleClose("dialog03")}
             >
               취소
             </button>
             <button
               type="button"
-              className="button-large bg-secondary"
+              className="button-large bg-primary"
               onClick={() => handleClose("dialog03")}
             >
               확인
