@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/guide.module.scss";
 import UiTextField from "@/components/TextField"
@@ -81,6 +81,8 @@ function MuiTextField() {
 }
 
 export default function TextFieldGuide(){
+  const tempValue = useRef(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab ea ex magnam quia optio! Incidunt dolor ea quos, ex magni, quo et adipisci quae est qui at, nihil ratione iusto?`)
+  
   return (
     <section>
       <h1 className={style.h1}>TextField</h1><table className={style.table}>
@@ -130,6 +132,15 @@ export default function TextFieldGuide(){
                   시간연장
                 </button>
             </UiTextField>
+          </td>
+        </tr>
+        <tr>
+          <th>TextField multiline</th>
+          <td></td>
+          <td>
+            <UiTextField label="내용 default" placeholder="내용 입력" multiline/>
+            <UiTextField label="내용 multiline maxRows 4" placeholder="내용 입력" multiline maxRows={4} value={tempValue.current} error errorMessage="Error message!!"/>
+            <UiTextField label="내용 multiline rows 3" placeholder="내용 입력" multiline rows={3}/>
           </td>
         </tr>
       </tbody>

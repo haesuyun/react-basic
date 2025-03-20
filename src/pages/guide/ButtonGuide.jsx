@@ -69,7 +69,7 @@ export default function ButtonGuide() {
             </td>
           </tr>
           <tr>
-            <th rowspan="2">icon</th>
+            <th rowSpan="2">icon</th>
             <td>medium-18px(default)</td>
             <td>
               <i className="icon close-black" aria-label="닫기"></i>
@@ -194,7 +194,7 @@ export default function ButtonGuide() {
           </tr>
           <tr>
             <th>containd(default)</th>
-            <td>large-48px</td>
+            <td>large-56px</td>
             <td>
               <button type="button" className="button-large bg-primary">
                 Button

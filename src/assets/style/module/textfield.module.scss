@@ -44,12 +44,23 @@
     .input {
       position: relative;
       width: 100%;
+      min-height: 5.6rem;
       z-index: 3;
+      display: flex;
+      input {
+        padding: 1.6rem 1.2rem;
+        width: inherit;
+      }
+      textarea {
+        line-height: 1.5em !important;
+        padding: 0;
+        margin: 1.6rem 1.2rem;
+        resize: none;
+      }
+      textarea,
       input {
         display: block;
-        width: 100%;
-        min-height: 5.6rem;
-        padding: 1.6rem 1.2rem;
+        flex: 1;
         box-sizing: border-box;
         border-radius: 0.4rem;
         border: 0 none;

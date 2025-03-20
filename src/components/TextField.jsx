@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/textfield.module.scss"
 import UiFormLabel from "@/components/FormLabel"
@@ -14,6 +14,9 @@ export default function TextField({
   name,
   value="",
   type="text",
+  multiline,
+  rows=0,
+  maxRows,
   inputProps,
   error,
   message,
@@ -23,37 +26,105 @@ export default function TextField({
 }){
   const [innerValue, setInnerValue] = useState(value)
   const [isFocused, setIsFocused] = useState(false)
+  // textarea 자동 높이
+  const textareaRef = useRef();
+  const textareaHeightRef = useRef();
+
+  const handleResizeHeight = () => {
+    // multiline 기본 rows 가 없을때
+    if(multiline && rows<1){
+      textareaRef.current.style.height = 'auto';
+      const textareaScrollHeight = textareaRef.current.scrollHeight;
+      const rowsCount = textareaScrollHeight/textareaHeightRef.current;
+      if(maxRows){
+        textareaRef.current.style.height = 
+        maxRows>rowsCount ? 
+        `${textareaScrollHeight}px`
+        : `${textareaHeightRef.current*maxRows}px`;
+        
+      }else{
+        textareaRef.current.style.height = `${textareaScrollHeight}px`;
+      }
+    }
+  };
+
+  useEffect(() => {
+    if(multiline && textareaRef.current) {
+      // textareaHeightRef.current = 24;
+      textareaHeightRef.current ||= textareaRef.current?.clientHeight;
+      queueMicrotask(handleResizeHeight);
+      window.addEventListener("resize", handleResizeHeight);
+      return () => {
+        // cleanup
+        window.removeEventListener("resize", handleResizeHeight);
+      }
+    }
+  }, []);
+
   return(
-    <div className={clsx("input-wrap", style.inputWrap, className, isFocused && style.focus, error && style.error)}>
+    <div 
+      className={clsx(
+        "input-wrap", 
+        style.inputWrap, 
+        className, 
+        isFocused && style.focus, 
+        error && style.error)}>
       <UiFormLabel label={label} required={required}/>
       <div className={clsx(style.inputBox)}>
-        <div className={clsx(style.input, readonly && style.readonly, disabled && style.disabled)}>
-          <input 
-            required={required} 
-            readOnly={readonly}
-            disabled={disabled}
-            type={type}
-            name={name} 
-            placeholder={placeholder}
-            {...inputProps} 
-            value={innerValue} 
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            onChange={e=>{
-              onChange?.(e);
-              setInnerValue(e.target.value);
-            }}
-            />
-          {(!readonly && !disabled && innerValue!=="" ) && 
-          <button 
-            type="button" 
-            className={clsx(style.clearable)}       
-            onClick={()=>setInnerValue("")}>
-            <i
-              className="icon icon-small delete-gray"
-              aria-label="삭제"
-            ></i>
-          </button>}
+        <div 
+          className={clsx(
+            style.input, 
+            readonly && style.readonly, 
+            disabled && style.disabled)}>
+          {multiline ? (
+            <textarea
+              ref={textareaRef}
+              required={required} 
+              readOnly={readonly}
+              disabled={disabled}
+              type={type}
+              name={name} 
+              placeholder={placeholder}
+              {...inputProps} 
+              rows={rows?rows:1}
+              value={innerValue} 
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+              onChange={e=>{
+                onChange?.(e);
+                setInnerValue(e.target.value);
+                handleResizeHeight();
+              }}
+            ></textarea>
+          ):(
+            <input 
+              required={required} 
+              readOnly={readonly}
+              disabled={disabled}
+              type={type}
+              name={name} 
+              placeholder={placeholder}
+              {...inputProps}
+              value={innerValue} 
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+              onChange={e=>{
+                onChange?.(e);
+                setInnerValue(e.target.value);
+              }}
+              />
+          )}
+          {(!readonly && !disabled && !multiline && innerValue!=="" ) && (
+            <button 
+              type="button" 
+              className={clsx(style.clearable)}       
+              onClick={()=>setInnerValue("")}>
+              <i
+                className="icon icon-small delete-gray"
+                aria-label="삭제"
+              ></i>
+            </button>
+          )}
         </div>
         {children && <div className={clsx(style.inputActions)}>{children}</div>}
       </div>
