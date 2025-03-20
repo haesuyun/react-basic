@@ -190,6 +190,51 @@ const routes = [
     },
   },
   {
+    path: "/TabsGuide",
+    component: React.lazy(() => import("@/pages/guide/TabsGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "Tabs",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
+    path: "/_TabsGuide",
+    component: React.lazy(() => import("@/components/TabsGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "tab",
+      author: "",
+      state: "테스트",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
+    path: "/_TabsScrollGuide",
+    component: React.lazy(() => import("@/components/TabsScrollGuide")),
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "tabScroll",
+      author: "",
+      state: "테스트",
+      createdDate: "",
+      note: "",
+    },
+  },
+  {
     path: "/Board",
     component: React.lazy(() => import("@/components/Board")),
     meta: {
@@ -234,37 +279,7 @@ const routes = [
       note: "",
     },
   },
-
-  {
-    path: "/TabsGuide",
-    component: React.lazy(() => import("@/components/TabsGuide")),
-    meta: {
-      depth01: "guide",
-      depth02: "",
-      depth03: "",
-      id: "",
-      name: "tab",
-      author: "",
-      state: "테스트",
-      createdDate: "",
-      note: "",
-    },
-  },
-  {
-    path: "/TabsScrollGuide",
-    component: React.lazy(() => import("@/components/TabsScrollGuide")),
-    meta: {
-      depth01: "guide",
-      depth02: "",
-      depth03: "",
-      id: "",
-      name: "tabScroll",
-      author: "",
-      state: "테스트",
-      createdDate: "",
-      note: "",
-    },
-  },
+  
   // import Select from "@/components/Select";
 ];
 

@@ -1,4 +1,4 @@
-@use '../settings' as setting;
+@use '../settings' as *;
 
 .page-list-wrap {
   position: relative;
@@ -12,11 +12,11 @@
     flex: 1 1 auto;
     .list-top {
       padding: 16px 24px;
-      background-color: #20232a;
+      background-color: $tertiary;
       h1 {
         font-size: 2rem;
         font-weight: 600;
-        color: #61dafb;
+        color: #fff;
       }
     }
     .table-wrap {
