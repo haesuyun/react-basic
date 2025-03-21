@@ -1,0 +1,15 @@
+@use '../settings/' as *;
+.tabs {
+  display: flex;
+  width: 100%;
+  gap: .8rem;
+}
+.tab {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  outline: 1px solid pink;
+  &.checked {
+    outline: 1px solid red;
+  }
+}

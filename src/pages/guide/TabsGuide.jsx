@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import style from "@/assets/style/module/guide.module.scss";
+import UiTabs from "@/components/Tabs";
+import UiTab from "@/components/Tab";
 // mui
 import { 
   Tabs,
@@ -35,6 +37,11 @@ function MuiTabs() {
 }
 
 export default function TabsGuide() {
+  const [value, setValue] = useState(0)
+  const tabs01 = ['Tab01','Tab02','Tab03']
+  const handleChange = (_,newValue) => {
+    setValue(newValue);
+  };
   return (
     <section>
       <h1 className={style.h1}>Tabs</h1>
@@ -58,6 +65,27 @@ export default function TabsGuide() {
             <th>Default</th>
             <td></td>
             <td>
+              {'value: '+value}
+              <UiTabs value={value} 
+                onChange={handleChange}>
+                {tabs01.map((item,index)=>(
+                  <UiTab key={index} 
+                  label={item} 
+                  />
+                ))}
+              </UiTabs>
+              <UiTabs value={value} 
+                onChange={handleChange}>
+                <UiTab label="Tab01"/>
+                <UiTab label="Tab02"/>
+                <UiTab>
+                  Tab033
+                  <i className="icon icon-xsmall arrow-black" aria-label="이동"></i>
+                </UiTab>
+              </UiTabs>
+              {value === 0 && <div>탭 1 내용</div>}
+              {value === 1 && <div>탭 2 내용</div>}
+              {value === 2 && <div>탭 3 내용</div>}
             </td>
           </tr>
         </tbody>

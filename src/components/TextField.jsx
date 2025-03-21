@@ -30,7 +30,8 @@ export default function TextField({
   const textareaRef = useRef();
   const textareaHeightRef = useRef();
 
-  const handleResizeHeight = () => {
+  const handleResizeHeight = () => { // 처음 로드될때 두번 실행이 됨 한번만 실행시키는 방법?
+    
     // multiline 기본 rows 가 없을때
     if(multiline && rows<1){
       textareaRef.current.style.height = 'auto';
@@ -47,18 +48,17 @@ export default function TextField({
       }
     }
   };
-
   useEffect(() => {
-    if(multiline && textareaRef.current) {
-      // textareaHeightRef.current = 24;
-      textareaHeightRef.current ||= textareaRef.current?.clientHeight;
-      queueMicrotask(handleResizeHeight);
+      if(multiline && textareaRef.current) {
+        // textareaHeightRef.current = 24;
+        textareaHeightRef.current ||= textareaRef.current?.clientHeight;
+        queueMicrotask(handleResizeHeight);
+      }
       window.addEventListener("resize", handleResizeHeight);
       return () => {
-        // cleanup
+        // cleanup 
         window.removeEventListener("resize", handleResizeHeight);
       }
-    }
   }, []);
 
   return(
