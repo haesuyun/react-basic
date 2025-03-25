@@ -2,7 +2,6 @@ import React, {useEffect, useState, useRef} from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/tabs.module.scss"
 
-// tab.jsx
 export default function Tab({
   className,
   label,

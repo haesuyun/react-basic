@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import clsx from "clsx";
 import style from "@/assets/style/module/guide.module.scss";
 import UiTabs from "@/components/Tabs";
 import UiTab from "@/components/Tab";
@@ -74,18 +75,37 @@ export default function TabsGuide() {
                   />
                 ))}
               </UiTabs>
+              {value === 0 && <div>탭 1 내용</div>}
+              {value === 1 && <div>탭 2 내용</div>}
+              {value === 2 && <div>탭 3 내용</div>}
+            </td>
+          </tr>
+          <tr>
+            <th>label icon</th>
+            <td></td>
+            <td>
               <UiTabs value={value} 
                 onChange={handleChange}>
                 <UiTab label="Tab01"/>
                 <UiTab label="Tab02"/>
                 <UiTab>
                   Tab033
-                  <i className="icon icon-xsmall arrow-black" aria-label="이동"></i>
+                  <i className={clsx("icon icon-small", value===2?"close-white":"arrow-black")} aria-label="이동"></i>
                 </UiTab>
               </UiTabs>
-              {value === 0 && <div>탭 1 내용</div>}
-              {value === 1 && <div>탭 2 내용</div>}
-              {value === 2 && <div>탭 3 내용</div>}
+            </td>
+          </tr>
+          <tr>
+            <th>variant underline</th>
+            <td></td>
+            <td>
+              <UiTabs value={value} 
+                variant="underline"
+                onChange={handleChange}>
+                <UiTab label="Tab01"/>
+                <UiTab label="Tab02"/>
+                <UiTab label="Tab03"/>
+              </UiTabs>
             </td>
           </tr>
         </tbody>
