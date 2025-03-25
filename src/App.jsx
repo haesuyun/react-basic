@@ -9,13 +9,23 @@ export default function App() {
     <Router>
       <Suspense>
         <Routes>
-          {routes.map((route, index) => (
-            <Route
+          {routes.map((route, index) => {
+            const Layout = route.layout || React.Fragment; // 레이아웃이 없으면 Fragment 사용
+            const Component = route.component;
+            return (<Route
               key={index}
               path={route.path}
-              element={<route.component />}
-            />
-          ))}
+              element={
+                Layout === React.Fragment ? (
+                  <Component/>
+                ) : (
+                  <Layout meta={route.meta}>
+                    <Component/>
+                  </Layout>
+                )
+              }
+            />)
+          })}
         </Routes>
       </Suspense>
     </Router>

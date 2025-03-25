@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import style from "@/assets/style/module/guide.module.scss";
+// import style from "@/assets/style/module/guide.module.scss";
 import UiTextField from "@/components/TextField"
 import UiSelect from "@/components/Select";
 import UiRadio from "@/components/Radio";
@@ -113,14 +113,13 @@ export default function SignUp(){
   }
   return (
     <section>
-      <h1 className={style.h1}>회원 가입</h1>
+      {/* <h1 className={style.h1}>회원 가입</h1> */}
       <UiTabs value={value} 
         variant="underline"
         onChange={handleChange}>
         <UiTab label="휴대폰"/>
         <UiTab label="카드"/>
         <UiTab label="카드본인확인"/>
-        <UiTab label="Pay인증"/>
       </UiTabs>
       <div className="px-6 pt-10">
         {value===0&&<SignUpMobile/>}

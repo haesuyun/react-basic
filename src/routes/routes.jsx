@@ -1,4 +1,5 @@
 import React from "react";
+import DefaultLayout from "@/layout/DefaultLayout";
 // import HomePage from "@/pages/Home";
 // import AboutPage from "@/pages/About";
 // import ContactPage from "@/pages/Contact";
@@ -57,6 +58,7 @@ const routes = [
   {
     path: "/Signup",
     component: React.lazy(() => import("@/pages/Signup")),
+    layout: DefaultLayout,
     meta: {
       depth01: "홈",
       depth02: "",
