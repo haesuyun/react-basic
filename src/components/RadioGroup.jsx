@@ -17,16 +17,18 @@ export default function RadioGroup({
     <div role="radiogroup" className={clsx("radio-group", style.radioGroup, className)} aria-labelledby={`${name}-label`}>
       <UiFormLabel label={label} required={required}/>
       <div className={clsx("radio-box", style.radioBox)}>
-        {React.Children.map(children, (child) => 
-          React.isValidElement(child) && child.props?.value !== undefined // 유효한 React 요소인지 확인
-          ? React.cloneElement(child, {
-              name,
-              checked: child.props.value === value,
-              onClick : (e)=> onClick?.(Number(e.target.value)),
-              onChange : (e)=> onChange(Number(e.target.value)),
-            })
-          : child // 일반 텍스트나 다른 요소 유지
-        )}
+        {React.Children.map(children, (child, index) => {
+          if(!React.isValidElement(child)) return child;
+          const childValue = child.props.value ?? index; // 값이 없으면 index 사용
+          const isChecked = String(childValue) === String(value);
+          return React.cloneElement(child, {
+            name,
+            value: childValue,
+            checked: isChecked,
+            onClick : (e)=> onClick?.(e.target.value),
+            onChange : (e)=> onChange?.(e.target.value),
+          })
+        })}
       </div>
     </div>
   )
