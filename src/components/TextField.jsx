@@ -30,8 +30,7 @@ export default function TextField({
   const textareaRef = useRef();
   const textareaHeightRef = useRef();
 
-  const handleResizeHeight = () => { // 처음 로드될때 두번 실행이 됨 한번만 실행시키는 방법?
-    
+  const handleResizeHeight = () => {
     // multiline 기본 rows 가 없을때
     if(multiline && rows<1){
       textareaRef.current.style.height = 'auto';
