@@ -1,5 +1,6 @@
 import React from "react";
 import style from "@/assets/style/module/guide.module.scss";
+
 export default function ButtonGuide() {
   return (
     <section>
@@ -17,11 +18,11 @@ export default function ButtonGuide() {
             <th>icon</th>
             <td>xsmall-12px</td>
             <td>
-              <i className="icon icon-xsmall close-black" aria-label="닫기"></i>
-              <i className="icon icon-xsmall arrow-black" aria-label="이동"></i>
+              <i className="icon-xsmall close" aria-label="닫기"></i>
+              <i className="icon-xsmall next" aria-label="이동"></i>
               <button type="button" className="button-text button-small">
                 <i
-                  className="icon icon-xsmall close-black"
+                  className="icon-xsmall close"
                   aria-label="닫기"
                 ></i>
                 Button small
@@ -29,19 +30,19 @@ export default function ButtonGuide() {
               <button type="button" className="button-text button-small">
                 Button small
                 <i
-                  className="icon icon-xsmall close-black"
+                  className="icon-xsmall close"
                   aria-label="닫기"
                 ></i>
               </button>
               <button type="button">
                 <i
-                  className="icon icon-xsmall close-black"
+                  className="icon-xsmall close"
                   aria-label="닫기"
                 ></i>
               </button>
               <a href="#none">
                 <i
-                  className="icon icon-xsmall close-black"
+                  className="icon-xsmall close"
                   aria-label="닫기"
                 ></i>
               </a>
@@ -51,10 +52,10 @@ export default function ButtonGuide() {
             <th>icon</th>
             <td>small-16px</td>
             <td>
-              <i className="icon icon-small close-black" aria-label="닫기"></i>
+              <i className="icon-small close" aria-label="닫기"></i>
               <button type="button" className="button-text button-small">
                 <i
-                  className="icon icon-small close-black"
+                  className="icon-small close"
                   aria-label="닫기"
                 ></i>
                 Button
@@ -62,37 +63,31 @@ export default function ButtonGuide() {
               <button type="button" className="button-text button-small">
                 Button
                 <i
-                  className="icon icon-small close-black"
+                  className="icon-small close"
                   aria-label="닫기"
                 ></i>
               </button>
             </td>
           </tr>
           <tr>
-            <th rowSpan="2">icon</th>
+            <th>icon</th>
             <td>medium-18px(default)</td>
             <td>
-              <i className="icon close-black" aria-label="닫기"></i>
-              <i className="icon down-black" aria-label="열기"></i>
-              <i className="icon arrow-black" aria-label="이동"></i>
-              <i className="icon delete-gray" aria-label="삭제"></i>
+              <i className="icon close" aria-label="닫기"></i>
+              <i className="icon down" aria-label="열기"></i>
+              <i className="icon next" aria-label="이동"></i>
+              <br/>
               <button type="button">
-                <i className="icon close-black" aria-label="닫기"></i>
+                <i className="icon close" aria-label="닫기"></i>
               </button>
               <button type="button" className="button-text button-small">
-                <i className="icon close-black" aria-label="닫기"></i>
+                <i className="icon close" aria-label="닫기"></i>
                 Button
               </button>
               <button type="button" className="button-text button-small">
                 Button
-                <i className="icon close-black" aria-label="닫기"></i>
+                <i className="icon close" aria-label="닫기"></i>
               </button>
-            </td>
-          </tr>
-          <tr>
-            <td>medium color white</td>
-            <td className="bg-grey-900">
-              <i className="icon close-white" aria-label="닫기"></i>
             </td>
           </tr>
           <tr>
@@ -101,7 +96,7 @@ export default function ButtonGuide() {
             <td>
               <button type="button" className="button-text">
                 <i
-                  className="icon icon-large close-black"
+                  className="icon-large close"
                   aria-label="닫기"
                 ></i>
                 Button
@@ -109,7 +104,7 @@ export default function ButtonGuide() {
               <button type="button" className="button-text">
                 Button
                 <i
-                  className="icon icon-large close-black"
+                  className="icon-large close"
                   aria-label="닫기"
                 ></i>
               </button>
@@ -119,23 +114,23 @@ export default function ButtonGuide() {
             <th>icon</th>
             <td>xlarge-32px</td>
             <td>
-              <i className="icon icon-xlarge close-black" aria-label="닫기"></i>
+              <i className="icon-xlarge close" aria-label="닫기"></i>
               <button type="button" className="button-text">
                 <i
-                  className="icon icon-xlarge close-black"
+                  className="icon-xlarge close"
                   aria-label="닫기"
                 ></i>
                 Button
               </button>
               <button type="button">
                 <i
-                  className="icon icon-xlarge close-black"
+                  className="icon-xlarge close"
                   aria-label="닫기"
                 ></i>
               </button>
               <a href="#none">
                 <i
-                  className="icon icon-xlarge close-black"
+                  className="icon-xlarge close"
                   aria-label="닫기"
                 ></i>
               </a>

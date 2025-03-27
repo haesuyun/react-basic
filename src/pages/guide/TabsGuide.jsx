@@ -90,7 +90,7 @@ export default function TabsGuide() {
                 <UiTab label="Tab02"/>
                 <UiTab>
                   Tab033
-                  <i className={clsx("icon icon-small", value===2?"close-white":"arrow-black")} aria-label="이동"></i>
+                  <i className={clsx("icon-small", value===2?"close-white":"arrow-black")} aria-label="이동"></i>
                 </UiTab>
               </UiTabs>
             </td>

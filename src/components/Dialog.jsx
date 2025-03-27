@@ -39,7 +39,7 @@ export default function Dialog({
         <div className={style.dialogTitle}>
           {title.length && <p className={style.title}>{title}</p>}
           <button type="button" onClick={() => onClose()}>
-            <i className="icon icon-large close-black" aria-label="닫기"></i>
+            <i className="icon icon-large close" aria-label="닫기"></i>
           </button>
         </div>
         <div

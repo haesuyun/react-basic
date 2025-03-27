@@ -9,10 +9,10 @@
   padding: 0 2.4rem;
   background: #fff;
   z-index: 100;
-  gap: 1.2rem;
+  gap: 1rem;
   h1 {
+    flex: 1;
     padding-top: .2rem;
     @extend .title-18;
-    font-weight: normal !important;
   }
 }

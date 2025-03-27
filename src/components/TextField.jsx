@@ -119,7 +119,7 @@ export default function TextField({
               className={clsx(style.clearable)}       
               onClick={()=>setInnerValue("")}>
               <i
-                className="icon icon-small delete-gray"
+                className="icon close-circle"
                 aria-label="삭제"
               ></i>
             </button>

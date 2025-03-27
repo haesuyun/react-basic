@@ -64,7 +64,7 @@ function MuiTextField() {
                   className={clsx("mr-2", style.clearable)}       
                   onClick={()=>setValue("")}>
                   <i
-                    className="icon icon-small delete-gray"
+                    className="icon-small delete-gray"
                     aria-label="삭제"
                   ></i>
                 </button>}

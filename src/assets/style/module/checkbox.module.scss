@@ -22,4 +22,11 @@
       padding-right: 0.8rem;
     }
   }
+  &.heart,
+  &.bookmark {
+    label {
+      gap: 0.4rem;
+      align-items: center;
+    }
+  }
 }

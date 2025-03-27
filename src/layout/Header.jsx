@@ -6,11 +6,17 @@ export default function Header({meta}){
   return(
     <header className={style.header}>
       <button type="button">
-        <i className="icon back-black" aria-label="뒤로가기"></i>
+        <i className="icon-large arrow-left" aria-label="이전"></i>
       </button>
       <h1>
         {meta.name || ""}
       </h1>
+      <button type="button">
+        <i className="icon-large home" aria-label="홈"></i>
+      </button>
+      <button type="button">
+        <i className="icon-large menu" aria-label="메뉴"></i>
+      </button>
     </header>
   )
 } 

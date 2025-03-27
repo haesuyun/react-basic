@@ -3,8 +3,8 @@ import clsx from "clsx";
 import style from "@/assets/style/module/select.module.scss";
 import UiFormLabel from "@/components/FormLabel"
 import Dialog from "@/components/Dialog";
-import RadioGroup from "@/components/RadioGroup";
-import Radio from "@/components/Radio";
+import UiRadioGroup from "@/components/RadioGroup";
+import UiRadio from "@/components/Radio";
 
 export default function Select({ 
   className, 
@@ -36,7 +36,7 @@ export default function Select({
             onClick={handleOpen}
             onKeyDown={handleOpen}
           ></input>
-          <i className={clsx("icon down-black", style.icon)}></i>
+          <i className={clsx("icon down", style.icon)}></i>
         </div>
       </div>
       <Dialog
@@ -45,13 +45,13 @@ export default function Select({
         onClose={handleClose}
         title={optionTitle}
       >
-        <RadioGroup className={style.radioGroup} name='option-radio-group' value={selectedIndex} onChange={handleSelect} onClick={handleSelect}>
+        <UiRadioGroup className={style.radioGroup} name='option-radio-group' value={selectedIndex} onChange={handleSelect} onClick={handleSelect}>
           {
             options.map((option,index)=>
-              <Radio key={index} {...option} value={index} className={style.radio}/>
+              <UiRadio key={index} {...option} value={index} className={style.radio}/>
             )
           }
-        </RadioGroup>
+        </UiRadioGroup>
       </Dialog>
     </>
   );

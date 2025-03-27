@@ -84,6 +84,70 @@ export default function CheckboxGuide() {
               onChange={e=>handleChange('checkbox03',e)}/>
           </td>
         </tr>
+        <tr>
+          <th>bookmark</th>
+          <td></td>
+          <td>
+            <UiCheckbox 
+              variant="bookmark"
+              {...label} 
+            />
+            <UiCheckbox 
+              variant="bookmark"
+              {...label} 
+              label="1,000" 
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>heart</th>
+          <td>default</td>
+          <td>
+            <UiCheckbox 
+              variant="heart"
+              {...label} 
+            />
+            <UiCheckbox 
+              variant="heart"
+              {...label} 
+              label="1,000" 
+            />
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>large</td>
+          <td>
+            <UiCheckbox 
+                variant="heart"
+              iconSize="large"
+              {...label} 
+              />
+            <UiCheckbox 
+              variant="heart"
+              iconSize="large"
+              {...label} 
+              label="1,000" 
+            />
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>xlarge</td>
+          <td>
+            <UiCheckbox 
+                variant="heart"
+              iconSize="xlarge"
+              {...label} 
+              />
+            <UiCheckbox 
+              variant="heart"
+              iconSize="xlarge"
+              {...label} 
+              label="1,000" 
+            />
+          </td>
+        </tr>
       </tbody>
     </table>
     </section>

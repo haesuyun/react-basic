@@ -25,7 +25,7 @@ export default function Radio({
           onClick={onClick}
           onChange={onChange}
           />
-        {type !== "button" && <i className={clsx("icon", style.icon, checked?"checkbox-on":"checkbox-off")}></i>}
+        {type !== "button" && <i className={clsx("icon", style.icon, checked?"check-circle":"check-circle-outline")}></i>}
         { label &&
           <p className={clsx("label", style.label)}>
             {label}

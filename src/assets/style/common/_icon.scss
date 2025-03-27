@@ -1,14 +1,6 @@
 @use '../settings/' as *;
 
-.icon-xlarge,
-.icon-large,
-.icon-small,
-.icon-xsmall,
-.icon {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
-}
+
 .icon {
   width: 18px;
   height: 18px;
@@ -29,32 +21,50 @@
   width: 32px;
   height: 32px;
 }
+.icon-xlarge,
+.icon-large,
+.icon-small,
+.icon-xsmall,
 .icon {
-  background-size: contain;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  background-size: 100% auto;
   background-repeat: no-repeat;
-  &.checkbox-on {
-    background-image: url('@/assets/images/icon/icon_checkbox_on.svg');
+  $icons: 
+  'arrow-right',
+  'arrow-left',
+  'close', 
+  'close-circle', 
+  'check',
+  'check-circle', 
+  'check-circle-outline',
+  'home',
+  'menu',
+  'setting', 
+  'search', 
+  'prev', 
+  'next', 
+  'up', 
+  'down', 
+  'user',
+  'bookmark',
+  'bookmark-outline',
+  'heart',
+  'heart-outline',
+  ;
+  @each $icon in $icons {
+    &.#{$icon} {
+      background-image: url('@/assets/images/icon/#{$icon}.svg')
+    }
   }
-  &.checkbox-off {
-    background-image: url('@/assets/images/icon/icon_checkbox_off.svg');
-  }
-  &.close-black {
-    background-image: url('@/assets/images/icon/icon_close_black.svg');
-  }
-  &.close-white {
-    background-image: url('@/assets/images/icon/icon_close_white.svg');
-  }
-  &.down-black,
-  &.arrow-black {
-    background-image: url('@/assets/images/icon/icon_arrow_black.svg');
-  }
-  &.down-black {
-    transform: rotate(90deg);
-  }
-  &.delete-gray {
-    background-image: url('@/assets/images/icon/icon_delete_gray.svg');
-  }
-  &.back-black {
-    background-image: url('@/assets/images/icon/icon_back_black.svg');
+  $whiteIcons: 
+  'check',
+  'close', 
+  ;
+  @each $icon in $whiteIcons {
+    &.#{$icon}-white {
+      background-image: url('@/assets/images/icon/#{$icon}-white.svg')
+    }
   }
 }
