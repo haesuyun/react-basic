@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/radio.module.scss"
 
@@ -8,13 +8,27 @@ export default function Radio({
   value,
   name,
   inputProps,
-  type,
+  variant,
   checked,
   onClick,
   onChange,
-}){
+  iconSize,
+}) {
+  const getIcon = (isActive) => {
+    switch (variant) {
+      case "check":
+        return isActive ? "check" : "check opacity-30";
+      default:
+        return isActive ? "radio" : "radio-outline";
+    }
+  };
+  const activeIcon = useMemo(() => getIcon(true), [variant]);
+  const inactiveIcon = useMemo(() => getIcon(false), [variant]);
+  const iconSizeClass = iconSize ? `icon-${iconSize}` : "icon";
   return(
-    <div className={clsx("radio", style.radio, className, type==="button" && style.radioButton, checked && style.checked )}>
+    <div className={clsx("radio", style.radio, className, style[variant], style[iconSize],
+      checked && style.checked
+    )}>
       <label>
         <input 
           type="radio" 
@@ -25,7 +39,11 @@ export default function Radio({
           onClick={onClick}
           onChange={onChange}
           />
-        {type !== "button" && <i className={clsx("icon", style.icon, checked?"check-circle":"check-circle-outline")}></i>}
+        {variant !== "button" &&
+          <i className={clsx(
+            style.icon,
+            checked ? activeIcon : inactiveIcon,
+            iconSizeClass)}></i>}
         { label &&
           <p className={clsx("label", style.label)}>
             {label}

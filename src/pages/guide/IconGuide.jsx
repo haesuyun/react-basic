@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/guide.module.scss";
+import { Opacity } from "@mui/icons-material";
 
 export default function IconGuide() {
   const sizes = [
@@ -27,6 +28,12 @@ export default function IconGuide() {
     'up', 
     'down', 
     'user',
+    'bookmark',
+    'bookmark-outline',
+    'heart',
+    'heart-outline',
+    'radio',
+    'radio-outline',
   ]
   return (
     <section>
@@ -44,7 +51,7 @@ export default function IconGuide() {
             <td>
               {sizes.map(size => {
                 return (
-                  <div key={size.id}>
+                  <div key={size}>
                     <p>{size}</p>
                     <i  className={clsx("close", size)} aria-label=""></i>
                   </div>
@@ -56,7 +63,7 @@ export default function IconGuide() {
             <th>default</th>
             <td>
               {icons.map(icon => {
-                return <i key={icon.id} className={clsx("icon", icon)} aria-label=""></i>
+                return <i key={icon} className={clsx("icon", icon)} aria-label=""></i>
               })}
             </td>
           </tr>

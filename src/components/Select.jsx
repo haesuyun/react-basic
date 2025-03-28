@@ -48,7 +48,7 @@ export default function Select({
         <UiRadioGroup className={style.radioGroup} name='option-radio-group' value={selectedIndex} onChange={handleSelect} onClick={handleSelect}>
           {
             options.map((option,index)=>
-              <UiRadio key={index} {...option} value={index} className={style.radio}/>
+              <UiRadio key={index} {...option} value={index} className={style.radio} variant="check"/>
             )
           }
         </UiRadioGroup>

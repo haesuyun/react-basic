@@ -3,6 +3,7 @@ import clsx from "clsx";
 import style from "@/assets/style/module/checkbox.module.scss"
 
 export default function Checkbox({
+  className,
   inputProps,
   checked,
   label,
@@ -32,14 +33,17 @@ export default function Checkbox({
   const inactiveIcon = useMemo(() => getIcon(false), [variant]);
   const iconSizeClass = iconSize ? `icon-${iconSize}` : "icon";
   return(
-    <div className={clsx("checkbox", style.checkbox , style[variant], style[iconSize])}>
+    <div className={clsx("checkbox", style.checkbox, className, style[variant], style[iconSize])}>
       <label>
         <input 
           type="checkbox" 
           {...inputProps} 
           checked={value} 
           onChange={(e) => handleChange(e)} />
-          <i className={clsx("icon", style.icon, value? activeIcon : inactiveIcon, iconSizeClass)}></i>
+        <i className={clsx(
+          style.icon,
+          value ? activeIcon : inactiveIcon,
+          iconSizeClass)}></i>
           { label &&
           <p className={style.label}>
             {label}
