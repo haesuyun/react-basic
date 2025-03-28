@@ -12,13 +12,14 @@ input,
 body {
   font-family: 'Pretendard';
 }
-// #root, 
 html,
 body {
   height: 100%;
   min-height: 100%;
 }
 #root {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   min-height: 100%;
   width: 100%;

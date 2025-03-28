@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import style from "@/assets/style/module/guide.module.scss";
 import UiTextField from "@/components/TextField"
 import UiSelect from "@/components/Select";
 import UiRadio from "@/components/Radio";
@@ -89,7 +88,7 @@ function SignUpMobile(){
         <UiRadioGroup label="성별" required name='radio-button-group1' value={value.radio01} onChange={index=>handleChange('radio01', index)}>
           {
             radioOptions01.map((option,index)=>
-              <UiRadio type="button" key={index} {...option} value={index} />
+              <UiRadio variant="button" key={index} {...option} value={index} />
             )
           }
         </UiRadioGroup>
