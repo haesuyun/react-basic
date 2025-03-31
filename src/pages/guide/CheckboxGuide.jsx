@@ -35,7 +35,7 @@ export default function CheckboxGuide() {
     checkbox02: false,
     checkbox03: false,
   })
-  const handleChange = (key,e) => {
+  const handleChange = (key) => (e) => {
     setChecked((prev)=>({...prev, [key]: e.target.checked}))
   }
   return (
@@ -71,17 +71,17 @@ export default function CheckboxGuide() {
                 {...label} 
                 checked={checked.checkbox01} 
                 label={String(checked.checkbox01)} 
-                onChange={e=>handleChange('checkbox01',e)}/>
+                onChange={handleChange('checkbox01')}/>
               <UiCheckbox 
                 {...label} 
                 checked={checked.checkbox02} 
                 label={String(checked.checkbox02)} 
-                onChange={e=>handleChange('checkbox02',e)}/>
+                onChange={handleChange('checkbox02')}/>
               <UiCheckbox 
                 {...label} 
                 checked={checked.checkbox03} 
                 label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, eos?" 
-                onChange={e=>handleChange('checkbox03',e)}/>
+                onChange={handleChange('checkbox03')}/>
             </td>
           </tr>
           <tr>
