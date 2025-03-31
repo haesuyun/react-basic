@@ -64,7 +64,6 @@ export default function SelectGuide() {
   });
   return (
     <section>
-      <h1 className={style.h1}>Select</h1>
       <table className={style.table}>
         <thead>
           <tr>

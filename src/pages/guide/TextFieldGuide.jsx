@@ -85,7 +85,7 @@ export default function TextFieldGuide(){
   
   return (
     <section>
-      <h1 className={style.h1}>TextField</h1><table className={style.table}>
+      <table className={style.table}>
       <thead>
         <tr>
           <th className="text-center">type</th>

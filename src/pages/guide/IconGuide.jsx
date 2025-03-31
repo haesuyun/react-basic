@@ -37,7 +37,6 @@ export default function IconGuide() {
   ]
   return (
     <section>
-      <h1 className={style.h1}>Icon</h1>
       <table className={style.table}>
         <thead>
           <tr>

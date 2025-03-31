@@ -73,7 +73,6 @@ export default function DialogGuide() {
   const temp = Array.from({ length: 100 });
   return (
     <section>
-      <h1 className={style.h1}>Dialog</h1>
       <table className={style.table}>
         <thead>
           <tr>

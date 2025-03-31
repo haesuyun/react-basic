@@ -7,7 +7,6 @@ export default function TypographyGuide() {
   const textSizes = [18, 16, 14, 13, 12, 11, 10];
   return (
     <section>
-      <h1 className={style.h1}>Typography</h1>
       <table className={style.table}>
         <thead>
           <tr>

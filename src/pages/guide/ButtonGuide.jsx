@@ -4,7 +4,6 @@ import style from "@/assets/style/module/guide.module.scss";
 export default function ButtonGuide() {
   return (
     <section>
-      <h1 className={style.h1}>Button</h1>
       <table className={style.table}>
         <thead>
           <tr>

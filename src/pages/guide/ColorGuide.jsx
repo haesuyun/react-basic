@@ -69,7 +69,6 @@ export default function ColorGuide(){
   ]
   return (
     <section>
-      <h1 className={style.h1}>color</h1>
       <table className={style.table}>
         <thead>
           <tr>

@@ -45,7 +45,6 @@ export default function TabsGuide() {
   };
   return (
     <section>
-      <h1 className={style.h1}>Tabs</h1>
       <table className={style.table}>
         <thead>
           <tr>
