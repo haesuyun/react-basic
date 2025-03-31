@@ -39,7 +39,7 @@ function SignUpMobile(){
     { label: "남자"},
     { label: "여자"},
   ];
-  const handleChange = (key, index) => {
+  const handleChange = (key) => (index) => {
     setValue((prev)=>({...prev, [key]:index}));
   };
   return (
@@ -85,7 +85,7 @@ function SignUpMobile(){
         </UiTextField>
       </div>
       <div className="form-item">
-        <UiRadioGroup label="성별" required name='radio-button-group1' value={value.radio01} onChange={index=>handleChange('radio01', index)}>
+        <UiRadioGroup label="성별" required name='radio-button-group1' value={value.radio01} onChange={handleChange('radio01')}>
           {
             radioOptions01.map((option,index)=>
               <UiRadio variant="button" key={index} {...option} value={index} />
@@ -107,7 +107,7 @@ function SignUpMobile(){
 
 export default function SignUp(){
   const [value, setValue] = useState(0);
-  const handleChange = (_,value) => {
+  const handleTabChange = (_,value) => {
     setValue(value)
   }
   return (
@@ -115,7 +115,7 @@ export default function SignUp(){
       {/* <h1 className={style.h1}>회원 가입</h1> */}
       <UiTabs value={value} 
         variant="underline"
-        onChange={handleChange}>
+        onChange={handleTabChange}>
         <UiTab label="휴대폰"/>
         <UiTab label="카드"/>
         <UiTab label="카드본인확인"/>

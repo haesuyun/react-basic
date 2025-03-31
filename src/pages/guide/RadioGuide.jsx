@@ -47,7 +47,7 @@ export default function RadioGuide() {
     { label: "남자"},
     { label: "여자"},
   ];
-  const handleChange = (key, value) => {
+  const handleChange = (key) => (value) => {
     setValue((prev)=>({...prev, [key]:value}));
   };
   return (
@@ -72,7 +72,7 @@ export default function RadioGuide() {
           <th>radio</th>
           <td></td>
           <td>
-            <UiRadioGroup name='radio-button-group1' value={value.radio01} onChange={value=>handleChange('radio01', value)}>
+              <UiRadioGroup name='radio-button-group1' value={value.radio01} onChange={handleChange('radio01')}>
               {
                 options01.map((option,index)=>
                   <UiRadio key={index} {...option} />
@@ -86,7 +86,7 @@ export default function RadioGuide() {
           <th>radio label</th>
           <td></td>
           <td>
-            <UiRadioGroup label="Label" required name='radio-button-group2' value={value.radio02} onChange={index=>handleChange('radio02', index)}>
+            <UiRadioGroup label="Label" required name='radio-button-group2' value={value.radio02} onChange={handleChange('radio02')}>
               {
                 options02.map((option,index)=>
                   <UiRadio key={index} {...option}/>
@@ -100,7 +100,7 @@ export default function RadioGuide() {
           <th>variant check</th>
           <td></td>
           <td>
-            <UiRadioGroup label="성별" required name='radio-button-group3' value={value.radio03} onChange={value=>handleChange('radio03', value)}>
+            <UiRadioGroup label="성별" required name='radio-button-group3' value={value.radio03} onChange={handleChange('radio03')}>
               {
                 options03.map((option,index)=>
                   <UiRadio variant="check" key={index} {...option} />
@@ -113,7 +113,7 @@ export default function RadioGuide() {
           <th>variant check</th>
           <td>large</td>
           <td>
-            <UiRadioGroup label="성별" required name='radio-button-group3' value={value.radio03} onChange={value=>handleChange('radio03', value)}>
+            <UiRadioGroup label="성별" required name='radio-button-group3' value={value.radio03} onChange={handleChange('radio03')}>
               {
                 options03.map((option,index)=>
                   <UiRadio variant="check" iconSize="large" key={index} {...option} />
@@ -126,7 +126,7 @@ export default function RadioGuide() {
           <th>variant button</th>
           <td></td>
           <td>
-            <UiRadioGroup label="성별" required name='radio-button-group3' value={value.radio03} onChange={value=>handleChange('radio03', value)}>
+            <UiRadioGroup label="성별" required name='radio-button-group3' value={value.radio03} onChange={handleChange('radio03')}>
               {
                 options03.map((option,index)=>
                   <UiRadio variant="button" key={index} {...option} />
