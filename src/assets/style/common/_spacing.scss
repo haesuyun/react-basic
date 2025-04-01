@@ -1,6 +1,6 @@
 $unit: rem; // 단위
-$max-step: 16; // 최대 단계
-$base-size: 0.4; // 기본 단위 (0.4rem씩 증가)
+$maxStep: 16; // 최대 단계
+$baseSize: 0.4; // 기본 단위 (0.4rem씩 증가)
 
 $directions: (
   t: top,
@@ -11,35 +11,50 @@ $directions: (
   y: (top, bottom) // list
 );
 
-@mixin generateSpacing($prop, $short, $minStep: 0, $onlyAll: false) {
-  @for $i from $minStep through $max-step {
-    $size: $i * $base-size;
+@mixin generateSpacing($prop, $short, $minStep: 0) {
+  @for $i from $minStep through $maxStep {
+    $size: $i * $baseSize;
     $class-name: if($i < 0, "n#{abs($i)}", "#{$i}"); // 음수 변환
 
     .#{$short}a-#{$class-name} {
       #{$prop}: #{$size}#{$unit} !important;
     }
-
     // gap일 경우 추가 클래스를 생성하지 않음
-    @if not $onlyAll {
+    @if $prop != "gap" {
       @each $key, $val in $directions {
-        @if type-of($val) == list {
+        @if type-of($val) == list { // x, y
           .#{$short}#{$key}-#{$class-name} {
             @each $v in $val {
               #{$prop}-#{$v}: #{$size}#{$unit} !important;
             }
           }
-        } @else {
+        } @else { // t, r, b, l
           .#{$short}#{$key}-#{$class-name} {
             #{$prop}-#{$val}: #{$size}#{$unit} !important;
           }
         }
       }
+      }
     }
-  }
+    // margin일때 auto 추가
+    @if $prop == "margin" {
+      // auto 값 추가
+      @each $key, $val in $directions {
+        @if type-of($val) == list { // x, y
+          .#{$short}#{$key}-auto {
+            @each $v in $val {
+              #{$prop}-#{$v}: auto !important;
+            }
+          }
+        } @else { // t, r, b, l
+          .#{$short}#{$key}-auto {
+            #{$prop}-#{$val}: auto !important;
+          }
+        }
+      }
+    }
 }
 
-// gap은 `ga-*`만 필요
-@include generateSpacing(gap, g, 0, true);
 @include generateSpacing(margin, m, -16);
 @include generateSpacing(padding, p);
+@include generateSpacing(gap, g, 0);

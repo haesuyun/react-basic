@@ -25,6 +25,8 @@ export default function Checkbox({
         return isActive ? "bookmark" : "bookmark-outline";
       case "heart":
         return isActive ? "heart" : "heart-outline";
+      case "line":
+        return isActive ? "check" : "check opacity-30";
       default:
         return isActive ? "check-circle" : "check-circle-outline";
     }

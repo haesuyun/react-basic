@@ -1,4 +1,3 @@
-@use '../settings/' as *;
 @each $key, $color in $colorGroup {
   .bg-#{$key} {
     background-color: $color !important;

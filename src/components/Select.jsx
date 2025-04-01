@@ -36,7 +36,7 @@ export default function Select({
             onClick={handleOpen}
             onKeyDown={handleOpen}
           ></input>
-          <i className={clsx("icon down", style.icon)}></i>
+          <i className={clsx("icon-large down", style.icon)}></i>
         </div>
       </div>
       <Dialog

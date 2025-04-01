@@ -48,16 +48,16 @@ export default function TextField({
     }
   };
   useEffect(() => {
-      if(multiline && textareaRef.current) {
-        // textareaHeightRef.current = 24;
-        textareaHeightRef.current ||= textareaRef.current?.clientHeight;
-        queueMicrotask(handleResizeHeight);
-      }
-      window.addEventListener("resize", handleResizeHeight);
-      return () => {
-        // cleanup 
-        window.removeEventListener("resize", handleResizeHeight);
-      }
+    if(multiline && textareaRef.current) {
+      // textareaHeightRef.current = 24;
+      textareaHeightRef.current ||= textareaRef.current?.clientHeight;
+      queueMicrotask(handleResizeHeight);
+    }
+    window.addEventListener("resize", handleResizeHeight);
+    return () => {
+      // cleanup 
+      window.removeEventListener("resize", handleResizeHeight);
+    }
   }, []);
 
   return(

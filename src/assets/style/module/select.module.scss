@@ -27,7 +27,7 @@
     text-overflow: ellipsis !important;
     background-color: transparent;
     border: 0 none;
-    font-size: 1.6rem;
+    @extend .text-16;
     z-index: 2;
     cursor: pointer;
     &:focus {
@@ -37,6 +37,7 @@
   .icon {
     position: absolute;
     right: 0.8rem;
+    opacity: .5; 
     z-index: 1;
   }
 }

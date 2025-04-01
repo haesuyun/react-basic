@@ -38,66 +38,172 @@ body {
     background-color: transparent;
   }
 }
-.text-left {
-  text-align: left !important;
+
+.ellipsis {
+  @include ellipsis;
 }
-.text-right {
-  text-align: right !important;
+.clear-ellipsis {
+  @include clear-ellipsis;
 }
-.text-center {
-  text-align: center !important;
+@for $i from 2 through 6 {
+  .ellipsis-#{$i} {
+    @include multi-ellipsis($i);
+  }
 }
+
+// display
+$display: none, inline, inline-block, block, table, table-cell, table-row, flex, inline-flex;
+@each $val in $display {
+  .d-#{$val} {
+    display: $val !important;
+  }
+}
+
+// flex
+$flex: (
+  "fill": 1 1 auto,
+  "1-1": 1 1 auto,
+  "1-0": 1 0 auto,
+  "0-1": 0 1 auto,
+  "0-0": 0 0 auto,
+  "1-1-0": 1 1 0%,
+  "1-1-100": 1 1 100%,
+  "1-0-0": 1 0 0%,
+  "1-0-100": 1 0 100%,
+  "0-1-0": 0 1 0%,
+  "0-1-100": 0 1 100%,
+  "0-0-0": 0 0 0%,
+  "0-0-100": 0 0 100%
+);
+
+@each $key, $val in $flex {
+  .flex-#{$key} {
+    flex: #{$val} !important;
+  }
+}
+
+// flex-direction
+$flex-directions: row, row-reverse, column, column-reverse;
+@each $val in $flex-directions {
+  .flex-#{$val} {
+    flex-direction: #{$val} !important;
+  }
+}
+
+// justify-content
+$justify-content: flex-start, flex-end, center, space-between, space-around, space-evenly;
+@each $val in $justify-content {
+  .justify-#{$val} {
+    justify-content: #{$val} !important;
+  }
+}
+
+// align-items
+$align-items: flex-start, flex-end, center, baseline, stretch;
+@each $val in $align-items {
+  .align-#{$val} {
+    align-items: #{$val} !important;
+  }
+}
+
+// align-self
+$align-self: flex-start, flex-end, center, baseline, auto, stretch;
+@each $val in $align-self {
+  .align-self-#{$val} {
+    align-self: #{$val} !important;
+  }
+}
+
+// align-content
+$align-content: flex-start, flex-end, center, space-between, space-around, space-evenly, stretch;
+@each $val in $align-content {
+  .align-content-#{$val} {
+    align-content: #{$val} !important;
+  }
+}
+
+// flex-wrap
+$flex-wrap: nowrap, wrap, wrap-reverse;
+@each $val in $flex-wrap {
+  .flex-#{$val} {
+    flex-wrap: #{$val} !important;
+  }
+}
+
+// flex-grow, flex-shrink
+@for $i from 0 through 1 {
+  .flex-grow-#{$i} {
+    flex-grow: #{$i} !important;
+  }
+  .flex-shrink-#{$i} {
+    flex-shrink: #{$i} !important;
+  }
+}
+
+// position
+$position: static, relative, absolute, fixed, sticky;
+@each $val in $position {
+  .position-#{$val} {
+    position: #{$val} !important;
+  }
+}
+
+// position direction
+$direction: top, right, bottom, left;
+@each $val in $direction {
+  .#{$val}-0 {
+    #{$val}: 0 !important;
+  }
+}
+
+// width
+$width: (
+  auto: auto,
+  0: 0,
+  25: 25%,
+  33: 33%,
+  50: 50%,
+  66: 66%,
+  75: 75%,
+  100: 100%
+);
+
+@each $key, $val in $width {
+  .w-#{$key} {
+    width: #{$val} !important;
+  }
+}
+
+// height
+$height: (
+  auto: auto,
+  screen: 100vh,
+  0: 0,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  fill-height: 100%,
+  height-screen: 100dvh
+);
+
+@each $key, $val in $height {
+  .h-#{$key} {
+    height: #{$val} !important;
+  }
+}
+
+// opacity
 @for $i from 0 through 10 {
   .opacity-#{$i * 10} {
     opacity: calc($i / 10) !important;
   }
 }
-// 정리 전
-.container {
-  h1 {
-    font-size: 18px;
-  }
-  h2 {
-    font-size: 14px;
-  }
-}
-.todo-list {
-  padding: 0px;
-  li {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-    padding: 5px;
-    margin: 5px;
-    border: 1px solid lightblue;
-    list-style: none;
-  }
-}
 
-p {
-  margin: 0;
-}
-
-.tabs-area {
-  .tabs-list {
-    .active {
-      background:#000;
-      color: #fff;
-    }
-  }
-  .tab-panel > div {
-    border: 1px solid #000;
-  }
-  &.scroll,
-  &.full-width {
-    .tabs-list {
-      position:sticky;
-      top: 56px;
-      display: flex;
-      justify-content: space-between;
-      button {
-        flex: 1 1 auto;
-      }
-    }
+// text-align
+$text-align : left, right, center;
+@each $val in $text-align {
+  .text-#{$val} {
+    text-align: #{$val} !important;
   }
 }

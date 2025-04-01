@@ -1,0 +1,22 @@
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin multi-ellipsis($clamp: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  word-wrap:break-word;
+  white-space:normal;
+  -webkit-line-clamp: $clamp;
+}
+@mixin clear-ellipsis {
+  display: block;
+  overflow:visible;
+  white-space:normal;
+  -webkit-line-clamp: none;
+  text-overflow:initial;
+}

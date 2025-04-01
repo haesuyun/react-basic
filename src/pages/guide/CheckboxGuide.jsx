@@ -85,6 +85,21 @@ export default function CheckboxGuide() {
             </td>
           </tr>
           <tr>
+            <th>line</th>
+            <td></td>
+            <td>
+              <UiCheckbox 
+                variant="line"
+                {...label} 
+              />
+              <UiCheckbox 
+                variant="line"
+                {...label} 
+                label="Line" 
+              />
+            </td>
+          </tr>
+          <tr>
             <th>bookmark</th>
             <td></td>
             <td>
