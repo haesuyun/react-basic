@@ -49,6 +49,23 @@ const routes = [
     },
   },
   {
+    path: "/Overview",
+    component: React.lazy(() => import("@/pages/guide/Overview")),
+    layout: DefaultLayout,
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "Overview",
+      author: "",
+      state: "완료",
+      createdDate: "",
+      note: "",
+      showHeaderPrev: true,
+    },
+  },
+  {
     path: "/Typography",
     component: React.lazy(() => import("@/pages/guide/TypographyGuide")),
     layout: DefaultLayout,

@@ -3,14 +3,23 @@
 section {
   padding: 0 0 6rem;
 }
-.h1 {
-  @extend .heading-32;
+h1 {
+  @extend .title-24;
   margin: 2.4rem 0;
-  padding: 0 2.4rem;
+}
+hr {
+  margin-top: 3.2rem;
+  margin-bottom: 4rem;
+  border: 0;
+  border-top: 1px solid $grey-300;
 }
 .table {
   width: 100%;
   @extend .text-16;
+  th,
+  td {
+    word-break: keep-all;
+  }
   th {
     padding: 1.2rem;
   }
@@ -33,6 +42,72 @@ section {
     }
     td {
       text-align: left;
+    }
+  }
+}
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  li {
+    &:before {
+      content: '';
+      display: inline-block;
+      width: .2rem;
+      height: .2rem;
+      margin-top: -.2rem;
+      margin-right: .8rem;
+      background-color: $grey-900;
+      vertical-align: middle;
+    }
+  }
+}
+.tree-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  ul {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
+    gap: 1.2rem;
+  }
+  :global(.icon) {
+    margin-right: .8rem;
+    opacity: .5;
+  }
+  .name {
+    font-weight: 500;
+  }
+  .desc {
+    padding-left: 1rem;
+    color: green;
+    @extend .text-14;
+    &:before {
+      content: '//';
+    }
+  }
+}
+.structure {
+  $gap: 1.2rem;
+  &,div,li {
+    padding: $gap;
+    outline: 1px solid $primary;
+  }
+  &,div,li {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+  }
+  ul {
+    display: flex;
+    gap: $gap;
+    padding: $gap;
+    background-color: $grey-300;
+    li {
+      flex: 1;
+      padding: calc($gap/2);
+      @extend .text-14;
     }
   }
 }

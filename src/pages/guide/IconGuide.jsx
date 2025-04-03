@@ -34,6 +34,8 @@ export default function IconGuide() {
     'heart-outline',
     'radio',
     'radio-outline',
+    'folder',
+    'file',
   ]
   return (
     <section>
