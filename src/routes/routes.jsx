@@ -185,6 +185,23 @@ const routes = [
     },
   },
   {
+    path: "/SwitchGuide",
+    component: React.lazy(() => import("@/pages/guide/SwitchGuide")),
+    layout: DefaultLayout,
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "Switch",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+      showHeaderPrev: true,
+    },
+  },
+  {
     path: "/RadioGuide",
     component: React.lazy(() => import("@/pages/guide/RadioGuide")),
     layout: DefaultLayout,
