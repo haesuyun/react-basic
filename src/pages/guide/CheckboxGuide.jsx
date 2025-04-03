@@ -57,7 +57,7 @@ export default function CheckboxGuide() {
             </td>
           </tr>
           <tr>
-            <th>checkbox</th>
+            <th>default</th>
             <td></td>
             <td>
               <UiCheckbox 
@@ -82,6 +82,21 @@ export default function CheckboxGuide() {
                 checked={checked.checkbox03} 
                 label="본인인증 약관 전체 동의 본인인증 약관 전체 동의 본인인증 약관 전체 동의 " 
                 onChange={handleChange('checkbox03')}/>
+            </td>
+          </tr>
+          <tr>
+            <th>disabled</th>
+            <td></td>
+            <td>
+              <UiCheckbox 
+                disabled
+                {...label} 
+                />
+              <UiCheckbox 
+                disabled
+                {...label} 
+                label="본인인증 약관 전체 동의" 
+              />
             </td>
           </tr>
           <tr>

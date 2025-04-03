@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/select.module.scss";
 import UiFormLabel from "@/components/FormLabel"
@@ -15,6 +15,7 @@ export default function Select({
   options, 
   onChange 
 }) {
+  const id = useId();
   const [selectedIndex, setSelectedIndex] = useState(value);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -27,9 +28,10 @@ export default function Select({
   return (
     <>
       <div className={clsx("select-wrap", style.selectWrap, className)}>
-        <UiFormLabel label={label} required={required}/>
+        <UiFormLabel label={label} htmlFor={id} required={required}/>
         <div className={clsx("select", style.select)}>
           <input
+            id={id}
             type="text"
             readOnly
             value={options[selectedIndex]?.label||""}

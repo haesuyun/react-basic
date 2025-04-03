@@ -38,6 +38,9 @@
       align-items: center;
     }
   }
+  &.disabled {
+    opacity: 0.5;
+  }
 }
 .button {
   flex: 1;

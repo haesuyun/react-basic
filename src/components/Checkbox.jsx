@@ -10,6 +10,7 @@ export default function Checkbox({
   onChange,
   variant,
   iconSize,
+  disabled = false,
 }){
   // checked가 주어지지 않으면 내부 상태로 관리
   const [value, setValue] = useState(checked!==undefined ? checked : false)
@@ -35,10 +36,11 @@ export default function Checkbox({
   const inactiveIcon = useMemo(() => getIcon(false), [variant]);
   const iconSizeClass = iconSize ? `icon-${iconSize}` : "icon";
   return(
-    <div className={clsx("checkbox", style.checkbox, className, style[variant], style[iconSize])}>
+    <div className={clsx("checkbox", style.checkbox, className, style[variant], style[iconSize], disabled && style.disabled)}>
       <label>
         <input 
           type="checkbox" 
+          disabled={disabled}
           {...inputProps} 
           checked={value} 
           onChange={(e) => handleChange(e)} />

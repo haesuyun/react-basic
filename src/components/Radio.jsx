@@ -7,6 +7,7 @@ export default function Radio({
   label,
   value,
   name,
+  disabled = false,
   inputProps,
   variant,
   checked,
@@ -27,12 +28,14 @@ export default function Radio({
   const iconSizeClass = iconSize ? `icon-${iconSize}` : "icon";
   return(
     <div className={clsx("radio", style.radio, className, style[variant], style[iconSize],
-      checked && style.checked
+      checked && style.checked,
+      disabled && style.disabled
     )}>
       <label>
         <input 
           type="radio" 
           name={name} 
+          disabled={disabled}
           {...inputProps} 
           value={value} 
           checked={checked}

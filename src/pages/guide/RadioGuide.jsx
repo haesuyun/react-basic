@@ -18,6 +18,7 @@ function MuiRadio(){
       >
       <FormControlLabel value="female" control={<Radio />} label="female" />
       <FormControlLabel value="male" control={<Radio />} label="male" />
+      <FormControlLabel value="other" control={<Radio />} label="other" disabled/>
     </RadioGroup>
   )
 }
@@ -34,14 +35,14 @@ export default function RadioGuide() {
     radio03: 0,
   });
   const options01 = [
-    { inputProps: {'aria-label': 'radio female'} },
-    { inputProps: {'aria-label': 'radio male'} },
-    { inputProps: {'aria-label': 'radio other'} },
+    { inputProps: {'aria-label': '0'} },
+    { inputProps: {'aria-label': '1'} },
+    { inputProps: {'aria-label': '2'} },
   ];
   const options02 = [
     { label: "Female", value:"Female", inputProps: {'aria-label': 'radio female'} },
     { label: "Male", value:"Male", inputProps: {'aria-label': 'radio male'} },
-    { label: "Other", value:"Other", inputProps: {'aria-label': 'radio other'} },
+    { label: "Disabled", value:"Other", inputProps: {'aria-label': 'radio other'}, disabled: true },
   ];
   const options03 = [
     { label: "남자"},
@@ -72,7 +73,7 @@ export default function RadioGuide() {
           <th>radio</th>
           <td></td>
           <td>
-              <UiRadioGroup name='radio-button-group1' value={value.radio01} onChange={handleChange('radio01')}>
+            <UiRadioGroup name='radio-button-group1' value={value.radio01} onChange={handleChange('radio01')}>
               {
                 options01.map((option,index)=>
                   <UiRadio key={index} {...option} />
