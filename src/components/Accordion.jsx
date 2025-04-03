@@ -3,6 +3,7 @@ import clsx from "clsx";
 import style from "@/assets/style/module/accordion.module.scss"
 
 export default function Accordion({
+  className,
   title,
   header,
   children,
@@ -26,7 +27,7 @@ export default function Accordion({
     }
   },[toggle])
   return (
-    <dl className={clsx("accordion", style.accordion, style[variant],toggle&&style.expanded)}>
+    <dl className={clsx("accordion", className, style.accordion, style[variant],toggle&&style.expanded)}>
       <dt className={clsx(style.summary)}>
         {header && <div className={clsx(style.header)}>{ header}</div>}
         <button type="button"

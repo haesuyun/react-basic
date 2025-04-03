@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from "react";
+import React, {useState, useRef, useEffect, useId} from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/textfield.module.scss"
 import UiFormLabel from "@/components/FormLabel"
@@ -10,6 +10,7 @@ export default function TextField({
   readonly,
   disabled,
   label,
+  hiddenLabel=false,
   placeholder,
   name,
   value="",
@@ -26,6 +27,7 @@ export default function TextField({
 }){
   const [innerValue, setInnerValue] = useState(value)
   const [isFocused, setIsFocused] = useState(false)
+  const id = useId()
   // textarea 자동 높이
   const textareaRef = useRef();
   const textareaHeightRef = useRef();
@@ -68,7 +70,7 @@ export default function TextField({
         className, 
         isFocused && style.focus, 
         error && style.error)}>
-      <UiFormLabel label={label} required={required}/>
+      <UiFormLabel label={label} htmlFor={id} required={required} className={ clsx(hiddenLabel?"opacity-0":"") } />
       <div className={clsx(style.inputBox)}>
         <div 
           className={clsx(
@@ -77,6 +79,7 @@ export default function TextField({
             disabled && style.disabled)}>
           {multiline ? (
             <textarea
+              id={id}
               ref={textareaRef}
               required={required} 
               readOnly={readonly}
@@ -97,6 +100,7 @@ export default function TextField({
             ></textarea>
           ):(
             <input 
+              id={id}
               required={required} 
               readOnly={readonly}
               disabled={disabled}

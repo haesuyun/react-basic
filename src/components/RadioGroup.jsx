@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useId} from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/radio.module.scss"
 import UiFormLabel from "@/components/FormLabel"
@@ -12,11 +12,12 @@ export default function RadioGroup({
   onChange, 
   onClick, 
   children, 
-}){
+}) {
+  const id = useId();
   return(
-    <div role="radiogroup" className={clsx("radio-group", style.radioGroup, className)} aria-labelledby={`${name}-label`}>
-      <UiFormLabel label={label} required={required}/>
-      <div className={clsx("radio-box", style.radioBox)}>
+    <div className={clsx("radio-group", style.radioGroup, className)}>
+      <UiFormLabel id={id} label={label} required={required}/>
+      <div role="radiogroup" className={clsx("radio-box", style.radioBox)} aria-labelledby={id}>
         {React.Children.map(children, (child, index) => {
           if(!React.isValidElement(child)) return child;
           const childValue = child.props.value ?? index; // 값이 없으면 index 사용

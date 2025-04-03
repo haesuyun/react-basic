@@ -65,7 +65,7 @@ export default function CheckboxGuide() {
               />
               <UiCheckbox 
                 {...label} 
-                label="Label" 
+                label="본인인증 약관 전체 동의" 
               />
               <UiCheckbox 
                 {...label} 
@@ -80,7 +80,7 @@ export default function CheckboxGuide() {
               <UiCheckbox 
                 {...label} 
                 checked={checked.checkbox03} 
-                label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, eos?" 
+                label="본인인증 약관 전체 동의 본인인증 약관 전체 동의 본인인증 약관 전체 동의 " 
                 onChange={handleChange('checkbox03')}/>
             </td>
           </tr>

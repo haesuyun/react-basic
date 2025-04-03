@@ -1,0 +1,13 @@
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  &>li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    &>button {
+      flex-shrink: 0;
+    }
+  }
+}

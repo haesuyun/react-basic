@@ -92,6 +92,18 @@ export default function SelectGuide() {
               />
             </td>
           </tr>
+          <tr>
+            <th>Default</th>
+            <td></td>
+            <td>
+              <UiSelect
+                {...select}
+                onChange={(index) =>
+                  setSelect((prev) => ({ ...prev, value: index }))
+                }
+              />
+            </td>
+          </tr>
         </tbody>
       </table>
     </section>

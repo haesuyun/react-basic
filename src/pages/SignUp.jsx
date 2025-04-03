@@ -5,6 +5,8 @@ import UiRadio from "@/components/Radio";
 import UiRadioGroup from "@/components/RadioGroup";
 import UiTabs from "@/components/Tabs";
 import UiTab from "@/components/Tab";
+import UiAccordion from "@/components/Accordion";
+import UiCheckbox from "@/components/Checkbox";
 
 function SignUpMobile(){
   const [select, setSelect] = useState({
@@ -42,14 +44,43 @@ function SignUpMobile(){
   const handleChange = (key) => (index) => {
     setValue((prev)=>({...prev, [key]:index}));
   };
+  const agreements = [
+    '개인정보 제공 및 이용 개인정보 제공 및 이용 개인정보 제공 및 이용',
+    '고유식별 정보처리',
+    '통신사 이용약관',
+  ]
   return (
     <form className="form-list">
+      <div className="form-item">
+        <UiAccordion className="mb-6" header={
+          <UiCheckbox 
+            label="본인인증 약관 전체 동의"
+          />
+        }>
+          <ul className="checkbox-list mb-4">
+            {agreements.map((item) => { 
+              return <li key={item}>
+                <UiCheckbox 
+                  iconSize="small"
+                  variant="line"
+                  label={item}
+                />
+                <button type="button" className="button-text button-small">
+                  약관보기
+                  <i className="icon next" aria-label="이동"></i>
+                </button>
+              </li>
+              })
+            }
+          </ul>
+        </UiAccordion>
+      </div>
       <div className="form-item">
         <UiTextField label="이름" placeholder="이름 입력"/>
       </div>
       <div className="form-item">
         <UiTextField label="주민등록번호" type="tel" placeholder="앞 6자리 입력" error errorMessage="앞 6자리 입력해주세요"/>
-        <UiTextField className="mt-label" type="tel" placeholder="뒤 1자리 입력"/>
+        <UiTextField label="주민등록번호 뒷자리" hiddenLabel type="tel" placeholder="뒤 1자리 입력"/>
       </div>
       <div className="form-item">
         <UiSelect

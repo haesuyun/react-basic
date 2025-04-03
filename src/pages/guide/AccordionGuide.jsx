@@ -75,7 +75,7 @@ export default function AccordionGuide() {
     ],
   });
   const agreements = [
-'개인정보 제공 및 이용',
+'개인정보 제공 및 이용 개인정보 제공 및 이용 개인정보 제공 및 이용',
 '고유식별 정보처리',
 '통신사 이용약관',
   ]
@@ -115,18 +115,20 @@ export default function AccordionGuide() {
               <br/>
               <UiAccordion header={
                 <UiCheckbox 
-                label="본인인증 약관 전체 동의 본인인증 약관 전체 동의"
+                  label="본인인증 약관 전체 동의"
                 />
               }>
-                <ul className="d-flex flex-column ga-4 mb-4">
+                <ul className="checkbox-list mb-4">
                   {agreements.map((item) => { 
-                    return <li className="d-flex" key={item}>
+                    return <li key={item}>
                       <UiCheckbox 
+                        iconSize="small"
                         variant="line"
-                        label={item} 
+                        label={item}
                       />
-                      <button type="button" className="button-text button-small ml-auto">
+                      <button type="button" className="button-text button-small">
                         약관보기
+                        <i className="icon next" aria-label="이동"></i>
                       </button>
                     </li>
                     })
