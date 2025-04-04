@@ -43,6 +43,10 @@ export default function TabsGuide() {
   const handleChange = (_,newValue) => {
     setValue(newValue);
   };
+  const [innerValue, setInnerValue] = useState(0)
+  const handleInnerChange = (_,newValue) => {
+    setInnerValue(newValue);
+  };
   return (
     <section>
       <table className={style.table}>
@@ -105,6 +109,22 @@ export default function TabsGuide() {
                 <UiTab label="Tab02"/>
                 <UiTab label="Tab03"/>
               </UiTabs>
+              {value === 0 && <div>
+                탭 1 내용
+                <UiTabs value={innerValue} 
+                  variant="rounded"
+                  className="mt-4"
+                  onChange={handleInnerChange}>
+                  <UiTab label="Tab01"/>
+                  <UiTab label="Tab02"/>
+                  <UiTab label="Tab03"/>
+                </UiTabs>
+                {innerValue === 0 && <div>Inner Tab 1 내용</div>}
+                {innerValue === 1 && <div>Inner Tab 2 내용</div>}
+                {innerValue === 2 && <div>Inner Tab 3 내용</div>}
+              </div>}
+              {value === 1 && <div>탭 2 내용</div>}
+              {value === 2 && <div>탭 3 내용</div>}
             </td>
           </tr>
         </tbody>

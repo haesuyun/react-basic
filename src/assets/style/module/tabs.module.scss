@@ -41,6 +41,30 @@
       }
     }
   }
+  &.rounded {
+    gap: .8rem;
+    .tab {
+      position: relative;
+      align-items: center;
+      padding: .8rem 1.2rem;
+      gap: .4rem;
+      border: 1px solid $grey-400;
+      border-radius: 2rem;
+      background-color: #fff;
+      @extend .text-14;
+      z-index: 1;
+      &.checked {
+        border: 1px solid $secondary;
+        background-color: $secondary;
+        color: #fff;
+        z-index: 2;
+      }
+    }
+  }
+  &:global(.position-sticky){
+    background-color: #fff;
+    z-index: 100;
+  }
 }
 .tab {
   display: inline-flex;

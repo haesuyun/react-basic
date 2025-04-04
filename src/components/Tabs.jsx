@@ -7,10 +7,12 @@ export default function Tabs({
   value, 
   onChange, 
   children,
-  variant="standard"
-}){
+  variant = "standard",
+  sticky = false,
+  top = "5.6rem", // header 높이
+}) {
   return(
-    <div role="tablist" className={clsx("tabs", style.tabs, className, style[variant])}>
+    <div role="tablist" className={clsx("tabs", style.tabs, className, style[variant], sticky&&"position-sticky")} style={{'top': sticky&&top}}>
       {React.Children.map(children, (child,index) => {
         if(!React.isValidElement(child)) return child;
         const childValue = child.props.value ?? index; // 값이 없으면 index 사용

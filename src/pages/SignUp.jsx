@@ -146,6 +146,7 @@ export default function SignUp(){
       {/* <h1 className={style.h1}>회원 가입</h1> */}
       <UiTabs value={value} 
         variant="underline"
+        sticky
         onChange={handleTabChange}>
         <UiTab label="휴대폰"/>
         <UiTab label="카드"/>
