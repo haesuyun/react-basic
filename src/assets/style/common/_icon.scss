@@ -60,8 +60,15 @@
     }
   }
   $whiteIcons: 
+  'card',
+  'customer',
+  'heart',
+  'home',
+  'map-search',
+  'wallet',
   'check',
-  'close', 
+  'close',
+  'my-account', 
   ;
   @each $icon in $whiteIcons {
     &.#{$icon}-white {

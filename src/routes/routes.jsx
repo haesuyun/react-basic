@@ -28,6 +28,7 @@ const routes = [
       showHeaderHome: true,
       showHeaderMenu: true,
       showFooter: true,
+      showFnb: true,
     },
   },
   {

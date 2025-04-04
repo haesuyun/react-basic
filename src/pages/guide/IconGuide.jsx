@@ -37,6 +37,17 @@ export default function IconGuide() {
     'folder',
     'file',
   ]
+  const whiteIcons = [
+    'card',
+    'customer',
+    'heart',
+    'home',
+    'map-search',
+    'wallet',
+    'check',
+    'close',
+    'my-account', 
+  ]
   return (
     <section>
       <table className={style.table}>
@@ -70,9 +81,10 @@ export default function IconGuide() {
           </tr>
           <tr>
             <th>white</th>
-            <td className="bg-grey-900">
-              <i className={clsx("icon", "close-white")} aria-label=""></i>
-              <i className={clsx("icon", "check-white")} aria-label=""></i>
+            <td className="bg-grey-900 px-2">
+              {whiteIcons.map(icon => {
+                return <i key={icon} className={clsx("icon", icon+`-white`)} aria-label=""></i>
+              })}
             </td>
           </tr>
         </tbody>
