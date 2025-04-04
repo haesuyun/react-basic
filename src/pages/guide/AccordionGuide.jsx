@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import style from "@/assets/style/module/guide.module.scss";
 import UiAccordion from "@/components/Accordion";
+import UiAccordionGroup from "@/components/AccordionGroup";
 import UiSelect from "@/components/Select";
 import UiCheckbox from "@/components/Checkbox";
 // mui
@@ -47,6 +48,57 @@ function MuiAccordion() {
   )
 }
 
+function UseAccordionGroup() {
+  const contents = [
+    {
+      title: 'Lorem ipsum dolor sit amet',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.'
+    }
+  ]
+  const [value, setValue] = useState(1)
+  return (
+    <>
+      <UiAccordionGroup value={value} onChange={index=>setValue(index)}>
+        <UiAccordion title={contents[0].title}>
+          {contents[0].content}
+        </UiAccordion>
+        <UiAccordion title={contents[0].title}>
+          {contents[0].content}
+        </UiAccordion>
+        <UiAccordion title={contents[0].title}>
+          {contents[0].content}
+        </UiAccordion>
+      </UiAccordionGroup>
+    </>
+  )
+}
+
+function OneExpandedAccordion() {
+  const contents = [
+    {
+      title: 'Lorem ipsum dolor sit amet',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.'
+    }
+  ]
+  const [expanded, setExpanded] = useState(2)
+  const handleChange = (value) => (event, isExpanded) => {
+    setExpanded(isExpanded ? value : false);
+  };
+  return (
+    <>
+      <UiAccordion expanded={expanded === 1} onChange={handleChange(1)} title={contents[0].title}>
+        {contents[0].content}
+      </UiAccordion>
+      <UiAccordion expanded={expanded === 2} onChange={handleChange(2)} title={contents[0].title} className="mt-3">
+        {contents[0].content}
+      </UiAccordion>
+      <UiAccordion expanded={expanded === 3} onChange={handleChange(3)} title={contents[0].title} className="mt-3">
+        {contents[0].content}
+      </UiAccordion>
+    </>
+  )
+}
+
 export default function AccordionGuide() {
   const [select, setSelect] = useState({
     value: 1,
@@ -75,9 +127,9 @@ export default function AccordionGuide() {
     ],
   });
   const agreements = [
-'개인정보 제공 및 이용 개인정보 제공 및 이용 개인정보 제공 및 이용',
-'고유식별 정보처리',
-'통신사 이용약관',
+    '개인정보 제공 및 이용 개인정보 제공 및 이용 개인정보 제공 및 이용',
+    '고유식별 정보처리',
+    '통신사 이용약관',
   ]
   return (
     <section>
@@ -98,17 +150,32 @@ export default function AccordionGuide() {
             </td>
           </tr>
           <tr>
+            <th>Accordion Group</th>
+            <td></td>
+            <td>
+              <UseAccordionGroup/>
+            </td>
+          </tr>
+          <tr>
+            <th>one expanded Accordion</th>
+            <td></td>
+            <td>
+              <OneExpandedAccordion/>
+            </td>
+          </tr>
+          <tr>
             <th>Default</th>
             <td></td>
             <td>
               <UiSelect
+                label="Select"
                 {...select}
                 onChange={(index) =>
                 setSelect((prev) => ({ ...prev, value: index }))
                 }
               />
               <br/>
-              <UiAccordion title="본인인증 약관 전체 동의">
+              <UiAccordion expanded title="본인인증 약관 전체 동의">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                 malesuada lacus ex, sit amet blandit leo lobortis eget.
               </UiAccordion>

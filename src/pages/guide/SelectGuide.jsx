@@ -37,24 +37,26 @@ function MuiSelect() {
 
 export default function SelectGuide() {
   const [select, setSelect] = useState({
-    value: 1,
-    optionTitle: '주제를 선택하세요',
+    label: "통신사 선택",
+    placeholder: "통신사 선택",
+    value: null,
+    optionTitle: '통신사를 선택하세요',
     options: [
       {
         id: 0,
-        label: "국내주식 0",
+        label: "SKT",
       },
       {
         id: 1,
-        label: "해외주식 1",
+        label: "KT",
       },
       {
         id: 2,
-        label: "부동산 2",
+        label: "LG U+",
       },
       {
         id: 3,
-        label: "가상자산 3",
+        label: "SKT 알뜰폰",
       },
       {
         id: 4,

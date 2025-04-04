@@ -11,6 +11,7 @@ export default function Select({
   required, 
   label, 
   value, 
+  placeholder,
   optionTitle, 
   options, 
   onChange 
@@ -34,7 +35,8 @@ export default function Select({
             id={id}
             type="text"
             readOnly
-            value={options[selectedIndex]?.label||""}
+            value={options[selectedIndex]?.label || ""}
+            placeholder={placeholder}
             onClick={handleOpen}
             onKeyDown={handleOpen}
           ></input>

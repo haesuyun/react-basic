@@ -3,14 +3,19 @@ import clsx from "clsx";
 import style from "@/assets/style/module/accordion.module.scss"
 
 export default function Accordion({
+  expanded=false,
   className,
   title,
   header,
   children,
+  onChange,
   variant = "standard" }) {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(expanded);
   const detailsRef = useRef();
   const [detailsHeight, setDetailsHeight] = useState(0);
+  useEffect(() => {
+    setToggle(expanded)
+  },[expanded])
   useEffect(() => {
     if (!toggle) {
       setDetailsHeight(0);
@@ -25,7 +30,11 @@ export default function Accordion({
       // cleanup 
       window.removeEventListener("resize", updateHeight);
     }
-  },[toggle])
+  }, [toggle])
+  const handleClick = (e) => {
+    setToggle(!toggle)
+    onChange?.(e,!toggle)
+  }
   return (
     <dl className={clsx("accordion", className, style.accordion, style[variant],toggle&&style.expanded)}>
       <dt className={clsx(style.summary)}>
@@ -33,7 +42,7 @@ export default function Accordion({
         <button type="button"
           className={clsx(style.btnToggle, title&&"flex-1-1")}
           aria-expanded={toggle}
-          onClick={() => setToggle(!toggle)}
+          onClick={handleClick}
         >
           {title&&<p className={style.title}>
             {title}
