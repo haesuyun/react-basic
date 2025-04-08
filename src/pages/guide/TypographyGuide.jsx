@@ -20,7 +20,7 @@ export default function TypographyGuide() {
         <tbody>
           {HeadingSizes.map((item, index) => (
             <tr key={index}>
-              <td className={"heading-" + item}>.heading-{item}</td>
+              <th className={"heading-" + item}>.heading-{item}</th>
               <td>{item}px</td>
               <td>{Math.trunc(item * 1.4)}px / 1.4em</td>
               <td>700</td>
@@ -29,7 +29,7 @@ export default function TypographyGuide() {
           ))}
           {titleSizes.map((item, index) => (
             <tr key={index}>
-              <td className={"title-" + item}>.title-{item}</td>
+              <th className={"title-" + item}>.title-{item}</th>
               <td>{item}px</td>
               <td>{Math.trunc(item * 1.4)}px / 1.4em</td>
               <td>700</td>
@@ -38,7 +38,7 @@ export default function TypographyGuide() {
           ))}
           {buttonSizes.map((item, index) => (
             <tr key={index}>
-              <td className={"button-" + item}>.button-{item}</td>
+              <th className={"button-" + item}>.button-{item}</th>
               <td>{item}px</td>
               <td>{Math.trunc(item * 1.4)}px / 1.4em</td>
               <td>700</td>
@@ -47,7 +47,7 @@ export default function TypographyGuide() {
           ))}
           {textSizes.map((item, index) => (
             <tr key={index}>
-              <td className={"text-" + item}>.text-{item}</td>
+              <th className={"text-" + item}>.text-{item}</th>
               <td>{item}px</td>
               <td>{Math.trunc(item * 1.4)}px / 1.4em</td>
               <td>400</td>

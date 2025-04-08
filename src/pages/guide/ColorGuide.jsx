@@ -80,9 +80,9 @@ export default function ColorGuide(){
         <tbody>
           {colorGroup.map((item, index)=>
           <tr key={index}>
-            <td >${item.color}</td>
-            <td className={'text-'+item.color} style={{backgroundColor : item.contrastText}}>text-{item.color}</td>
-            <td className={'bg-'+item.color} style={{color : item.contrastText}}>bg-{item.color} </td>
+            <th >${item.color}</th>
+            <td className={'text-'+item.color+' px-2'} style={{backgroundColor : item.contrastText}}>text-{item.color}</td>
+            <td className={'bg-'+item.color+' px-2'} style={{color : item.contrastText}}>bg-{item.color} </td>
           </tr>
           )}
         </tbody>
