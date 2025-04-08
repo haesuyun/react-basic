@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect, useId} from "react";
+import React, {useState, useRef, useEffect, useId, useLayoutEffect} from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/textfield.module.scss"
 import UiFormLabel from "@/components/FormLabel"
@@ -49,12 +49,14 @@ export default function TextField({
       }
     }
   };
-  useEffect(() => {
+  useLayoutEffect(() => { //DOM 크기를 측정하거나 조작해야 할때 사용
     if(multiline && textareaRef.current) {
       // textareaHeightRef.current = 24;
       textareaHeightRef.current ||= textareaRef.current?.clientHeight;
       queueMicrotask(handleResizeHeight);
     }
+  }, [])
+  useEffect(() => {
     window.addEventListener("resize", handleResizeHeight);
     return () => {
       // cleanup 
