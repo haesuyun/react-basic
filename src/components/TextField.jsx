@@ -3,6 +3,7 @@ import clsx from "clsx";
 import style from "@/assets/style/module/textfield.module.scss"
 import UiFormLabel from "@/components/FormLabel"
 import UiFormMessage from "@/components/FormMessage"
+import {useResize} from "@/hooks"
 
 export default function TextField({
   className,
@@ -48,21 +49,16 @@ export default function TextField({
         textareaRef.current.style.height = `${textareaScrollHeight}px`;
       }
     }
+    // console.log("handleResizeHeight")
   };
   useLayoutEffect(() => { //DOM 크기를 측정하거나 조작해야 할때 사용
     if(multiline && textareaRef.current) {
       // textareaHeightRef.current = 24;
       textareaHeightRef.current ||= textareaRef.current?.clientHeight;
-      queueMicrotask(handleResizeHeight);
+      queueMicrotask(handleResizeHeight); // DOM 측정/ 조작 후 , 랜더링 안정화 직후 실행
     }
   }, [])
-  useEffect(() => {
-    window.addEventListener("resize", handleResizeHeight);
-    return () => {
-      // cleanup 
-      window.removeEventListener("resize", handleResizeHeight);
-    }
-  }, []);
+  useResize(handleResizeHeight)
 
   return(
     <div 
