@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import routes from "@/routes/routes";
 
 export default function App() {
-  const temp = Array.from({ length: 0 });
   return (
     <Router>
       <Suspense>
