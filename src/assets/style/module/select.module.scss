@@ -6,6 +6,14 @@
   flex-direction: column;
   width: 100%;
   gap: .6rem;
+  &.error {
+    .select input {
+      outline: 2px solid $error;
+    }
+    :global(.label) {
+      color: $error;
+    }
+  }
 }
 .select {
   position: relative;
@@ -31,7 +39,7 @@
     z-index: 2;
     cursor: pointer;
     &:focus {
-      outline: 2px solid $primary;
+      outline: 2px solid $primary !important;
     }
   }
   .icon {

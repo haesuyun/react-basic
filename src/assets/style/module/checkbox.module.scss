@@ -3,6 +3,10 @@
   position: relative;
   display: inline-flex;
   flex-direction: row;
+  &.focus {
+    outline: 2px solid $black;
+    border-radius: .4rem;
+  }
   label {
     display: flex;
     align-items: start;

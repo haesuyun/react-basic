@@ -11,7 +11,7 @@ export default function FormLabel({
 }){
   return (
     <>
-      {label && <label className={clsx(style.formLabel, className)} id={id} htmlFor={htmlFor}>
+      {label && <label className={clsx("label", style.formLabel, className)} id={id} htmlFor={htmlFor}>
       {label}{required && ' *'}
     </label>}
     </>

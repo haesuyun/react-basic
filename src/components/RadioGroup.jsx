@@ -11,6 +11,8 @@ export default function RadioGroup({
   value, 
   onChange, 
   onClick, 
+  onKeyDown,
+  onMouseDown,
   children, 
 }) {
   const id = useId();
@@ -26,8 +28,10 @@ export default function RadioGroup({
             name,
             value: childValue,
             checked: isChecked,
-            onClick : (e)=> onClick?.(e.target.value),
-            onChange : (e)=> onChange?.(e.target.value),
+            onMouseDown: (value) => onMouseDown?.(value),//label mouse down
+            onClick: e => onClick?.(e.target.value),
+            onChange: e => onChange?.(e.target.value),
+            onKeyDown: e => onKeyDown?.(e.target.value),
           })
         })}
       </div>

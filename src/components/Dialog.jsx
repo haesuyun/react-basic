@@ -1,59 +1,73 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
+import FocusLock from "react-focus-lock"; // focus trap, open한 버튼으로 포커드 이동 및 open 시 dialog 내부로 포커스 이동
 import clsx from "clsx";
 import style from "@/assets/style/module/dialog.module.scss";
 export default function Dialog({
   open,
-  type,
   size,
+  fullScreen = false,
+  bottomSheet = false,
   title,
   onClose,
   actions,
   children,
   dimHide,
 }) {
-  const [dialogs, setDialogs] = useState(null);
+  const dialogRef = useRef(null);
+  const rootRef = useRef(null);
   useEffect(() => {
-    const htmlElement = document.documentElement;
-    // console.log("mount", title, open);
-    setDialogs(document.querySelectorAll(".dialog-wrap"));
-    if (open && !dimHide) {
-      htmlElement.style.overflow = "hidden";
-      // console.log("isTrue:", title, open);
+    const body = document.body;
+    const root = document.getElementById('root');
+    rootRef.current = root;
+    if (open) {
+      body.style.overflow = "hidden";
+      root?.setAttribute('aria-hidden', 'true');
       return () => {
-        htmlElement.style.overflow = "";
-        // console.log("isCleanup:", title, open);
+        const hasOtherDialogs  = document.querySelectorAll('.dialog-root');
+        if (hasOtherDialogs.length === 0) {
+          body.style.overflow = "";
+          root?.removeAttribute('aria-hidden');
+        }
       };
     }
   }, [open]);
   if (!open) return null;
-  // size: default, full-scren,
-  // type: bottom-sheet,
-  return (
-    <div
-      className={`${style.dialogWrap} ${style[type] || ""} ${
-        style[size] || ""
-      } ${dimHide ? style.dimHide : ""}`.trim()}
-    >
-      {/* style={{ zIndex: 100 + dialogs.length }} */}
-      <div className={style.dialogContainer}>
-        <div className={style.dialogTitle}>
-          {title.length && <p className={style.title}>{title}</p>}
-          <button type="button" onClick={() => onClose()}>
-            <i className="icon icon-large close" aria-label="닫기"></i>
-          </button>
-        </div>
+  return createPortal(
+    <div ref={dialogRef} role="presentation" className="dialog-root">
+      <FocusLock returnFocus>
         <div
-          className={`${style.dialogContent} ${
-            actions ? style.dialogContentActions : ""
-          }`.trim()}
-        >
-          {children}
+          role="dialog"
+          aria-modal="true"
+          className={clsx(
+            style.dialogWrap,
+            style[size],
+            {[style.fullScreen]:fullScreen},
+            {[style.bottomSheet]:bottomSheet},
+            {[style.dimHide]:dimHide}
+          )}>
+          <div className={style.dialogContainer}>
+            <div className={style.dialogTitle}>
+              {title && <p className={style.title}>{title}</p>}
+              <button type="button" onClick={() => onClose()}>
+                <i className="icon icon-large close" aria-label="닫기"></i>
+              </button>
+            </div>
+            <div
+              className={clsx(style.dialogContent,
+                { [style.dialogContentActions]: actions }
+              )}
+            >
+              {children}
+            </div>
+            {actions && <div className={clsx("button-group", style.dialogActions)}>{actions}</div>}
+          </div>
+          {!dimHide && (
+            <div className={style.dialogDim} onClick={() => onClose()}></div>
+          )}
         </div>
-        {actions && <div className={clsx("button-group", style.dialogActions)}>{actions}</div>}
-      </div>
-      {!dimHide && (
-        <div className={style.dialogDim} onClick={() => onClose()}></div>
-      )}
-    </div>
+      </FocusLock>
+    </div>,
+    document.body
   );
 }

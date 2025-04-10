@@ -40,6 +40,7 @@ function MuiDialog() {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
+            <MuiDialog/>
             Let Google help apps determine location. This means sending anonymous
             location data to Google, even when no apps are running.
           </DialogContentText>
@@ -124,7 +125,7 @@ export default function DialogGuide() {
                 className="button bg-secondary"
                 onClick={() => handleClickOpen("dialog03")}
               >
-                Bottom Sheet Dialog(dimHide)
+                Bottom Sheet Dialog
               </button>
             </td>
           </tr>
@@ -160,13 +161,12 @@ export default function DialogGuide() {
       </UiDialog>
       {/* full screen */}
       <UiDialog
-        size="fullScreen"
-        // dimHide
+        fullScreen
         open={open.dialog02}
         onClose={() => {
           handleClose("dialog02");
         }}
-        title="Dialog Title 2"
+        title={["Dialog Title 2", <br key={0} />,"Title에 br태그 넣는 방법"]}
         actions={
           <>
             <button
@@ -186,6 +186,13 @@ export default function DialogGuide() {
           </>
         }
       >
+        <button
+          type="button"
+          className="button bg-secondary"
+          onClick={() => handleClickOpen("dialog01")}
+        >
+          Alert Dialog
+        </button>
         {temp.map((t, i) => (
           <span key={i}>
             {(t, i)}lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -194,7 +201,7 @@ export default function DialogGuide() {
       </UiDialog>
       {/* bottom sheet */}
       <UiDialog
-        type="bottomSheet"
+        bottomSheet
         // dimHide
         open={open.dialog03}
         onClose={() => {
@@ -226,6 +233,11 @@ export default function DialogGuide() {
           </p>
         ))}
       </UiDialog>
+        {temp.map((t, i) => (
+          <p key={i}>
+            {(t, i)}lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        ))}
     </section>
   );
 }

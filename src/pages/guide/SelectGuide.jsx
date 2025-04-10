@@ -41,6 +41,7 @@ export default function SelectGuide() {
     placeholder: "통신사 선택",
     value: null,
     optionTitle: '통신사를 선택하세요',
+    message: "접근성 키운영 적용",
     options: [
       {
         id: 0,
@@ -88,6 +89,20 @@ export default function SelectGuide() {
             <td>
               <UiSelect
                 {...select}
+                onChange={(index) =>
+                  setSelect((prev) => ({ ...prev, value: index }))
+                }
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>Default error</th>
+            <td></td>
+            <td>
+              <UiSelect
+                {...select}
+                error
+                errorMessage="접근성 키운영 적용"
                 onChange={(index) =>
                   setSelect((prev) => ({ ...prev, value: index }))
                 }
