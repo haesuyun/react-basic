@@ -1,9 +1,9 @@
 import React, {useState, useRef, useEffect, useId, useLayoutEffect} from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/textfield.module.scss"
+import {useResize} from "@/hooks"
 import UiFormLabel from "@/components/FormLabel"
 import UiFormMessage from "@/components/FormMessage"
-import {useResize} from "@/hooks"
 
 export default function TextField({
   className,
