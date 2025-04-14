@@ -77,6 +77,7 @@ export default function IconGuide() {
               {icons.map(icon => {
                 return <i key={icon} className={clsx("icon", icon)} aria-label=""></i>
               })}
+
             </td>
           </tr>
           <tr>
@@ -89,6 +90,9 @@ export default function IconGuide() {
           </tr>
         </tbody>
       </table>
+      <div className="py-6 px-4">
+        <a href="https://fonts.google.com/icons?icon.set=Material+Icons&selected=Material+Icons+Outlined:search:&icon.size=24&icon.color=%231f1f1f&icon.platform=web" target="_blank" className="button bg-primary">Icon 출처 : Google Font</a>
+      </div>
     </section>
   );
 }
