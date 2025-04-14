@@ -1,4 +1,6 @@
-@each $key, $color in $colorGroup {
+@use '../settings/color' as c;
+
+@each $key, $color in c.$colorGroup {
   .bg-#{$key} {
     background-color: $color !important;
   }
