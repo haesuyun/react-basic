@@ -1,5 +1,3 @@
-@use '../settings/mixin' as mix;
-
 html {
   min-width: 340px;
   font-size: 10px;
@@ -43,14 +41,14 @@ body {
 }
 
 .ellipsis {
-  @include mix.ellipsis;
+  @include ellipsis;
 }
 .clear-ellipsis {
-  @include mix.clear-ellipsis;
+  @include clear-ellipsis;
 }
 @for $i from 2 through 6 {
   .ellipsis-#{$i} {
-    @include mix.multi-ellipsis($i);
+    @include multi-ellipsis($i);
   }
 }
 
