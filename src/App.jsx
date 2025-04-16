@@ -10,7 +10,8 @@ export default function App() {
   useEffect(() => { 
     document.body.classList?.remove('theme-dark')
     if(mode==='dark')document.body.classList.add('theme-'+mode)
-  },[mode])
+  }, [mode])
+  // 기본 모드 설정
   useEffect(() => {
     if (mode !== 'dark') {
       setMode('dark')
