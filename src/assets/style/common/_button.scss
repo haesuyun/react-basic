@@ -34,6 +34,7 @@ button {
   padding: 0;
   border-radius: 0;
   background-color: transparent;
+  color: inherit;
   @extend .button-16;
   &.button-small {
     @extend .button-14;
@@ -70,7 +71,7 @@ button {
   height: 24px;
   line-height: 20px;
   padding: 4px 12px;
-  background-color: #ccc;
+  background-color: var(--grey-300);
   word-break: keep-all;
   border-radius: 4px;
   font-size: 12px;

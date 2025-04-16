@@ -7,12 +7,11 @@
   min-height: 100%;
   margin: 0;
   padding-right: 400px;
-  background-color: rgb(247, 247, 247);
   .list-wrap {
     flex: 1 1 auto;
     .list-top {
       padding: 16px 24px;
-      background-color: $tertiary;
+      background-color: var(--tertiary);
       h1 {
         font-size: 2rem;
         font-weight: 600;

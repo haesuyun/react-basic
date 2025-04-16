@@ -3,10 +3,10 @@ html {
   font-size: 10px;
 }
 body {
-  background-color: #fff;
+  background-color: var(--background);
   font-size: 1.6rem;
   line-height: 1.3em;
-  color: #000;
+  color: var(--black);
 }
 textarea,
 input,
@@ -21,19 +21,22 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  height: 100%;
   min-height: 100%;
   width: 100%;
+  background-color: inherit;
 }
+
 textarea,
 body {
+  -webkit-overflow-scrolling: touch; // iOS에서 터치 기반의 자연스러운 스크롤 활성화
+  scroll-behavior: smooth; // 스크롤 이동 시 부드럽게 이동 (단, 프로그래밍적으로 스크롤 이동 시에만 적용)
   &::-webkit-scrollbar {
     width: 5px;
     height: 5px;
   }
   &::-webkit-scrollbar-thumb {
-    background: rgba(#000,0.3);
     border-radius: 3px;
+    background: rgba(var(--black-rgb),0.3);
   }
   &::-webkit-scrollbar-track {
     background-color: transparent;

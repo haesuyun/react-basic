@@ -1,7 +1,6 @@
 import React from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/guide.module.scss";
-import { Opacity } from "@mui/icons-material";
 
 export default function IconGuide() {
   const sizes = [
@@ -37,15 +36,11 @@ export default function IconGuide() {
     'folder',
     'file',
   ]
-  const whiteIcons = [
+  const oneModeIcons = [
     'card',
     'customer',
-    'heart',
-    'home',
     'map-search',
     'wallet',
-    'check',
-    'close',
     'my-account', 
   ]
   return (
@@ -72,7 +67,18 @@ export default function IconGuide() {
             </td>
           </tr>
           <tr>
-            <th>default</th>
+            <th>one Mode</th>
+            <td className="bg-grey-500 px-2">
+              {oneModeIcons.map(icon => {
+                return <i key={icon} className={clsx("icon", icon)} aria-label=""></i>
+              })}<br/>
+              {oneModeIcons.map(icon => {
+                return <i key={icon} className={clsx("icon", icon+`-white`)} aria-label=""></i>
+              })}
+            </td>
+          </tr>
+          <tr>
+            <th>light</th>
             <td>
               {icons.map(icon => {
                 return <i key={icon} className={clsx("icon", icon)} aria-label=""></i>
@@ -81,9 +87,9 @@ export default function IconGuide() {
             </td>
           </tr>
           <tr>
-            <th>white</th>
-            <td className="bg-grey-900 px-2">
-              {whiteIcons.map(icon => {
+            <th>dark</th>
+            <td className="bg-grey-500 px-2">
+              {icons.map(icon => {
                 return <i key={icon} className={clsx("icon", icon+`-white`)} aria-label=""></i>
               })}
             </td>

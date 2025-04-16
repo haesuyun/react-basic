@@ -1,17 +1,40 @@
 import { createTheme } from "@mui/material/styles";
-
 export const theme = createTheme({
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: {
+          main: "#00a49d",
+        },
+        secondary: {
+          main: "#404b57",
+        },
+      },
+    },
+    dark: {
+      palette: {
+        primary: {
+          main: "#936FFF",
+        },
+        secondary: {
+          main: "#404b57",
+        },
+      },
+    },
+  },
+  // 단일 모드 일때 사용
+  // palette: {
+  //   mode: 'dark',
+  //   primary: {
+  //     main: "#00a49d",
+  //   },
+  //   secondary: {
+  //     main: "#404b57",
+  //   },
+  // },
   typography: {
     htmlFontSize: 10,
-    fontFamily: 'Pretendard',
-  },
-  palette: {
-    primary: {
-      main: "#00a49d",
-    },
-    secondary: {
-      main: "#404b57",
-    },
+      fontFamily: 'Pretendard',
   },
   components: {
     MuiDialog: {

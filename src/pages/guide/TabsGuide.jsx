@@ -9,6 +9,8 @@ import {
   Tab,
   Box,
 } from '@mui/material';
+// theme
+import { useColorScheme } from "@mui/material";
 
 function MuiTabs() {
   const [value, setValue] = useState(0);
@@ -16,6 +18,8 @@ function MuiTabs() {
   const handleChange = (_, newValue) => {
     setValue(newValue);
   };
+
+  
 
   return (
     <Box>
@@ -47,6 +51,22 @@ export default function TabsGuide() {
   const handleInnerChange = (_,newValue) => {
     setInnerValue(newValue);
   };
+  const { mode } = useColorScheme();
+  const iconCheck = (value) => {
+    let classList = null
+    console.log('tab mode',mode)
+    if (mode === 'dark') {
+      classList = "check"
+    }
+    else {
+      if (value === 2) {
+        classList = "check-white"
+      } else {
+        classList = "check"
+      }
+    }
+    return classList;
+  }
   return (
     <section>
       <table className={style.table}>
@@ -93,7 +113,7 @@ export default function TabsGuide() {
                 <UiTab label="Tab02"/>
                 <UiTab>
                   Tab033
-                  <i className={clsx("icon", value===2?"check-white":"check")} aria-label="이동"></i>
+                  <i className={clsx("icon", iconCheck(value))} aria-label="이동"></i>
                 </UiTab>
               </UiTabs>
             </td>

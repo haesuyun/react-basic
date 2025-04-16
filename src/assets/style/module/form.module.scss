@@ -1,12 +1,12 @@
 @use '../settings' as *;
 
 .form-label {
-  color: $grey-700;
+  color: var(--grey-700);
 }
 .form-message {
-  color: $grey-700;
+  color: var(--grey-700);
   @extend .text-13;
 }
 .error-message {
-  color: $error;
+  color: var(--error);
 }

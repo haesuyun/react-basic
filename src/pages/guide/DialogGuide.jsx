@@ -104,6 +104,13 @@ export default function DialogGuide() {
             </td>
           </tr>
           <tr>
+            <th>default</th>
+            <td></td>
+            <td>
+              default 및 사이즈 props 만들기
+            </td>
+          </tr>
+          <tr>
             <th>full Screen</th>
             <td>full (w: 600)</td>
             <td>

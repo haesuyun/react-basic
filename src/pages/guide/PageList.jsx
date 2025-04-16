@@ -25,6 +25,7 @@ export default function PageList() {
                   <td>
                     <button
                       type="button"
+                      className="button-text"
                       onClick={() => {
                         setPath(route.path);
                       }}

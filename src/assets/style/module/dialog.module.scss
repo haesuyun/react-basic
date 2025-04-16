@@ -22,7 +22,7 @@
     overflow: hidden;
     width: 30rem;
     max-width: 90vw;
-    background: #fff;
+    background: var(--background-dialog);
     border-radius: .8rem;
     z-index: 2;
     .dialog-title {
@@ -30,10 +30,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.6rem 1.6rem 1.6rem 2.4rem;
-      border-bottom: 1px solid $grey-300;
-      background-color: #fff;
+      border-bottom: 1px solid var(--grey-300);
+      background-color: inherit;
       .title {
-        color: #000;
+        color: var(--black);
         @extend .title-16;
       }
       button {
@@ -46,7 +46,7 @@
     .dialog-actions {
       padding: .8rem 2.4rem 2rem;
       margin: 0;
-      background: #fff;
+      background: inherit;
     }
   }
   &.bottom-sheet {

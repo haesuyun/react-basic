@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import clsx from "clsx";
 import style from "@/assets/style/module/accordion.module.scss"
 import { useResize } from "@/hooks"

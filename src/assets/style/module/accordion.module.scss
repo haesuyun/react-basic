@@ -9,6 +9,9 @@
       flex: 1;
       width: 100%;
     }
+    .title {
+      color: var(--black);
+    }
     .btn-toggle {
       display: flex;
       justify-content: flex-end;
@@ -40,7 +43,7 @@
     }
   }
   &.standard {
-    border: 1px solid $grey-400;
+    border: 1px solid var(--grey-400);
     border-radius: .4rem;
     .summary {
       .header {

@@ -7,22 +7,22 @@
   width: 100%;
   &.error {
     .input-box:before {
-      outline: 2px solid $error;
+      outline: 2px solid var(--error);
     }
     .label {
-      color: $error;
+      color: var(--error);
     }
   }
   &.focus {
     .input-box:before {
-      outline: 2px solid $primary;
+      outline: 2px solid var(--primary);
     }
   }
   .input-box {
     position: relative;
     display: flex;
     align-items: center;
-    border: 1px solid $grey-400;
+    border: 1px solid var(--grey-400);
     border-radius: 0.4rem;
     z-index: 1;
     &:before {
@@ -66,6 +66,8 @@
         box-sizing: border-box;
         border-radius: 0.4rem;
         border: 0 none;
+        background-color: transparent;
+        color: var(--black);
         @extend .text-16;
         &:focus {
           outline: 0 none;
@@ -82,8 +84,8 @@
       &.disabled,
       &.readonly {
         input {
-          background-color: $grey-100;
-          color: $grey-600;
+          background-color: var(--grey-100);
+          color: var(--grey-600);
         }
       }
     }

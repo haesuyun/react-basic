@@ -1,3 +1,51 @@
+$iconSizes : 
+'.icon-xlarge',
+'.icon-large',
+'.icon-small',
+'.icon-xsmall',
+'.icon'
+;
+// on mode icons
+$oneModeIcons: 
+'card',
+'customer',
+'map-search',
+'wallet',
+'my-account', 
+;
+$themeIcons: 
+'arrow-right',
+'arrow-left',
+'close', 
+'close-circle', 
+'check',
+'check-circle', 
+'check-circle-outline',
+'home',
+'menu',
+'setting', 
+'search', 
+'prev', 
+'next', 
+'up', 
+'down', 
+'user',
+'bookmark',
+'bookmark-outline',
+'heart',
+'heart-outline',
+'radio',
+'radio-outline',
+'folder',
+'file',
+;
+#{$iconSizes} {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
 .icon {
   width: 18px;
   height: 18px;
@@ -18,61 +66,30 @@
   width: 32px;
   height: 32px;
 }
-.icon-xlarge,
-.icon-large,
-.icon-small,
-.icon-xsmall,
-.icon {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  $icons: 
-  'arrow-right',
-  'arrow-left',
-  'close', 
-  'close-circle', 
-  'check',
-  'check-circle', 
-  'check-circle-outline',
-  'home',
-  'menu',
-  'setting', 
-  'search', 
-  'prev', 
-  'next', 
-  'up', 
-  'down', 
-  'user',
-  'bookmark',
-  'bookmark-outline',
-  'heart',
-  'heart-outline',
-  'radio',
-  'radio-outline',
-  'folder',
-  'file',
-  ;
+
+@mixin applyIcons($icons, $mode: 'light'){
   @each $icon in $icons {
-    &.#{$icon} {
-      background-image: url('@/assets/images/icon/#{$icon}.svg')
+    #{$iconSizes} {
+      &.#{$icon} {
+        background-image: url('@/assets/images/icon/#{$icon}.svg')
+      }
+      &.#{$icon}-white {
+        background-image: url('@/assets/images/icon/#{$icon}-white.svg')
+      }
     }
-  }
-  $whiteIcons: 
-  'card',
-  'customer',
-  'heart',
-  'home',
-  'map-search',
-  'wallet',
-  'check',
-  'close',
-  'my-account', 
-  ;
-  @each $icon in $whiteIcons {
-    &.#{$icon}-white {
-      background-image: url('@/assets/images/icon/#{$icon}-white.svg')
+    @if $mode == 'dark' {
+      .theme-dark {
+        #{$iconSizes} {
+          &.#{$icon} {
+            background-image: url('@/assets/images/icon/#{$icon}-white.svg')
+          }
+          &.#{$icon}-white {
+            background-image: url('@/assets/images/icon/#{$icon}.svg')
+          }
+        }
+      }
     }
   }
 }
+@include applyIcons($oneModeIcons);
+@include applyIcons($themeIcons, 'dark');

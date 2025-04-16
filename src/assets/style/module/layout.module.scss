@@ -9,7 +9,7 @@
   width: 100%;
   height: 5.6rem;
   padding: 0 2.4rem;
-  background: #fff;
+  background:inherit;
   z-index: 100;
   gap: 1rem;
   h1 {
@@ -26,31 +26,31 @@ main {
 .footer {
   flex-shrink: 0;
   padding: 3.2rem 2.4rem 4rem;
-  background-color: $grey-100;
+  background-color: var(--grey-100);
   .menu {
     display: flex;
     gap: 1.6rem;
     li {
       @extend .text-14;
-      color: $black;
+      color: var(--black);
     }
   }
   .address {
     margin-top: 2rem;
     @extend .text-14;
-    color: $grey-900;
+    color: var(--grey-900);
   }
   .copyright {
     margin-top: .4rem;
     @extend .text-12;
-    color: $grey-700;
+    color: var(--grey-700);
   }
 }
 .fnb {
   position: sticky;
   bottom: 0;
   width: 100%;
-  background-color: $secondary;
+  background-color: var(--secondary);
   z-index: 100;
   padding: 1.2rem 2.4rem;
   .menu {
@@ -64,7 +64,7 @@ main {
         display: inline-block;
         margin-top: .4rem;
         @extend .text-12;
-        color: $white;
+        color: #fff;
       }
     }
   }

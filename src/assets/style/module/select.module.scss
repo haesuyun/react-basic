@@ -8,10 +8,10 @@
   gap: .6rem;
   &.error {
     .select input {
-      outline: 2px solid $error;
+      outline: 2px solid var(--error);
     }
     :global(.label) {
-      color: $error;
+      color: var(--error);
     }
   }
 }
@@ -21,7 +21,7 @@
   align-items: center;
   min-width: 200px;
   width: 100%;
-  border: 1px solid $grey-400;
+  border: 1px solid var(--grey-400);
   border-radius: 0.4rem;
   input {
     position: relative;
@@ -35,11 +35,12 @@
     text-overflow: ellipsis !important;
     background-color: transparent;
     border: 0 none;
+    color: var(--black);
     @extend .text-16;
     z-index: 2;
     cursor: pointer;
     &:focus {
-      outline: 2px solid $primary !important;
+      outline: 2px solid var(--primary) !important;
     }
   }
   .icon {

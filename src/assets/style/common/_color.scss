@@ -1,8 +1,8 @@
 @each $key, $color in $colorGroup {
   .bg-#{$key} {
-    background-color: $color !important;
+    background-color: var($color) !important;
   }
   .text-#{$key} {
-    color: $color !important;
+    color: var($color) !important;
   }
 }

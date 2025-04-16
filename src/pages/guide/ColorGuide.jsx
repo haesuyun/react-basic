@@ -1,70 +1,73 @@
 import React from "react";
 import style from "@/assets/style/module/guide.module.scss";
+import clsx from "clsx";
+// import { theme } from "@/assets/style/theme.ts";
+
 export default function ColorGuide(){
   const colorGroup = [
     {
       color:'primary',
-      contrastText: '#fff',
+      contrastText: 'white',
     },
     {
       color:'secondary',
-      contrastText: '#fff',
+      contrastText: 'white',
     },
     {
       color:'tertiary',
-      contrastText: '#fff',
+      contrastText: 'white',
     },
     {
       color:'white',
-      contrastText: '#000',
+      contrastText: 'black',
     },
     {
       color:'black',
-      contrastText: '#fff',
+      contrastText: 'white',
     },
     {
       color:'grey',
-      contrastText: '#000',
+      // contrastText: 'black',
     },
     {
       color:'grey-50',
-      contrastText: '#000',
+      // contrastText: 'black',
     },
     {
       color:'grey-100',
-      contrastText: '#000',
+      // contrastText: 'black',
     },
     {
       color:'grey-200',
-      contrastText: '#000',
+      // contrastText: 'black',
     },
     {
       color:'grey-300',
-      contrastText: '#000',
+      // contrastText: 'black',
     },
     {
       color:'grey-400',
-      contrastText: '#000',
+      // contrastText: 'black',
     },
     {
       color:'grey-500',
-      contrastText: '#000',
+      // contrastText: 'black',
     },
     {
       color:'grey-600',
-      contrastText: '#fff',
+      contrastText: 'white',
     },
     {
       color:'grey-700',
-      contrastText: '#fff',
+      contrastText: 'white',
     },
     {
       color:'grey-800',
-      contrastText: '#fff',
+      contrastText: 'white',
     },
     {
       color:'grey-900',
-      contrastText: '#fff',
+      contrastText: 'white',
     },
   ]
   return (
@@ -81,8 +84,9 @@ export default function ColorGuide(){
           {colorGroup.map((item, index)=>
           <tr key={index}>
             <th >${item.color}</th>
-            <td className={'text-'+item.color+' px-2'} style={{backgroundColor : item.contrastText}}>text-{item.color}</td>
-            <td className={'bg-'+item.color+' px-2'} style={{color : item.contrastText}}>bg-{item.color} </td>
+            <td className={clsx('text-' + item.color + ' px-2','bg-'+item.contrastText)}
+            >text-{item.color}</td>
+            <td className={clsx('bg-'+item.color+' px-2','text-'+item.contrastText)}>bg-{item.color} </td>
           </tr>
           )}
         </tbody>

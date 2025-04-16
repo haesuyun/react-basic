@@ -14,7 +14,7 @@
   display: inline-flex;
   flex-direction: row;
   &.focus {
-    outline: 2px solid $black;
+    outline: 2px solid var(--black);
     border-radius: .4rem;
   }
   label {
@@ -48,7 +48,7 @@
 }
 .button {
   flex: 1;
-  border: 1px solid $grey-400;
+  border: 1px solid var(--grey-400);
   border-radius: 0.4rem;
   label {
     width: 100%;
@@ -65,8 +65,8 @@
   }
   &.checked {
     label {
-      outline: 2px solid $primary;
-      background-color: rgba($primary, 0.1);
+      outline: 2px solid var(--primary);
+      background-color: rgba(var(--primary), 0.1);
     }
   }
 }
