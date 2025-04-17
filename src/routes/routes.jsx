@@ -152,6 +152,23 @@ const routes = [
     },
   },
   {
+    path: "/TooltipGuide",
+    component: React.lazy(() => import("@/pages/guide/TooltipGuide")),
+    layout: DefaultLayout,
+    meta: {
+      depth01: "guide",
+      depth02: "",
+      depth03: "",
+      id: "",
+      name: "Tooltip",
+      author: "",
+      state: "진행중",
+      createdDate: "",
+      note: "",
+      showHeaderPrev: true,
+    },
+  },
+  {
     path: "/SelectGuide",
     component: React.lazy(() => import("@/pages/guide/SelectGuide")),
     layout: DefaultLayout,
