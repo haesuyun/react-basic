@@ -332,8 +332,10 @@ export default function DialogGuide() {
           className="button bg-secondary"
           onClick={() => handleClickOpen("dialog01")}
         >
-          Alert Dialog
+          Dialog
         </button>
+        <br/>
+        <br/>
         {temp.map((t, i) => (
           <span key={i}>
             {(t, i)}lorem ipsum dolor sit amet, consectetur adipiscing elit.
