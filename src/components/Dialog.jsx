@@ -5,9 +5,10 @@ import clsx from "clsx";
 import style from "@/assets/style/module/dialog.module.scss";
 export default function Dialog({
   open,
-  size,
+  // size,
   fullScreen = false,
   bottomSheet = false,
+  maxWidth = 'md',
   title,
   onClose,
   actions,
@@ -41,10 +42,11 @@ export default function Dialog({
           aria-modal="true"
           className={clsx(
             style.dialogWrap,
-            style[size],
+            // style[size],
             {[style.fullScreen]:fullScreen},
             {[style.bottomSheet]:bottomSheet},
-            {[style.dimHide]:dimHide}
+            { [style.dimHide]: dimHide },
+            style[maxWidth],
           )}>
           <div className={style.dialogContainer}>
             <div className={style.dialogTitle}>

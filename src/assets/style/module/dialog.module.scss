@@ -20,7 +20,7 @@
   }
   .dialog-container {
     overflow: hidden;
-    width: 30rem;
+    width: 100%;
     max-width: 90vw;
     background: var(--background-dialog);
     border-radius: .8rem;
@@ -48,6 +48,31 @@
       margin: 0;
       background: inherit;
     }
+  }
+  &.xs {
+    .dialog-container {
+    max-width: 30rem;
+  }
+  }
+  &.sm {
+    .dialog-container {
+    max-width: 40rem;
+  }
+  }
+  &.md {
+    .dialog-container {
+      max-width: 50rem;
+    }
+  }
+  &.lg {
+    .dialog-container {
+      max-width: 60rem;
+    }
+  }
+  &.xl {
+    .dialog-container {
+    max-width: 70rem;
+  }
   }
   &.bottom-sheet {
     align-items: end;
