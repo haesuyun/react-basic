@@ -1,0 +1,12 @@
+@use '../settings' as *;
+
+.csr-list {
+    font-size: rem(16);
+    padding: rem(24);
+    li {
+        margin-bottom: rem(16);
+        i {
+            margin-right: rem(20);
+        }
+    }
+}
