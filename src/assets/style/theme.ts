@@ -34,7 +34,7 @@ export const theme = createTheme({
   // },
   typography: {
     htmlFontSize: 10,
-      fontFamily: 'Pretendard',
+    fontFamily: 'Pretendard',
   },
   components: {
     MuiDialog: {

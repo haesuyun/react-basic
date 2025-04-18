@@ -3,10 +3,10 @@ html {
   font-size: 10px;
 }
 body {
-  background-color: var(--background);
+  background-color: var(--background) !important;
   font-size: 1.6rem;
   line-height: 1.3em;
-  color: var(--black);
+  color: var(--black) !important;
 }
 textarea,
 input,

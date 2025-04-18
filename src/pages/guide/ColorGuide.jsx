@@ -18,6 +18,18 @@ export default function ColorGuide(){
       contrastText: 'white',
     },
     {
+      color:'error',
+      contrastText: 'white',
+    },
+    {
+      color:'background',
+      contrastText: 'black',
+    },
+    {
+      color:'background-dialog',
+      contrastText: 'black',
+    },
+    {
       color:'white',
       contrastText: 'black',
     },
@@ -83,7 +95,7 @@ export default function ColorGuide(){
         <tbody>
           {colorGroup.map((item, index)=>
           <tr key={index}>
-            <th >${item.color}</th>
+            <th>--{item.color}</th>
             <td className={clsx('text-' + item.color + ' px-2','bg-'+item.contrastText)}
             >text-{item.color}</td>
             <td className={clsx('bg-'+item.color+' px-2','text-'+item.contrastText)}>bg-{item.color} </td>
