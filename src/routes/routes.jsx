@@ -75,7 +75,7 @@ const routes = [
     component: React.lazy(() => import("@/pages/CSRinfo")),
     layout: DefaultLayout,
     meta: {
-      depth01: "공지사항",
+      depth01: "고객센터",
       depth02: "",
       depth03: "",
       id: "",
@@ -96,7 +96,7 @@ const routes = [
     component: React.lazy(() => import("@/pages/CSRquestion")),
     layout: DefaultLayout,
     meta: {
-      depth01: "자주하는질문",
+      depth01: "고객센터",
       depth02: "",
       depth03: "",
       id: "",
@@ -117,7 +117,7 @@ const routes = [
     component: React.lazy(() => import("@/pages/CSRonline")),
     layout: DefaultLayout,
     meta: {
-      depth01: "온라인상담문의",
+      depth01: "고객센터",
       depth02: "",
       depth03: "",
       id: "",
@@ -138,7 +138,7 @@ const routes = [
     component: React.lazy(() => import("@/pages/CSRtell")),
     layout: DefaultLayout,
     meta: {
-      depth01: "고객센터대표번호",
+      depth01: "고객센터",
       depth02: "",
       depth03: "",
       id: "",
