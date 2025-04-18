@@ -15,6 +15,7 @@ const CSRquestion = () => {
     return (
         <section>
             <h1>자주하는질문</h1>
+            질문유형필터
             <div className="form-item">
                 <UiAccordion expanded={expanded === 1} onChange={handleChange(1)} title={contents[0].title}>
                     {contents[0].content}
