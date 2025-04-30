@@ -12,7 +12,7 @@ const routes = [
   },
   {
     path: "/Signup",
-    component: React.lazy(() => import("@/pages/Signup")),
+    component: React.lazy(() => import("@/pages/SignUp")),
     layout: DefaultLayout,
     meta: {
       depth01: "홈",
@@ -484,7 +484,7 @@ const routes = [
       note: "",
     },
   },
-  
+
   // import Select from "@/components/Select";
 ];
 
