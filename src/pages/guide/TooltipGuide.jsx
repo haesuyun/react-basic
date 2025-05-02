@@ -1,14 +1,41 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "@/assets/style/module/guide.module.scss";
+import UiTooltip from "@/components/Tooltip";
+// mui
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 function MuiTooltip() {
-  return <>
-  <Tooltip title="Add" arrow placement="right">
-    <Button variant="contained">
-      Button
-    </Button>
-  </Tooltip>
+  const [open, setOpen] = useState(false);
+
+  const handleTooltipClose = () => {
+    setOpen(false);
+  };
+
+  const handleTooltipOpen = () => {
+    setOpen(true);
+  };
+  return (<>
+    <ClickAwayListener onClickAway={handleTooltipClose}>
+      <Tooltip
+        onClose={handleTooltipClose}
+        open={open}
+        disableFocusListener
+        disableHoverListener
+        disableTouchListener
+        title="Add"
+        slotProps={{
+          popper: {
+            disablePortal: true,
+          },
+        }}
+        arrow
+        placement="right">
+        <Button onClick={handleTooltipOpen} variant="contained">
+          Button
+        </Button>
+      </Tooltip>
+    </ClickAwayListener>
     <p className="text-14">placement="
       <br />
       top-start,
@@ -27,9 +54,10 @@ function MuiTooltip() {
       bottom,
       bottom-end,
     "</p>
-  </>
+  </>)
 }
 export default function TooltipGuide() {
+  const [open, setOpen] = useState(false)
   return (
     <section>
       <table className={style.table}>
@@ -52,6 +80,14 @@ export default function TooltipGuide() {
             <th>default</th>
             <td></td>
             <td>
+              {String(open)}
+              <UiTooltip open={open} onChange={e => setOpen(e)}  title="title" content={ 
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, sed.</div>
+              }>
+                <button type="button" className="button bg-primary">
+                  Button
+                </button>
+              </UiTooltip>
             </td>
           </tr>
         </tbody>

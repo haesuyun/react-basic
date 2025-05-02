@@ -1,0 +1,39 @@
+@use '../settings' as *;
+.tooltip-wrap {
+  position: relative;
+  &.active .tooltip-container {
+    display: block;
+  }
+  .tooltip-container {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    max-width: 90vw;
+    background: var(--background-dialog);
+    border-radius: .8rem;
+    z-index: 2;
+    .tooltip-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: inherit;
+      .title {
+        color: var(--black);
+        @extend .text-14;
+      }
+      button {
+        margin-left: auto;
+      }
+    }
+    .tooltip-content {
+      @extend .text-12;
+    }
+    .tooltip-actions {
+      padding: .8rem 2.4rem 2rem;
+      margin: 0;
+      background: inherit;
+    }
+  }
+}
