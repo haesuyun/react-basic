@@ -21,6 +21,28 @@
   --grey-800: rgba(var(--black-rgb),0.8);
   --grey-900: rgba(var(--black-rgb),0.9);
 }
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --primary: #936FFF;
+//   --background: #000;
+//   --background-dialog: #222;
+//   --black-rgb: 255,255,255;
+//   --white-rgb: 0,0,0;
+//   --white: rgb(var(--white-rgb));
+//   --black: rgb(var(--black-rgb));
+//   --grey: rgba(var(--black-rgb),0.5);
+//   --grey-50: rgba(var(--black-rgb),0.05);
+//   --grey-100: rgba(var(--black-rgb),0.1);
+//   --grey-200: rgba(var(--black-rgb),0.2);
+//   --grey-300: rgba(var(--black-rgb),0.3);
+//   --grey-400: rgba(var(--black-rgb),0.4);
+//   --grey-500: rgba(var(--black-rgb),0.5);
+//   --grey-600: rgba(var(--black-rgb),0.6);
+//   --grey-700: rgba(var(--black-rgb),0.7);
+//   --grey-800: rgba(var(--black-rgb),0.8);
+//   --grey-900: rgba(var(--black-rgb),0.9);
+//   }
+// }
 .theme-dark {
   --primary: #936FFF;
   --background: #000;
