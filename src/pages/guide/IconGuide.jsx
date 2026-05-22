@@ -1,6 +1,21 @@
-import React from "react";
-import clsx from "clsx";
 import style from "@/assets/style/module/guide.module.scss";
+import clsx from "clsx";
+
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Icon",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
+}
 
 export default function IconGuide() {
   const sizes = [

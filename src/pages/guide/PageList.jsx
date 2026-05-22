@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import routes from "@/routes/routes";
 import style from "@/assets/style/module/pagelist.module.scss";
+import { pageList } from "@/router.jsx";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { useState } from "react";
+
 export default function PageList() {
   const [path, setPath] = useState(null);
-  const newRoutes = routes.slice(1);
+  const newRoutes = pageList.slice(1);
   return (
     <section className={style.pageListWrap}>
       <div className={style.listWrap}>

@@ -1,6 +1,21 @@
-import React from "react";
 
-export default function Login() {
+export const meta = {
+  depth01: "홈",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "로그인",
+  author: "홍길동",
+  state: "진행중",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  },
+  footer: true,
+};
+export default () => {
   return (
     <section>
       <div className="px-6 pt-12">

@@ -1,15 +1,15 @@
-import React, {useState} from "react";
 import style from "@/assets/style/module/guide.module.scss";
 import UiAccordion from "@/components/Accordion";
 import UiAccordionGroup from "@/components/AccordionGroup";
-import UiSelect from "@/components/Select";
 import UiCheckbox from "@/components/Checkbox";
+import UiSelect from "@/components/Select";
+import { useState } from "react";
 // mui
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
 
 function MuiAccordion() {
   return (
@@ -98,7 +98,21 @@ function OneExpandedAccordion() {
     </>
   )
 }
-
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Accordion",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
+}
 export default function AccordionGuide() {
   const [select, setSelect] = useState({
     value: 1,

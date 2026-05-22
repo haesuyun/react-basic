@@ -1,10 +1,9 @@
-import React from "react";
 import style from "@/assets/style/module/layout.module.scss";
 
 export default function Footer({meta}) {
   return (
     <>
-    {meta.showFooter&&<footer className={style.footer}>
+    {meta.footer&&<footer className={style.footer}>
       <ul className={style.menu}>
         <li>
           <a href="#none">공지사항</a>

@@ -1,7 +1,6 @@
-import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
 import Fnb from "./Fnb";
+import Footer from "./Footer";
+import Header from "./Header";
 
 export default function DefaultLayout({meta, children}){
   return (

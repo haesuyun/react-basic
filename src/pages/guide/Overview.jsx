@@ -1,6 +1,5 @@
-import React from "react";
-import clsx from "clsx";
 import style from "@/assets/style/module/guide.module.scss";
+import clsx from "clsx";
 const TreeList = function ({ name, items }) {
   const fileExtention = (item) => {
     if (!item.items) {
@@ -24,6 +23,21 @@ const TreeList = function ({ name, items }) {
       </li>)}
     </ul>
   )
+}
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Overview",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
 }
 export default function Overview() {
   const styleFiles = [

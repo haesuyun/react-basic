@@ -1,11 +1,11 @@
-import React, {useState, useRef} from "react";
-import clsx from "clsx";
 import style from "@/assets/style/module/guide.module.scss";
-import UiTextField from "@/components/TextField"
+import UiTextField from "@/components/TextField";
+import clsx from "clsx";
+import { useRef, useState } from "react";
 // mui
-import { Box, TextField, FormControl, InputLabel, OutlinedInput,InputAdornment, IconButton } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { Box, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
 
 function MuiTextField() {
   const [showPassword, setShowPassword] = useState(false);
@@ -78,6 +78,22 @@ function MuiTextField() {
       </FormControl>
     </Box>
   );
+}
+
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "TextField",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
 }
 
 export default function TextFieldGuide(){

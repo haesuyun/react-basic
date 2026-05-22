@@ -1,9 +1,28 @@
-import React, { useState } from "react";
 import UiAccordion from "@/components/Accordion";
-import UiTabs from "@/components/Tabs";
 import UiTab from "@/components/Tab";
+import UiTabs from "@/components/Tabs";
+import { useState } from "react";
 
-const CSRquestion = () => {
+export const meta = {
+  depth01: "홈",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "자주하는질문",
+  author: "홍길동",
+  state: "진행중",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+    home : true,
+    menu : true,
+  },
+  footer: true,
+};
+
+export default () => {
     const [value, setValue] = useState(0);
     const tabs01 = ['Tab01','Tab02','Tab03']
 
@@ -50,4 +69,3 @@ const CSRquestion = () => {
     );
 };
 
-export default CSRquestion;

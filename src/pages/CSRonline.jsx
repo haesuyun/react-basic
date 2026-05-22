@@ -1,4 +1,3 @@
-import React from "react";
 import { Switch } from "@mui/material";
 
 function MuiSwitch() {
@@ -10,7 +9,26 @@ function MuiSwitch() {
     )
 }
 
-const CSRonline = () => {
+export const meta = {
+  depth01: "홈",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "온라인상담문의",
+  author: "홍길동",
+  state: "진행중",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+    home : true,
+    menu : true,
+  },
+  footer: true,
+};
+
+export default () => {
     return (
         <section>
             <h1>온라인상담문의</h1>
@@ -73,4 +91,3 @@ const CSRonline = () => {
     );
 };
 
-export default CSRonline;

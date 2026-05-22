@@ -1,12 +1,12 @@
-import React, {useState} from "react";
 import style from "@/assets/style/module/guide.module.scss";
 import UiRadio from "@/components/Radio";
 import UiRadioGroup from "@/components/RadioGroup";
+import { useState } from "react";
 // mui
-import { 
+import {
+  FormControlLabel,
   Radio,
   RadioGroup,
-  FormControlLabel,
 } from '@mui/material';
 
 function MuiRadio(){
@@ -21,6 +21,22 @@ function MuiRadio(){
       <FormControlLabel value="other" control={<Radio />} label="other" disabled/>
     </RadioGroup>
   )
+}
+
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Radio",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
 }
 
 export default function RadioGuide() {

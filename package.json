@@ -31,6 +31,7 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "lodash": "^4.17.21",
-    "react-focus-lock": "^2.13.6"
+    "react-focus-lock": "^2.13.6",
+    "vite-plugin-pages": "^0.33.3"
   }
 }

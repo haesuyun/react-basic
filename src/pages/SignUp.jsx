@@ -1,12 +1,12 @@
-import React, {useState} from "react";
-import UiTextField from "@/components/TextField"
-import UiSelect from "@/components/Select";
-import UiRadio from "@/components/Radio";
-import UiRadioGroup from "@/components/RadioGroup";
-import UiTabs from "@/components/Tabs";
-import UiTab from "@/components/Tab";
 import UiAccordion from "@/components/Accordion";
 import UiCheckbox from "@/components/Checkbox";
+import UiRadio from "@/components/Radio";
+import UiRadioGroup from "@/components/RadioGroup";
+import UiSelect from "@/components/Select";
+import UiTab from "@/components/Tab";
+import UiTabs from "@/components/Tabs";
+import UiTextField from "@/components/TextField";
+import { useState } from "react";
 
 function SignUpMobile(){
   const [select, setSelect] = useState({
@@ -136,7 +136,26 @@ function SignUpMobile(){
   )
 }
 
-export default function SignUp(){
+export const meta = {
+  depth01: "홈",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "회원가입",
+  author: "홍길동",
+  state: "진행중",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+    home : true,
+    menu : true,
+  },
+  footer: true,
+  fnb: true
+};
+export default () => {
   const [value, setValue] = useState(0);
   const handleTabChange = (_,value) => {
     setValue(value)

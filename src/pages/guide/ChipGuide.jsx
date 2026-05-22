@@ -1,7 +1,6 @@
-import React from "react";
 import style from "@/assets/style/module/guide.module.scss";
-import Stack from '@mui/material/Stack';
 import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 function MuiChip() {
   return (
     <Stack direction="row" spacing={1}>
@@ -10,6 +9,23 @@ function MuiChip() {
     </Stack>
   ) 
 }
+
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Chip",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
+}
+
 export default function ChipGuide() {
   return (
     <section>

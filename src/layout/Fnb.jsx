@@ -1,6 +1,5 @@
-import React from "react";
-import clsx from "clsx";
 import style from "@/assets/style/module/layout.module.scss";
+import clsx from "clsx";
 
 export default function Fnb({ meta }) {
   const menu = [
@@ -27,7 +26,7 @@ export default function Fnb({ meta }) {
   ]
   return (
     <>
-    {meta.showFnb&&<nav className={style.fnb}>
+    {meta.fnb&&<nav className={style.fnb}>
       <ul className={style.menu}>
         {menu.map((item, index)=><li key={index}>
           <a href="#none">

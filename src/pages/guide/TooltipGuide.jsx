@@ -1,10 +1,10 @@
-import React, {useState} from "react";
 import style from "@/assets/style/module/guide.module.scss";
 import UiTooltip from "@/components/Tooltip";
+import { useState } from "react";
 // mui
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Tooltip from '@mui/material/Tooltip';
 function MuiTooltip() {
   const [open, setOpen] = useState(false);
 
@@ -56,6 +56,23 @@ function MuiTooltip() {
     "</p>
   </>)
 }
+
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Tooltip",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
+}
+
 export default function TooltipGuide() {
   const [open, setOpen] = useState(false)
   return (

@@ -1,5 +1,20 @@
-import React from "react";
 import style from "@/assets/style/module/guide.module.scss";
+
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Button",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
+}
 
 export default function ButtonGuide() {
   return (

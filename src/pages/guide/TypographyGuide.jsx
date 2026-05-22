@@ -1,5 +1,21 @@
-import React from "react";
 import style from "@/assets/style/module/guide.module.scss";
+
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Typography",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
+}
+
 export default function TypographyGuide() {
   const HeadingSizes = [36, 32, 30, 28, 26];
   const titleSizes = [24, 22, 20, 18, 16, 14, 13];

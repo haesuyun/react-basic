@@ -1,13 +1,13 @@
-import React, {useState} from "react";
-import clsx from "clsx";
 import style from "@/assets/style/module/guide.module.scss";
-import UiTabs from "@/components/Tabs";
 import UiTab from "@/components/Tab";
+import UiTabs from "@/components/Tabs";
+import clsx from "clsx";
+import { useState } from "react";
 // mui
-import { 
-  Tabs,
-  Tab,
+import {
   Box,
+  Tab,
+  Tabs,
 } from '@mui/material';
 // theme
 import { useColorScheme } from "@mui/material";
@@ -39,6 +39,22 @@ function MuiTabs() {
       </Box>
     </Box>
   );
+}
+
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Tabs",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
 }
 
 export default function TabsGuide() {

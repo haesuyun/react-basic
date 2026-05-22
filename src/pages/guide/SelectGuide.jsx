@@ -1,12 +1,12 @@
-import React, { useState } from "react";
 import style from "@/assets/style/module/guide.module.scss";
 import UiSelect from "@/components/Select";
+import { useState } from "react";
 // mui
-import { 
-  Box, 
+import {
+  Box,
+  FormControl,
   InputLabel,
   MenuItem,
-  FormControl,
   Select,
 } from '@mui/material';
 
@@ -33,6 +33,22 @@ function MuiSelect() {
       </FormControl>
     </Box>
   )
+}
+
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Select",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
 }
 
 export default function SelectGuide() {

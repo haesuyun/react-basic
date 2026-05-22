@@ -1,22 +1,22 @@
-import React, { useState, useRef } from "react";
 import style from "@/assets/style/module/guide.module.scss";
 import UiDialog from "@/components/Dialog";
 import UiSelect from "@/components/Select";
+import React, { useRef, useState } from "react";
 // mui
-import { 
-  Button, 
+import {
+  Box,
+  Button,
   Dialog,
   DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Select,
-  Switch,
-  Box,
   FormControl,
+  FormControlLabel,
   InputLabel,
   MenuItem,
-  FormControlLabel,
+  Select,
+  Switch,
 } from '@mui/material';
 
 function MuiDialog() {
@@ -123,6 +123,23 @@ function DialogBody() {
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, aut!
   </div>;
 }
+
+export const meta = {
+  depth01: "guide",
+  depth02: "",
+  depth03: "",
+  id: "",
+  name: "Dialog",
+  author: "",
+  state: "완료",
+  createdDate: "",
+  note: "",
+  layout: "DefaultLayout",
+  header: {
+    prev : true,
+  }
+}
+
 export default function DialogGuide() {
   const [open, setOpen] = useState({
     dialog01: false,
