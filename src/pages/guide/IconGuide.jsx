@@ -91,6 +91,7 @@ export default function IconGuide() {
               <Icon icon="search" size="xlarge" color="primary"/>
               <Icon icon="search" size="xlarge" color="secondary"/>
               <Icon icon="search" size="xlarge" color="error"/>
+              <Icon icon="close-circle" size="xlarge" color="primary"/>
             </td>
           </tr>
           <tr>
