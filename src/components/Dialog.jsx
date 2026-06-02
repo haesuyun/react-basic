@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import style from "@/assets/style/module/dialog.module.scss";
+import clsx from "clsx";
+import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import FocusLock from "react-focus-lock"; // focus trap, open한 버튼으로 포커드 이동 및 open 시 dialog 내부로 포커스 이동
-import clsx from "clsx";
-import style from "@/assets/style/module/dialog.module.scss";
 export default function Dialog({
   open,
   // size,
@@ -45,7 +45,7 @@ export default function Dialog({
             // style[size],
             {[style.fullScreen]:fullScreen},
             {[style.bottomSheet]:bottomSheet},
-            { [style.dimHide]: dimHide },
+            {[style.dimHide]: dimHide},
             style[maxWidth],
           )}>
           <div className={style.dialogContainer}>
@@ -57,7 +57,7 @@ export default function Dialog({
             </div>
             <div
               className={clsx(style.dialogContent,
-                { [style.dialogContentActions]: actions }
+                {[style.dialogContentActions]: actions}
               )}
             >
               {children}

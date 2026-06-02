@@ -5,4 +5,7 @@
   .text-#{$key} {
     color: var($color) !important;
   }
+  .fill-#{$key} {
+    fill: var($color) !important;
+  }
 }

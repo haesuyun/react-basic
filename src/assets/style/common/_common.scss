@@ -39,7 +39,7 @@ body {
     background: rgba(var(--black-rgb),0.3);
   }
   &::-webkit-scrollbar-track {
-    background-color: transparent;
+    background-color: var(--background) !important;
   }
 }
 

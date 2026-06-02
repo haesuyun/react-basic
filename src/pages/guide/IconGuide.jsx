@@ -1,4 +1,5 @@
 import style from "@/assets/style/module/guide.module.scss";
+import Icon from "@/components/Icon";
 import clsx from "clsx";
 
 export const meta = {
@@ -69,7 +70,31 @@ export default function IconGuide() {
         </thead>
         <tbody>
           <tr>
-            <th>size</th>
+            <th>svg (loaing)</th>
+            <td>
+              <Icon icon={null} size="xlarge" color="primary"/>
+            </td>
+          </tr>
+          <tr>
+            <th>svg (size)</th>
+            <td>
+              <Icon icon="search" size="xsmall" color="primary"/>
+              <Icon icon="search" size="small" color="primary"/>
+              <Icon icon="search" color="primary"/>
+              <Icon icon="search" size="large" color="primary"/>
+              <Icon icon="search" size="xlarge" color="primary"/>
+            </td>
+          </tr>
+          <tr>
+            <th>svg (color)</th>
+            <td>
+              <Icon icon="search" size="xlarge" color="primary"/>
+              <Icon icon="search" size="xlarge" color="secondary"/>
+              <Icon icon="search" size="xlarge" color="error"/>
+            </td>
+          </tr>
+          <tr>
+            <th>class (size)</th>
             <td>
               {sizes.map(size => {
                 return (
