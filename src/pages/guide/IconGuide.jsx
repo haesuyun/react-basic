@@ -1,5 +1,5 @@
 import style from "@/assets/style/module/guide.module.scss";
-import Icon from "@/components/Icon";
+import UiIcon from "@/components/Icon";
 import clsx from "clsx";
 
 export const meta = {
@@ -70,32 +70,33 @@ export default function IconGuide() {
         </thead>
         <tbody>
           <tr>
-            <th>svg (loaing)</th>
+            <th>svg - loading</th>
             <td>
-              <Icon icon={null} size="xlarge" color="primary"/>
+              <UiIcon icon={null} size="xlarge" color="primary"/>
             </td>
           </tr>
           <tr>
-            <th>svg (size)</th>
+            <th>svg - size</th>
             <td>
-              <Icon icon="search" size="xsmall" color="primary"/>
-              <Icon icon="search" size="small" color="primary"/>
-              <Icon icon="search" color="primary"/>
-              <Icon icon="search" size="large" color="primary"/>
-              <Icon icon="search" size="xlarge" color="primary"/>
+              <UiIcon icon="search" size="xsmall" color="primary"/>
+              <UiIcon icon="search" size="small" color="primary"/>
+              <UiIcon icon="search" color="primary"/>
+              <UiIcon icon="search" size="large" color="primary"/>
+              <UiIcon icon="search" size="xlarge" color="primary"/>
+              * Icon 컴포넌트 사용 
             </td>
           </tr>
           <tr>
-            <th>svg (color)</th>
+            <th>svg - color</th>
             <td>
-              <Icon icon="search" size="xlarge" color="primary"/>
-              <Icon icon="search" size="xlarge" color="secondary"/>
-              <Icon icon="search" size="xlarge" color="error"/>
-              <Icon icon="close-circle" size="xlarge" color="primary"/>
+              <UiIcon icon="search" size="xlarge" color="primary"/>
+              <UiIcon icon="search" size="xlarge" color="secondary"/>
+              <UiIcon icon="search" size="xlarge" color="error"/>
+              <UiIcon icon="close-circle" size="xlarge" color="primary"/>
             </td>
           </tr>
           <tr>
-            <th>class (size)</th>
+            <th>class - size</th>
             <td>
               {sizes.map(size => {
                 return (
@@ -108,7 +109,7 @@ export default function IconGuide() {
             </td>
           </tr>
           <tr>
-            <th>one Mode</th>
+            <th>class - one Mode</th>
             <td className="bg-grey-500 px-2">
               {oneModeIcons.map(icon => {
                 return <i key={icon} className={clsx("icon", icon)} aria-label=""></i>
@@ -119,7 +120,7 @@ export default function IconGuide() {
             </td>
           </tr>
           <tr>
-            <th>light</th>
+            <th>class - light</th>
             <td>
               {icons.map(icon => {
                 return <i key={icon} className={clsx("icon", icon)} aria-label=""></i>
@@ -128,7 +129,7 @@ export default function IconGuide() {
             </td>
           </tr>
           <tr>
-            <th>dark</th>
+            <th>class - dark</th>
             <td className="bg-grey-500 px-2">
               {icons.map(icon => {
                 return <i key={icon} className={clsx("icon", icon+`-white`)} aria-label=""></i>

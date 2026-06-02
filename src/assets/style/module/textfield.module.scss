@@ -1,5 +1,4 @@
 @use '../settings' as *;
-
 .input-wrap {
   display: flex;
   flex-direction: column;
@@ -49,6 +48,11 @@
       min-height: 5.6rem;
       z-index: 3;
       display: flex;
+      align-items: center;
+      >:global(.icon) {
+        margin-left: 1.2rem;
+        outline: 1px solid red;
+      }
       input {
         padding: 1.6rem 1.2rem;
         width: inherit;
@@ -83,9 +87,9 @@
       }
       &.disabled,
       &.readonly {
+        background-color: var(--grey-100);
+        color: var(--grey-600);
         input {
-          background-color: var(--grey-100);
-          color: var(--grey-600);
         }
       }
     }

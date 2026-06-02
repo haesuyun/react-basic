@@ -1,9 +1,10 @@
-import React, {useState, useRef, useEffect, useId, useLayoutEffect} from "react";
+import style from "@/assets/style/module/textfield.module.scss";
+import UiFormLabel from "@/components/FormLabel";
+import UiFormMessage from "@/components/FormMessage";
+import UiIcon from "@/components/Icon";
+import { useResize } from "@/hooks";
 import clsx from "clsx";
-import style from "@/assets/style/module/textfield.module.scss"
-import {useResize} from "@/hooks"
-import UiFormLabel from "@/components/FormLabel"
-import UiFormMessage from "@/components/FormMessage"
+import { useId, useLayoutEffect, useRef, useState } from "react";
 
 export default function TextField({
   className,
@@ -16,6 +17,7 @@ export default function TextField({
   name,
   value="",
   type="text",
+  clearable=true,
   multiline,
   rows=0,
   maxRows,
@@ -72,9 +74,10 @@ export default function TextField({
       <div className={clsx(style.inputBox)}>
         <div 
           className={clsx(
-            style.input, 
-            readonly && style.readonly, 
-            disabled && style.disabled)}>
+          style.input, 
+          readonly && style.readonly, 
+          disabled && style.disabled)}>
+          <UiIcon icon="search" size="large" color="primary"/>
           {multiline ? (
             <textarea
               id={id}
@@ -115,15 +118,12 @@ export default function TextField({
               }}
               />
           )}
-          {(!readonly && !disabled && !multiline && innerValue!=="" ) && (
+          {clearable && (!readonly && !disabled && !multiline && innerValue!=="" ) && (
             <button 
               type="button" 
               className={clsx(style.clearable)}       
               onClick={()=>setInnerValue("")}>
-              <i
-                className="icon close-circle"
-                aria-label="삭제"
-              ></i>
+              <UiIcon icon="close-circle" color="secondary" aria-label="삭제"/>
             </button>
           )}
         </div>

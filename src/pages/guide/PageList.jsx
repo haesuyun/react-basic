@@ -1,4 +1,5 @@
 import style from "@/assets/style/module/pagelist.module.scss";
+import UiTextField from "@/components/TextField";
 import { pageList } from "@/router.jsx";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import clsx from "clsx";
@@ -30,6 +31,9 @@ export default function PageList() {
       <div className={style.listWrap}>
         <div className={style.listTop}>
           <h1>화면목록</h1>
+          <div>
+            <UiTextField placeholder="검색"/>
+          </div>
         </div>
         <div className={style.tableWrap}>
           <table>

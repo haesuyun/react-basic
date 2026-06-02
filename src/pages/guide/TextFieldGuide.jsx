@@ -1,11 +1,13 @@
 import style from "@/assets/style/module/guide.module.scss";
 import UiTextField from "@/components/TextField";
 import clsx from "clsx";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 // mui
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import ClearIcon from '@mui/icons-material/Clear';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Box, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
+import { Box, IconButton, InputAdornment, TextField } from '@mui/material';
 
 function MuiTextField() {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,24 +19,65 @@ function MuiTextField() {
     event.preventDefault();
   };
   const [value, setValue] = useState('')
+  const [text, setText] = React.useState('');
+  const handleClear = () => {
+    setText(''); // 텍스트 삭제
+  };
   return (
     <Box
       component="form"
-      sx={{ '& > :not(style)': { m: 1, width: '25ch' } }}
+      sx={{ '& > :not(style)': { m: 1 , width: '90%' } }}
       noValidate
       autoComplete="off"
     >
       <TextField id="outlined-basic" label="Outlined" variant="outlined" />
       <TextField id="filled-basic" label="Filled" variant="filled" />
       <TextField id="standard-basic" label="Standard" variant="standard" />
-      <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-        <OutlinedInput
-          id="outlined-adornment-password"
-          type={showPassword ? 'text' : 'password'}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
+      <TextField
+        label="ClearText"
+        variant="outlined"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        // slotProps를 통해 내부 Input 컴포넌트에 endAdornment 주입
+        slotProps={{
+          input: {
+            endAdornment: text && (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="텍스트 삭제"
+                  onClick={handleClear}
+                  edge="end"
+                >
+                  <ClearIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          },
+        }}
+      />
+      <TextField
+        label="With a start adornment"
+        variant="standard"
+        slotProps={{
+          input: {
+            startAdornment: (
+              <InputAdornment position="start">
+                <AccountCircle />
+              </InputAdornment>
+            ),
+          }
+        }}
+      />
+      <TextField 
+        label="Password"
+        variant="outlined"
+        type={showPassword ? 'text' : 'password'}
+        autoComplete="current-password"
+        slotProps={{
+          input: {
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
                 aria-label={
                   showPassword ? 'hide the password' : 'display the password'
                 }
@@ -45,37 +88,35 @@ function MuiTextField() {
               >
                 {showPassword ? <VisibilityOff /> : <Visibility />}
               </IconButton>
-            </InputAdornment>
+              </InputAdornment>
+            ),
           }
-          label="Password"
-        />
-      </FormControl>
-      <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-        <InputLabel htmlFor="outlined-adornment-password">인증번호</InputLabel>
-        <OutlinedInput
-          type="tel"
-          value={value}
-          onChange={(e)=>setValue(e.target.value)}
-          endAdornment={
-            <InputAdornment position="end">
-              {(value!=="" ) && 
-                <button 
-                  type="button" 
-                  className={clsx("mr-2", style.clearable)}       
-                  onClick={()=>setValue("")}>
-                  <i
-                    className="icon-small delete-gray"
-                    aria-label="삭제"
-                  ></i>
-                </button>}
-              <button type="button" className="button bg-secondary">
-                시간연장
-              </button>
-            </InputAdornment>
+        }}
+      />
+      <TextField 
+        label="인증번호"
+        variant="outlined"
+        slotProps={{
+          input: {
+            endAdornment: (
+              <InputAdornment position="end">
+                {(value!=="" ) && 
+                  <button 
+                    type="button" 
+                    className={clsx("mr-2", style.clearable)}       
+                    onClick={()=>setValue("")}>
+                    <i
+                      className="icon-small delete-gray"
+                      aria-label="삭제"
+                    ></i>
+                  </button>}
+                  <button type="button" className="button bg-secondary">
+                    시간연장
+                  </button>
+              </InputAdornment>
+            )
           }
-          label="Password"
-        />
-      </FormControl>
+      }}/> 
     </Box>
   );
 }
@@ -121,7 +162,9 @@ export default function TextFieldGuide(){
           <th>TextField</th>
           <td></td>
           <td>
+            <UiTextField label="검색" placeholder="검색어 입력"/>
             <UiTextField label="이름" placeholder="이름 입력"/>
+            <UiTextField label="clearable false" placeholder="기본값 true" clearable={false}/>
             <UiTextField readonly label="이름 readonly" placeholder="이름 입력" value="홍길동"/>
             <UiTextField disabled label="이름 disabled" placeholder="이름 입력" value="홍길동"/>
             <UiTextField 
