@@ -11,6 +11,8 @@ const ICON_STYLES = {
     error: "fill-error",
     black: "fill-black",
     grey: "fill-grey",
+    white: "fill-white",
+    staticWhite: "fill-static-white",
   },
   size: {
     xlarge: "icon-xlarge",

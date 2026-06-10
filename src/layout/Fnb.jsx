@@ -1,5 +1,5 @@
 import style from "@/assets/style/module/layout.module.scss";
-import clsx from "clsx";
+import UiIcon from "@/components/Icon";
 
 export default function Fnb({ meta }) {
   const menu = [
@@ -30,7 +30,7 @@ export default function Fnb({ meta }) {
       <ul className={style.menu}>
         {menu.map((item, index)=><li key={index}>
           <a href="#none">
-            <i className={clsx("icon-large", item.icon+`-white`)}></i>
+            <UiIcon icon={item.icon} size="large" color="staticWhite" />
             <span>
               {item.label}
             </span>

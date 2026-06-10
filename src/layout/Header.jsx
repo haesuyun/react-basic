@@ -2,6 +2,7 @@ import style from "@/assets/style/module/layout.module.scss";
 import { ColorSchemeContext } from "@/context/ColorScheme";
 import { useContext, useEffect, useState } from "react";
 // mui
+import UiIcon from "@/components/Icon";
 import { useColorScheme } from "@mui/material";
 import Switch from '@mui/material/Switch';
 
@@ -22,7 +23,7 @@ export default function Header({meta}){
     {meta.header&&<header className={style.header}
     >
       {meta.header.prev&&<button type="button">
-        <i className="icon-large arrow-left" aria-label="이전"></i>
+        <UiIcon icon="arrow-left" size="large" aria-label="이전"/>
       </button>}
       <h1>
         {meta.name || ""}
@@ -36,10 +37,10 @@ export default function Header({meta}){
         }}
         label="Toggle Mode" />
       {meta.header.home&&<button type="button">
-        <i className="icon-large home" aria-label="홈"></i>
+        <UiIcon icon="home" size="large" aria-label="홈"/>
       </button>}
       {meta.header.menu&&<button type="button">
-        <i className="icon-large menu" aria-label="메뉴"></i>
+        <UiIcon icon="menu" size="large" aria-label="메뉴"/>
       </button>}
     </header>}
     </>

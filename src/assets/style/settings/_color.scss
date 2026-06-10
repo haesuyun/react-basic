@@ -7,6 +7,7 @@
   --background-dialog: #fff;
   --white-rgb: 255,255,255;
   --black-rgb: 0,0,0;
+  --static-white: #ffffff;
   --white: rgb(var(--white-rgb));
   --black: rgb(var(--black-rgb));
   --grey: rgba(var(--black-rgb),0.5);
@@ -50,6 +51,7 @@
   --background-dialog: #222;
   --black-rgb: 255,255,255;
   --white-rgb: 0,0,0;
+  --static-white: #ffffff;
   --white: rgb(var(--white-rgb));
   --black: rgb(var(--black-rgb));
   --grey: rgba(var(--black-rgb),0.5);
@@ -73,6 +75,7 @@ $colorGroup: (
   'background': --background,
   'background-dialog': --background-dialog,
   'white': --white,
+  'static-white': --static-white,
   'black': --black,
   'grey': --grey,
   'grey-50': --grey-50,
