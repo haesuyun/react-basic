@@ -49,13 +49,23 @@
       z-index: 3;
       display: flex;
       align-items: center;
-      >:global(.icon) {
-        margin-left: 1.2rem;
-        outline: 1px solid red;
+      .start-adornment {
+        margin-left: 0.8rem;
+        margin-right: -0.4rem;
+      }
+      .end-adornment {
+        margin-left: 0.4rem;
+        margin-right: 0.8rem;
+      }
+      .input-inner {
+        position: relative;
+        width: 100%;
+        min-height: inherit;
       }
       input {
         padding: 1.6rem 1.2rem;
         width: inherit;
+        min-height: inherit;
       }
       textarea {
         line-height: 1.5em !important;
@@ -89,8 +99,6 @@
       &.readonly {
         background-color: var(--grey-100);
         color: var(--grey-600);
-        input {
-        }
       }
     }
   }

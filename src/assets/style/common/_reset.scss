@@ -21,7 +21,7 @@ time, mark, audio, video, button {
 	border: 0;
 	font: inherit;
 	vertical-align: baseline;
-	user-select:none; //add
+	// user-select:none; //텍스트 선택 막기
 	box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */

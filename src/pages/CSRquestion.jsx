@@ -4,7 +4,7 @@ import UiTabs from "@/components/Tabs";
 import { useState } from "react";
 
 export const meta = {
-  depth01: "홈",
+  depth01: "고객센터",
   depth02: "",
   depth03: "",
   id: "",

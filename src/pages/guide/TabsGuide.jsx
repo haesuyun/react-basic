@@ -19,8 +19,6 @@ function MuiTabs() {
     setValue(newValue);
   };
 
-  
-
   return (
     <Box>
       <Tabs

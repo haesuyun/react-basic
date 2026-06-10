@@ -1,6 +1,6 @@
-import React from "react";
+import style from "@/assets/style/module/tabs.module.scss";
 import clsx from "clsx";
-import style from "@/assets/style/module/tabs.module.scss"
+import React from "react";
 
 export default function Tabs({
   className,

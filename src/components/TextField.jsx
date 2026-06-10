@@ -17,6 +17,8 @@ export default function TextField({
   name,
   value="",
   type="text",
+  startAdornment,
+  endAdornment,
   clearable=true,
   multiline,
   rows=0,
@@ -26,7 +28,7 @@ export default function TextField({
   message,
   errorMessage,
   children,
-  onChange
+  onChange,
 }){
   const [innerValue, setInnerValue] = useState(value)
   const [isFocused, setIsFocused] = useState(false)
@@ -77,7 +79,7 @@ export default function TextField({
           style.input, 
           readonly && style.readonly, 
           disabled && style.disabled)}>
-          <UiIcon icon="search" size="large" color="primary"/>
+          
           {multiline ? (
             <textarea
               id={id}
@@ -100,31 +102,41 @@ export default function TextField({
               }}
             ></textarea>
           ):(
-            <input 
-              id={id}
-              required={required} 
-              readOnly={readonly}
-              disabled={disabled}
-              type={type}
-              name={name} 
-              placeholder={placeholder}
-              {...inputProps}
-              value={innerValue} 
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-              onChange={e=>{
-                onChange?.(e);
-                setInnerValue(e.target.value);
-              }}
-              />
-          )}
-          {clearable && (!readonly && !disabled && !multiline && innerValue!=="" ) && (
-            <button 
-              type="button" 
-              className={clsx(style.clearable)}       
-              onClick={()=>setInnerValue("")}>
-              <UiIcon icon="close-circle" color="secondary" aria-label="삭제"/>
-            </button>
+            <>
+              {startAdornment && <span className={clsx(style.startAdornment)}>{startAdornment}</span>}
+              {/* <UiIcon icon="search" size="large" color="primary"/> */}
+              <div className={clsx(style.inputInner)}>
+                <input 
+                  id={id}
+                  required={required} 
+                  readOnly={readonly}
+                  disabled={disabled}
+                  type={type}
+                  name={name} 
+                  placeholder={placeholder}
+                  {...inputProps}
+                  value={innerValue} 
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(false)}
+                  onChange={e=>{
+                    onChange?.(e);
+                    setInnerValue(e.target.value);
+                  }}
+                  />
+                {clearable && (!readonly && !disabled && !multiline && innerValue!=="" ) && (
+                  <button 
+                    type="button" 
+                    className={clsx(style.clearable)}       
+                    onClick={()=>{
+                      setInnerValue("");
+                      onChange?.({ target: { value: "" } });
+                    }}>
+                    <UiIcon icon="close-circle" color="secondary" aria-label="삭제"/>
+                  </button>
+                )}
+              </div>
+              {endAdornment && <span className={clsx(style.endAdornment)}>{endAdornment}</span>}
+            </>
           )}
         </div>
         {children && <div className={clsx(style.inputActions)}>{children}</div>}

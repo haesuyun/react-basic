@@ -1,5 +1,5 @@
 export const meta = {
-  depth01: "홈",
+  depth01: "고객센터",
   depth02: "",
   depth03: "",
   id: "",

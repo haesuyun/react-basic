@@ -1,4 +1,5 @@
 import style from "@/assets/style/module/guide.module.scss";
+import UiIcon from "@/components/Icon";
 import UiTextField from "@/components/TextField";
 import clsx from "clsx";
 import React, { useRef, useState } from "react";
@@ -162,7 +163,13 @@ export default function TextFieldGuide(){
           <th>TextField</th>
           <td></td>
           <td>
-            <UiTextField label="검색" placeholder="검색어 입력"/>
+            <UiTextField label="startAdornment" placeholder="검색어 입력" startAdornment={<UiIcon icon="search" size="large" color="primary" />}/>
+            <UiTextField label="endAdornment" placeholder="검색어 입력" endAdornment={<UiIcon icon="search" size="large" color="primary" />}/>
+            <UiTextField label="default slot : button" placeholder="검색어 입력">
+            <button type="button">
+              <UiIcon icon="search" size="large" color="primary" />
+            </button>
+            </UiTextField>
             <UiTextField label="이름" placeholder="이름 입력"/>
             <UiTextField label="clearable false" placeholder="기본값 true" clearable={false}/>
             <UiTextField readonly label="이름 readonly" placeholder="이름 입력" value="홍길동"/>

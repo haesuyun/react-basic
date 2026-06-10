@@ -10,14 +10,28 @@
     flex: 1 1 auto;
     .list-top {
       position: sticky;
+      display: flex;
+      align-items: center;
       top: 0;
-      padding: 16px 24px;
+      padding: 12px 24px;
       background-color: var(--tertiary);
       h1 {
-        margin: 0;
+        margin: 0 2rem 0 0;
         font-size: 2rem !important;
         font-weight: 600 !important;
         color: #fff;
+        text-wrap: nowrap;
+      }
+      .tabs-wrap {
+      }
+      .search-wrap {
+        margin-left: auto;
+        margin-right: 36px;
+        min-width: 360px;
+        width: 360px;
+        [class*="input-box"] {
+          background-color: var(--background);
+        }
       }
     }
     .table-wrap {
@@ -68,9 +82,10 @@
     .toggle-button {
       position: absolute;
       left: -10px;
-      top: 13px;
+      top: 23px;
       transform: translateX(-100%);
-      border: 1px solid #fff;
+      background-color: var(--tertiary);
+      border: 1px solid var(--white);
       border-radius: 50%;
       color: #fff;
       opacity: 0.8;

@@ -137,7 +137,7 @@ function SignUpMobile(){
 }
 
 export const meta = {
-  depth01: "홈",
+  depth01: "로그인",
   depth02: "",
   depth03: "",
   id: "",

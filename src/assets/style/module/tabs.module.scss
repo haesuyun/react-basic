@@ -50,8 +50,8 @@
       align-items: center;
       padding: .8rem 1.2rem;
       gap: .4rem;
-      border: 1px solid var(--grey-400);
       border-radius: 2rem;
+      border: 1px solid var(--grey-400);
       background-color: var(--white);
       color: var(--black);
       @extend .text-14;
@@ -59,7 +59,7 @@
       &.checked {
         border: 1px solid var(--secondary);
         background-color: var(--secondary);
-        color: #fff;
+        color: var(--white);
         z-index: 2;
       }
     }
@@ -67,6 +67,23 @@
   &:global(.position-sticky){
     background-color: var(--white);
     z-index: 100;
+  }
+}
+:global(.theme-dark) {
+  .tabs,
+  &.tabs {
+    &.rounded {
+      .tab {
+        border: 1px solid var(--secondary);
+        background-color: var(--secondary);
+        color: var(--black);;
+        &.checked {
+          border: 1px solid var(--black);
+          background-color: var(--black);
+          color: var(--white);
+        }
+      }
+    }
   }
 }
 .tab {
