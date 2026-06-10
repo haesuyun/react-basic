@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import style from "@/assets/style/module/accordion.module.scss";
+import UiIcon from "@/components/Icon";
+import { useResize } from "@/hooks";
 import clsx from "clsx";
-import style from "@/assets/style/module/accordion.module.scss"
-import { useResize } from "@/hooks"
 import debounce from "lodash/debounce";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export default function Accordion({
   expanded=false,
@@ -75,7 +76,7 @@ export default function Accordion({
           onClick={handleClick}
         >
           {title&&<p className={style.title}>{ title }</p>}
-          <i className={clsx(style.icon, "icon-large down")} aria-label={toggle?"닫기":"열기"}></i>
+          <UiIcon icon="down" size="large" aria-label={toggle?"닫기":"열기"}/>
         </button>
       </dt>
       <dd className={clsx(style.details)} style={{ maxHeight: detailsHeight }}

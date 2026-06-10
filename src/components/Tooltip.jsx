@@ -1,6 +1,7 @@
-import React, {useState, useEffect, useRef} from "react";
-import clsx from "clsx";
 import style from "@/assets/style/module/tooltip.module.scss";
+import UiIcon from "@/components/Icon";
+import clsx from "clsx";
+import React, { useEffect, useRef, useState } from "react";
 export default function Tooltip({
   open=false,
   title,
@@ -36,7 +37,7 @@ export default function Tooltip({
             onChange?.(false)
             lastTargetRef.current.focus();
           }}>
-            <i className="icon icon-small close" aria-label="닫기"></i>
+            <UiIcon icon="close" size="small" aria-label="닫기"/>
           </button>
         </div>
         <div className={clsx(style.tooltipContent)}>

@@ -1,7 +1,8 @@
-import React, { useState, useMemo } from "react";
+import style from "@/assets/style/module/checkbox.module.scss";
+import UiIcon from "@/components/Icon";
 import { useLastInputType } from "@/hooks/";
 import clsx from "clsx";
-import style from "@/assets/style/module/checkbox.module.scss"
+import { useState } from "react";
 
 export default function Checkbox({
   className,
@@ -11,6 +12,7 @@ export default function Checkbox({
   onChange,
   variant,
   iconSize,
+  iconColor,
   disabled = false,
 }) {
   // checked가 주어지지 않으면 내부 상태로 관리
@@ -22,20 +24,27 @@ export default function Checkbox({
     checked!==undefined ? onChange(e) : null
   }
   // icon
-  const getIcon = (isActive) => {
+  const setIcon = (isActive) => {
     switch (variant) {
       case "bookmark":
-        return isActive ? "bookmark" : "bookmark-outline";
-      case "heart":
-        return isActive ? "heart" : "heart-outline";
+        return isActive ? {name: "bookmark", color: "primary"} : {name: "bookmark-outline", color: "grey"};
+        case "heart":
+        return isActive ? {name: "heart", color: "primary"} : {name: "heart-outline", color: "secondary"};
       case "line":
-        return isActive ? "check" : "check opacity-30";
+        return isActive ? {name: "check", color: "primary"} : {name: "check", color: "secondary"};
       default:
-        return isActive ? "check-circle" : "check-circle-outline";
+        return isActive ? {name: "check-circle", color: "primary"} : {name: "check-circle-outline", color: "secondary"};
     }
   };
-  const activeIcon = useMemo(() => getIcon(true), [variant]);
-  const inactiveIcon = useMemo(() => getIcon(false), [variant]);
+
+  const setIconColor = (isActive) => {
+    if (iconColor) {
+      return isActive ? iconColor.checked : iconColor.unchecked;
+    } else {
+      return setIcon(isActive).color;
+    }
+  }
+
   // icon size
   const iconSizeClass = iconSize ? `icon-${iconSize}` : "icon";
   // focus
@@ -63,11 +72,8 @@ export default function Checkbox({
           }}
           onBlur={() => setIsFocused(false)}
         />
-        <i className={clsx(
-          style.icon,
-          value ? activeIcon : inactiveIcon,
-          iconSizeClass)}></i>
-          { label &&
+        <UiIcon icon={setIcon(value).name} size={iconSize} color={setIconColor(value)} className={clsx(style.icon)} />
+        { label &&
           <p className={style.label}>
             {label}
           </p>

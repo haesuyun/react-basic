@@ -1,4 +1,5 @@
 import style from "@/assets/style/module/dialog.module.scss";
+import UiIcon from "@/components/Icon";
 import clsx from "clsx";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
@@ -52,7 +53,8 @@ export default function Dialog({
             <div className={style.dialogTitle}>
               {title && <p className={style.title}>{title}</p>}
               <button type="button" onClick={() => onClose()}>
-                <i className="icon icon-large close" aria-label="닫기"></i>
+                <UiIcon icon="close" size="large" 
+                aria-label="닫기"/>
               </button>
             </div>
             <div

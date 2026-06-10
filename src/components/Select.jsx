@@ -1,11 +1,12 @@
-import React, { useState, useId } from "react";
-import clsx from "clsx";
 import style from "@/assets/style/module/select.module.scss";
+import UiDialog from "@/components/Dialog";
 import UiFormLabel from "@/components/FormLabel";
 import UiFormMessage from "@/components/FormMessage";
-import Dialog from "@/components/Dialog";
-import UiRadioGroup from "@/components/RadioGroup";
+import UiIcon from "@/components/Icon";
 import UiRadio from "@/components/Radio";
+import UiRadioGroup from "@/components/RadioGroup";
+import clsx from "clsx";
+import { useId, useState } from "react";
 
 export default function Select({ 
   className, 
@@ -52,11 +53,11 @@ export default function Select({
               }
             }}
           ></input>
-          <i className={clsx("icon-large down", style.icon)}></i>
+          <UiIcon icon="down" size="large" className={clsx(style.icon)} />
         </div>
         <UiFormMessage message={message} errorMessage={errorMessage}/>
       </div>
-      <Dialog
+      <UiDialog
         bottomSheet
         open={open}
         onClose={handleClose}
@@ -76,7 +77,7 @@ export default function Select({
             )
           }
         </UiRadioGroup>
-      </Dialog>
+      </UiDialog>
     </>
   );
 }

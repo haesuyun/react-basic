@@ -1,7 +1,8 @@
-import React, { useMemo, useRef, useState } from "react";
+import style from "@/assets/style/module/radio.module.scss";
+import UiIcon from "@/components/Icon";
 import { useLastInputType } from "@/hooks/";
 import clsx from "clsx";
-import style from "@/assets/style/module/radio.module.scss"
+import { useRef, useState } from "react";
 
 export default function Radio({
   className,
@@ -17,19 +18,27 @@ export default function Radio({
   onKeyDown,
   onMouseDown,
   iconSize,
+  iconColor,
 }) {
   const inputRef = useRef(null);
   // icon
-  const getIcon = (isActive) => {
+  const setIcon = (isActive) => {
     switch (variant) {
       case "check":
-        return isActive ? "check" : "check opacity-30";
+        return isActive ?  {name: "check", color: "primary"} : {name: "check", color: "secondary"};
       default:
-        return isActive ? "radio" : "radio-outline";
+        return isActive ? {name: "radio", color: "primary"} : {name: "radio-outline", color: "secondary"};
     }
   };
-  const activeIcon = useMemo(() => getIcon(true), [variant]);
-  const inactiveIcon = useMemo(() => getIcon(false), [variant]);
+  const setIconColor = (isActive) => {
+    if (iconColor) {
+      return isActive ? iconColor.checked : iconColor.unchecked;
+    } else {
+      return setIcon(isActive).color;
+    }
+  }
+  // const activeIcon = useMemo(() => setIcon(true), [variant]);
+  // const inactiveIcon = useMemo(() => setIcon(false), [variant]);
   // icon size
   const iconSizeClass = iconSize ? `icon-${iconSize}` : "icon";
   // focus
@@ -73,10 +82,8 @@ export default function Radio({
           onBlur={() => setIsFocused(false)}
           />
         {variant !== "button" &&
-          <i className={clsx(
-            style.icon,
-            checked ? activeIcon : inactiveIcon,
-            iconSizeClass)}></i>}
+            <UiIcon icon={setIcon(checked).name} size={iconSize} color={setIconColor(checked)} className={clsx(style.icon)} />
+        }
         { label &&
           <p className={clsx("label", style.label)}>
             {label}

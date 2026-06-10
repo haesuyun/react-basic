@@ -194,6 +194,19 @@ export default function CheckboxGuide() {
               />
             </td>
           </tr>
+          <tr>
+            <th></th>
+            <td>color</td>
+            <td>
+              <UiCheckbox 
+                  variant="heart"
+                iconSize="xlarge"
+                iconColor={{ 
+                  checked: "error", unchecked: "grey" }}
+                {...label} 
+                />
+            </td>
+          </tr>
         </tbody>
       </table>
     </section>

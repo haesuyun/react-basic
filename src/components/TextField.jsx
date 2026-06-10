@@ -104,7 +104,6 @@ export default function TextField({
           ):(
             <>
               {startAdornment && <span className={clsx(style.startAdornment)}>{startAdornment}</span>}
-              {/* <UiIcon icon="search" size="large" color="primary"/> */}
               <div className={clsx(style.inputInner)}>
                 <input 
                   id={id}

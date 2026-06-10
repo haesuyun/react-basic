@@ -9,6 +9,8 @@ const ICON_STYLES = {
     primary: "fill-primary",
     secondary: "fill-secondary",
     error: "fill-error",
+    black: "fill-black",
+    grey: "fill-grey",
   },
   size: {
     xlarge: "icon-xlarge",
@@ -19,7 +21,7 @@ const ICON_STYLES = {
 };
 
 // 2. cva의 defaultVariants 역할을 할 기본값 지정
-const DEFAULT_COLOR = "secondary";
+const DEFAULT_COLOR = "black";
 const DEFAULT_SIZE = "icon";
 
 const Icon = ({ icon, color, size, className, ...props }) => {

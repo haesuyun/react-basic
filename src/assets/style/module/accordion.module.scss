@@ -15,13 +15,13 @@
     .btn-toggle {
       display: flex;
       justify-content: flex-end;
+      :global(.icon),
       .icon {
         display: block;
         position: relative;
         flex-shrink: 0;
         transform: rotate(0deg);
         transition: all 0.3s ease-in-out;
-        opacity: 0.5;
       }
     }
   }
@@ -36,6 +36,7 @@
   &.expanded {
     .summary {
       .btn-toggle {
+        :global(.icon),
         .icon {
           transform: rotate(-180deg);
         }

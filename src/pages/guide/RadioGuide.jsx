@@ -140,6 +140,20 @@ export default function RadioGuide() {
           </td>
         </tr>
         <tr>
+          <th>variant check</th>
+          <td>color</td>
+          <td>
+            <UiRadioGroup label="성별" required name='radio-button-group3' value={value.radio03} onChange={handleChange('radio03')}>
+              {
+                options03.map((option,index)=>
+                  <UiRadio variant="check" iconSize="large" key={index} {...option} iconColor={{ 
+                  checked: "error", unchecked: "grey" }}/>
+                )
+              }
+            </UiRadioGroup>
+          </td>
+        </tr>
+        <tr>
           <th>variant button</th>
           <td></td>
           <td>
