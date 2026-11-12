@@ -74,7 +74,8 @@ Object.entries(pageModules).forEach(([file, module]) => {
     layout: routeConfig.layout || meta.layout,
   });
   
-  if (!file.includes('/guide/PageList')) {
+  // 페이지 목록에는 pages/guide 폴더의 화면만 노출합니다.
+  if (file.startsWith('./pages/guide/') && !file.includes('/guide/PageList')) {
     pageList.push({
       path,
       meta,
