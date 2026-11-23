@@ -133,3 +133,5 @@ dist
 # mcp
 .serena/
 .serena
+*storybook.log
+storybook-static
